@@ -1,0 +1,19 @@
+.container {
+    width: 800px;
+    margin: 20px auto;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.box {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}

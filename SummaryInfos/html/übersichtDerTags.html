@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Liste aller HTML-Tags</title>
+    <script>
+        function showTagExample(tagName) {
+            var exampleWindow = window.open("", "Tag Example", "width=400,height=400");
+            var exampleHTML = "<" + tagName + "></" + tagName + ">";
+            var description = getTagDescription(tagName);
+            exampleWindow.document.write("<html><body><h1>" + tagName + "</h1><p>" + description + "</p><hr>" + exampleHTML + "</body></html>");
+        }
+    
+        function getTagDescription(tagName) {
+            var descriptions = {
+                'html': {
+                    description: 'Das Wurzelelement, das den gesamten HTML-Inhalt umschließt.',
+                    attributes: ['manifest']
+                },
+                'head': {
+                    description: 'Enthält Metadaten wie den Titel des Dokuments und andere Informationen für Suchmaschinen.',
+                    attributes: ['profile']
+                },
+                'title': {
+                    description: 'Definiert den Titel des Dokuments, der im Browser-Tab oder in den Suchergebnissen angezeigt wird.',
+                    attributes: []
+                },
+                'base': {
+                    description: 'Definiert die Basis-URL für relative URLs in der Seite.',
+                    attributes: ['href', 'target']
+                },
+                'link': {
+                    description: 'Verknüpft das Dokument mit externen Ressourcen wie Stylesheets oder Favicons.',
+                    attributes: ['href', 'rel', 'type']
+                },
+                'meta': {
+                    description: 'Stellt Metadaten zur Seite bereit, z.B. Zeichencodierung oder Autor.',
+                    attributes: ['charset', 'name', 'content']
+                },
+                'style': {
+                    description: 'Enthält CSS-Regeln zur Gestaltung der Seite.',
+                    attributes: ['type', 'media']
+                },
+                'script': {
+                    description: 'Ermöglicht das Einbetten von JavaScript-Code in die Seite.',
+                    attributes: ['type', 'src', 'async']
+                },
+                'noscript': {
+                    description: 'Definiert Inhalte, die angezeigt werden, wenn JavaScript deaktiviert ist.',
+                    attributes: []
+                },
+                'body': {
+                    description: 'Der sichtbare Inhalt der Webseite, der den eigentlichen Text und die Struktur enthält.',
+                    attributes: ['onload', 'onunload']
+                },
+                'section': {
+                    description: 'Stellt einen Abschnitt oder Unterabschnitt des Dokuments dar.',
+                    attributes: []
+                },
+                'nav': {
+                    description: 'Definiert einen Bereich mit Navigationselementen.',
+                    attributes: []
+                },
+                'article': {
+                    description: 'Kennzeichnet den Hauptinhalt oder Artikel in einem Dokument.',
+                    attributes: []
+                },
+                'aside': {
+                    description: 'Kennzeichnet Inhalte, die nicht direkt zum Hauptinhalt gehören, z.B. Seitenleisten.',
+                    attributes: []
+                },
+                'h1': {
+                    description: 'Überschrift erster Ordnung, die normalerweise für den Haupttitel einer Seite verwendet wird.',
+                    attributes: []
+                },
+                'h2': {
+                    description: 'Überschrift zweiter Ordnung.',
+                    attributes: []
+                },
+                'p': {
+                    description: 'Absatz, der normalerweise Text enthält.',
+                    attributes: []
+                },
+                'ul': {
+                    description: 'Unsortierte Liste.',
+                    attributes: []
+                },
+                'ol': {
+                    description: 'Sortierte Liste.',
+                    attributes: []
+                },
+                'li': {
+                    description: 'Ein Listenelement in ul oder ol.',
+                    attributes: []
+                },
+                'a': {
+                    description: 'Verknüpfung zu einer anderen Seite oder Ressource.',
+                    attributes: ['href', 'target', 'title']
+                },
+                'img': {
+                    description: 'Bild.',
+                    attributes: ['src', 'alt', 'width', 'height']
+                },
+                'table': {
+                    description: 'Tabelle zur Anordnung von Daten in Zeilen und Spalten.',
+                    attributes: ['border', 'cellpadding', 'cellspacing']
+                },
+                'tr': {
+                    description: 'Tabellenzeile.',
+                    attributes: []
+                },
+                'td': {
+                    description: 'Tabellendatenzelle.',
+                    attributes: []
+                },
+                'th': {
+                    description: 'Tabellenkopfzelle.',
+                    attributes: []
+                },
+                'form': {
+                    description: 'Ermöglicht das Erstellen von Eingabeformularen.',
+                    attributes: ['action', 'method', 'enctype']
+                },
+                'input': {
+                    description: 'Eingabefeld für Formulare.',
+                    attributes: ['type', 'name', 'value']
+                },
+                'button': {
+                    description: 'Schaltfläche in einem Formular.',
+                    attributes: ['type', 'name', 'value']
+                },
+                'textarea': {
+                    description: 'Bereich für langen Text in Formularen.',
+                    attributes: ['name', 'rows', 'cols']
+                },
+                'label': {
+                    description: 'Beschriftung für Formularelemente.',
+                    attributes: ['for']
+                },
+                'select': {
+                    description: 'Dropdown-Auswahl in Formularen.',
+                    attributes: ['name', 'size', 'multiple']
+                },
+                'option': {
+                    description: 'Eine Option in einer Select-Liste.',
+                    attributes: ['value', 'selected']
+                },
+                'footer': {
+                    description: 'Enthält Abschlussinformationen oder -elemente am Ende eines Dokuments.',
+                    attributes: []
+                },
+                'header': {
+                    description: 'Enthält Kopfelemente oder -informationen am Anfang eines Dokuments.',
+                    attributes: []
+                },
+                'hr': {
+                    description: 'Horizontale Linie zur Trennung von Inhalten.',
+                    attributes: []
+                },
+                'b': {
+                    description: 'Fetter Text.',
+                    attributes: []
+                },
+                'i': {
+                    description: 'Kursiver Text.',
+                    attributes: []
+                },
+                'u': {
+                    description: 'Unterstrichener Text.',
+                    attributes: []
+                },
+                's': {
+                    description: 'Durchgestrichener Text.',
+                    attributes: []
+                },
+                'small': {
+                    description: 'Kleinerer Text für Untertitel oder Feinheiten.',
+                    attributes: []
+                },
+                'cite': {
+                    description: 'Zitierter Text oder Quellangabe.',
+                    attributes: []
+                },
+                'dfn': {
+                    description: 'Definition eines Begriffs.',
+                    attributes: []
+                },
+                'mark': {
+                    description: 'Hervorgehobener Text für Betonung.',
+                    attributes: []
+                },
+                'abbr': {
+                    description: 'Abgekürzter Text mit einem erweiterten Titel.',
+                    attributes: ['title']
+                },
+                'time': {
+                    description: 'Datum und/oder Uhrzeit in einer maschinenlesbaren Form.',
+                    attributes: ['datetime']
+                },
+                'code': {
+                    description: 'Code- oder Programmtext.',
+                    attributes: []
+                },
+                'kbd': {
+                    description: 'Tastatur-Eingabe oder Benutzereingabe.',
+                    attributes: []
+                },
+                'var': {
+                    description: 'Variablenname.',
+                    attributes: []
+                },
+                'samp': {
+                    description: 'Beispielausgabe oder Text aus einem Programm.',
+                    attributes: []
+                },
+                'pre': {
+                    description: 'Vorformatierter Text mit Beibehaltung der Zeilenumbrüche und Leerzeichen.',
+                    attributes: []
+                },
+                'blockquote': {
+                    description: 'Blockzitat oder längeres Zitat mit Einrückung.',
+                    attributes: ['cite']
+                },
+                'q': {
+                    description: 'Kurzes Zitat oder wörtliche Rede.',
+                    attributes: ['cite']
+                },
+                'cite': {
+                    description: 'Zitatquelle oder Verweis auf ein Werk oder eine Publikation.',
+                    attributes: []
+                },
+                'address': {
+                    description: 'Kontaktinformationen oder Autoreninformationen.',
+                    attributes: []
+                },
+                'bdo': {
+                    description: 'Richtungsänderung für Text (bidirektionales Textobjekt).',
+                    attributes: ['dir']
+                },
+                'ruby': {
+                    description: 'Anzeige von Text mit Ruby-Anmerkungen für die Aussprache.',
+                    attributes: []
+                },
+                'rt': {
+                    description: 'Ruby-Text, der die Aussprache von Zeichen in Ruby-Anmerkungen angibt.',
+                    attributes: []
+                },
+                'rp': {
+                    description: 'Fall-back-Anzeige für Browser, die Ruby nicht unterstützen.',
+                    attributes: []
+                },
+                'bdi': {
+                    description: 'Text mit isolierter Darstellung und keinem Bidi-Algorithmus.',
+                    attributes: []
+                },
+                'bdo': {
+                    description: 'Text mit erzwungener Textausrichtung (bidirektionales Textobjekt).',
+                    attributes: ['dir']
+                },
+                'span': {
+                    description: 'Inline-Container zur Anwendung von Stilen oder Skripten auf einen Textbereich.',
+                    attributes: []
+                },
+                'br': {
+                    description: 'Zeilenumbruch für Text oder Inline-Inhalte.',
+                    attributes: []
+                },
+                'wbr': {
+                    description: 'Möglicher Zeilenumbruchpunkt für lange Wörter oder URLs.',
+                    attributes: []
+                },
+                'ins': {
+                    description: 'Eingefügter Text oder Hinzufügungen in einem Dokument.',
+                    attributes: ['cite', 'datetime']
+                },
+                'del': {
+                    description: 'Gelöschter Text oder Änderungen in einem Dokument.',
+                    attributes: ['cite', 'datetime']
+                },
+                'img': {
+                    description: 'Bild.',
+                    attributes: ['src', 'alt', 'width', 'height', 'usemap', 'ismap']
+                },
+                'iframe': {
+                    description: 'Eingebettetes Frame zur Anzeige einer anderen Webseite oder Ressource.',
+                    attributes: ['src', 'name', 'width', 'height', 'sandbox', 'seamless']
+                },
+                'embed': {
+                    description: 'Einbettung von Multimedia-Elementen wie Audio oder Video.',
+                    attributes: ['src', 'type', 'width', 'height']
+                },
+                'object': {
+                    description: 'Allgemeines Container-Element für eingebettete Inhalte.',
+                    attributes: ['data', 'type', 'usemap', 'form', 'width', 'height']
+                },
+                'param': {
+                    description: 'Parameter für Objekte wie Flash-Filme oder Java-Applets.',
+                    attributes: ['name', 'value']
+                },
+                'video': {
+                    description: 'Einbettung von Videodateien oder -streams.',
+                    attributes: ['src', 'poster', 'preload', 'autoplay', 'controls', 'loop', 'muted', 'width', 'height']
+                },
+                'audio': {
+                    description: 'Einbettung von Audioinhalten, z.B. Musik oder Töne.',
+                    attributes: ['src', 'preload', 'autoplay', 'controls', 'loop', 'muted']
+                },
+                'source': {
+                    description: 'Definiert verschiedene Medienquellen für Audio- oder Videodateien.',
+                    attributes: ['src', 'type']
+                },
+                'track': {
+                    description: 'Untertitel- oder Textspuren für Audio- oder Videodateien.',
+                    attributes: ['kind', 'src', 'srclang', 'label', 'default']
+                },
+                'canvas': {
+                    description: 'Bereich zur Zeichnung von Grafiken und Animationen mit JavaScript.',
+                    attributes: ['width', 'height']
+                },
+                'map': {
+                    description: 'Bereichskarte zur Verknüpfung von Teilen eines Bildes oder einer Grafik mit URLs.',
+                    attributes: ['name']
+                },
+                'area': {
+                    description: 'Bereich in einer Bildkarte, der auf eine URL oder Aktion verweist.',
+                    attributes: ['alt', 'coords', 'shape', 'href', 'target', 'download', 'ping', 'rel', 'referrerpolicy']
+                },
+                'table': {
+                    description: 'Tabelle zur Anordnung von Daten in Zeilen und Spalten.',
+                    attributes: ['border', 'cellpadding', 'cellspacing', 'width', 'summary']
+                },
+                'caption': {
+                    description: 'Titel oder Überschrift für eine Tabelle.',
+                    attributes: []
+                },
+                'colgroup': {
+                    description: 'Gruppen von Tabellenspalten für Formatierung und Stil.',
+                    attributes: ['span']
+                },
+                'col': {
+                    description: 'Tabellenspalte innerhalb einer colgroup.',
+                    attributes: ['span']
+                },
+                'tbody': {
+                    description: 'Tabellenkörper, der Gruppen von Tabellenzeilen enthält.',
+                    attributes: []
+                },
+                'thead': {
+                    description: 'Tabellenkopf, der Spaltenüberschriften enthält.',
+                    attributes: []
+                },
+                'tfoot': {
+                    description: 'Tabellenfuß, der Zusammenfassungen oder Fußnoten enthält.',
+                    attributes: []
+                },
+                'tr': {
+                    description: 'Tabellenzeile, die Tabellendatenzellen enthält.',
+                    attributes: []
+                },
+                'td': {
+                    description: 'Tabellendatenzelle, die Daten in einer Tabelle enthält.',
+                    attributes: ['colspan', 'rowspan', 'headers']
+                },
+                'th': {
+                    description: 'Tabellenkopfzelle, die Überschriften in einer Tabelle enthält.',
+                    attributes: ['colspan', 'rowspan', 'headers', 'scope', 'abbr']
+                },
+                'form': {
+                    description: 'Ermöglicht das Erstellen von Eingabeformularen.',
+                    attributes: ['action', 'method', 'target', 'enctype', 'accept-charset', 'autocomplete', 'novalidate']
+                },
+                'input': {
+                    description: 'Eingabefeld für Formulare, z.B. Textfeld oder Schaltfläche.',
+                    attributes: ['type', 'name', 'value', 'checked', 'disabled', 'readonly', 'size', 'maxlength', 'placeholder', 'autocomplete']
+                },
+                'button': {
+                    description: 'Schaltfläche in einem Formular.',
+                    attributes: ['name', 'value', 'disabled', 'form', 'type']
+                },
+                'select': {
+                    description: 'Dropdown-Auswahl in Formularen.',
+                    attributes: ['name', 'size', 'multiple', 'disabled', 'form', 'required']
+                },
+                'datalist': {
+                    description: 'Verknüpfung mit einer Liste von Optionen für ein Eingabefeld.',
+                    attributes: []
+                },
+                'optgroup': {
+                    description: 'Gruppen von Optionen in einer Auswahl.',
+                    attributes: ['label', 'disabled']
+                },
+                'option': {
+                    description: 'Eine Option in einer Select-Liste.',
+                    attributes: ['value', 'disabled', 'selected', 'label']
+                },
+                'textarea': {
+                    description: 'Bereich für langen Text in Formularen.',
+                    attributes: ['name', 'rows', 'cols', 'disabled', 'readonly', 'maxlength', 'placeholder', 'autocomplete']
+                },
+                'label': {
+                    description: 'Beschriftung für Formularelemente.',
+                    attributes: ['for', 'form']
+                },
+                'fieldset': {
+                    description: 'Gruppierung von Formularelementen mit einer optionalen Legende.',
+                    attributes: ['name', 'disabled']
+                },
+                'legend': {
+                    description: 'Legende für ein Feldset.',
+                    attributes: []
+                },
+                'iframe': {
+                    description: 'Eingebettetes Frame zur Anzeige einer anderen Webseite oder Ressource.',
+                    attributes: ['src', 'name', 'width', 'height', 'sandbox', 'seamless', 'frameborder', 'scrolling']
+                },
+                'progress': {
+                    description: 'Fortschrittsbalken zur Anzeige von Ladezuständen oder Fortschritten.',
+                    attributes: ['value', 'max']
+                },
+                'meter': {
+                    description: 'Messinstrument zur Anzeige von Skalen oder Messwerten.',
+                    attributes: ['value', 'min', 'max', 'low', 'high', 'optimum']
+                },
+                'details': {
+                    description: 'Interaktives Element zur Anzeige oder Ausblenden von Zusatzinformationen.',
+                    attributes: ['open']
+                },
+                'summary': {
+                    description: 'Überschrift oder Titel für ein Details-Element.',
+                    attributes: []
+                },
+                'menu': {
+                    description: 'Liste von Menüoptionen oder Befehlen.',
+                    attributes: ['type', 'label']
+                },
+                'menuitem': {
+                    description: 'Ein Element in einem Menü.',
+                    attributes: ['type', 'label', 'icon', 'disabled', 'checked', 'radiogroup', 'command']
+                },
+                'dialog': {
+                    description: 'Dialogfenster zur Interaktion mit dem Benutzer.',
+                    attributes: ['open']
+                }
+            };
+            var tagInfo = descriptions[tagName];
+    
+            if (tagInfo) {
+                var description = tagInfo.description;
+                var attributes = tagInfo.attributes;
+                var attributesList = attributes.map(function (attribute) {
+                    return '<li>' + attribute + '</li>';
+                }).join('');
+    
+                return description + '<br><h4>Attribute:</h4>' +(attributesList.length > 0 ? '<ul>' + attributesList + '</ul>' : '');
+            }
+    
+            return 'Beschreibung für dieses Tag fehlt.';
+        };
+    </script>
+    
+</head>
+<body>
+    <h1>Liste aller HTML-Tags</h1>
+    <ul>
+        <li><button onclick="showTagExample('html')">html</button></li>
+        <li><button onclick="showTagExample('head')">head</button></li>
+        <li><button onclick="showTagExample('title')">title</button></li>
+        <li><button onclick="showTagExample('base')">base</button></li>
+        <li><button onclick="showTagExample('link')">link</button></li>
+        <li><button onclick="showTagExample('meta')">meta</button></li>
+        <li><button onclick="showTagExample('style')">style</button></li>
+        <li><button onclick="showTagExample('script')">script</button></li>
+        <li><button onclick="showTagExample('noscript')">noscript</button></li>
+        <li><button onclick="showTagExample('body')">body</button></li>
+        <li><button onclick="showTagExample('section')">section</button></li>
+        <li><button onclick="showTagExample('nav')">nav</button></li>
+        <li><button onclick="showTagExample('article')">article</button></li>
+        <li><button onclick="showTagExample('aside')">aside</button></li>
+        <li><button onclick="showTagExample('h1')">h1</button></li>
+        <li><button onclick="showTagExample('h2')">h2</button></li>
+        <li><button onclick="showTagExample('p')">p</button></li>
+        <li><button onclick="showTagExample('ul')">ul</button></li>
+        <li><button onclick="showTagExample('ol')">ol</button></li>
+        <li><button onclick="showTagExample('li')">li</button></li>
+        <li><button onclick="showTagExample('a')">a</button></li>
+        <li><button onclick="showTagExample('img')">img</button></li>
+        <li><button onclick="showTagExample('table')">table</button></li>
+        <li><button onclick="showTagExample('tr')">tr</button></li>
+        <li><button onclick="showTagExample('td')">td</button></li>
+        <li><button onclick="showTagExample('th')">th</button></li>
+        <li><button onclick="showTagExample('form')">form</button></li>
+        <li><button onclick="showTagExample('input')">input</button></li>
+        <li><button onclick="showTagExample('button')">button</button></li>
+        <li><button onclick="showTagExample('textarea')">textarea</button></li>
+        <li><button onclick="showTagExample('label')">label</button></li>
+        <li><button onclick="showTagExample('select')">select</button></li>
+        <li><button onclick="showTagExample('option')">option</button></li>
+        <li><button onclick="showTagExample('footer')">footer</button></li>
+        <li><button onclick="showTagExample('header')">header</button></li>
+        <li><button onclick="showTagExample('hr')">hr</button></li>
+        <li><button onclick="showTagExample('blockquote')">blockquote</button></li>
+        <li><button onclick="showTagExample('abbr')">abbr</button></li>
+        <li><button onclick="showTagExample('iframe')">iframe</button></li>
+        <li><button onclick="showTagExample('canvas')">canvas</button></li>
+        <li><button onclick="showTagExample('audio')">audio</button></li>
+        <li><button onclick="showTagExample('video')">video</button></li>
+        <li><button onclick="showTagExample('span')">span</button></li>
+        <li><button onclick="showTagExample('br')">br</button></li>
+        <li><button onclick="showTagExample('div')">div</button></li>
+        <li><button onclick="showTagExample('em')">em</button></li>
+        <li><button onclick="showTagExample('strong')">strong</button></li>
+        <li><button onclick="showTagExample('code')">code</button></li>
+        <li><button onclick="showTagExample('var')">var</button></li>
+        <li><button onclick="showTagExample('samp')">samp</button></li>
+        <li><button onclick="showTagExample('q')">q</button></li>
+        <li><button onclick="showTagExample('blockquote')">blockquote</button></li>
+        <li><button onclick="showTagExample('abbr')">abbr</button></li>
+        <li><button onclick="showTagExample('mark')">mark</button></li>
+        <li><button onclick="showTagExample('cite')">cite</button></li>
+        <li><button onclick="showTagExample('del')">del</button></li>
+        <li><button onclick="showTagExample('ins')">ins</button></li>
+        <li><button onclick="showTagExample('sub')">sub</button></li>
+        <li><button onclick="showTagExample('sup')">sup</button></li>
+        <li><button onclick="showTagExample('hr')">hr</button></li>
+        <li><button onclick="showTagExample('wbr')">wbr</button></li>
+        <li><button onclick="showTagExample('figure')">figure</button></li>
+        <li><button onclick="showTagExample('figcaption')">figcaption</button></li>
+        <li><button onclick="showTagExample('details')">details</button></li>
+        <li><button onclick="showTagExample('summary')">summary</button></li>
+        <li><button onclick="showTagExample('menu')">menu</button></li>
+        <li><button onclick="showTagExample('menuitem')">menuitem</button></li>
+        <li><button onclick="showTagExample('dialog')">dialog</button></li>
+        <li><button onclick="showTagExample('script')">script</button></li>
+        <li><button onclick="showTagExample('noscript')">noscript</button></li>
+        <li><button onclick="showTagExample('head')">head</button></li>
+        <li><button onclick="showTagExample('link')">link</button></li>
+        <li><button onclick="showTagExample('meta')">meta</button></li>
+        <li><button onclick="showTagExample('style')">style</button></li>
+        <li><button onclick="showTagExample('base')">base</button></li>
+        <li><button onclick="showTagExample('basefont')">basefont</button></li>
+        <li><button onclick="showTagExample('bgsound')">bgsound</button></li>
+        <li><button onclick="showTagExample('menuitem')">menuitem</button></li>
+        <li><button onclick="showTagExample('nobr')">nobr</button></li>
+        <li><button onclick="showTagExample('wbr')">wbr</button></li>
+        <li><button onclick="showTagExample('blink')">blink</button></li>
+        <li><button onclick="showTagExample('spacer')">spacer</button></li>
+        <li><button onclick="showTagExample('acronym')">acronym</button></li>
+        <li><button onclick="showTagExample('applet')">applet</button></li>
+        <li><button onclick="showTagExample('big')">big</button></li>
+        <li><button onclick="showTagExample('center')">center</button></li>
+        <li><button onclick="showTagExample('font')">font</button></li>
+        <li><button onclick="showTagExample('strike')">strike</button></li>
+        <li><button onclick="showTagExample('tt')">tt</button></li>
+        <li><button onclick="showTagExample('xmp')">xmp</button></li>
+        <li><button onclick="showTagExample('marquee')">marquee</button></li>
+        <li><button onclick="showTagExample('nobr')">nobr</button></li>
+        <li><button onclick="showTagExample('s')">s</button></li>
+        <li><button onclick="showTagExample('u')">u</button></li>
+        <li><button onclick="showTagExample('center')">center</button></li>
+    </ul>
+</body>
+</html>

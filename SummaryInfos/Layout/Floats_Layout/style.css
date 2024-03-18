@@ -1,0 +1,18 @@
+.container {
+    width: 800px;
+    margin: 20px auto;
+}
+
+.image {
+    float: left;
+    width: 300px;
+}
+
+.text {
+    float: right;
+    width: 500px;
+}
+
+h1 {
+    text-align: center;
+}
