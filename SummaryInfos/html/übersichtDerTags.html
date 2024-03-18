@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+Hallo Welt
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
     <title>Liste aller HTML-Tags</title>
     <script>
@@ -11,7 +13,7 @@
             var description = getTagDescription(tagName);
             exampleWindow.document.write("<html><body><h1>" + tagName + "</h1><p>" + description + "</p><hr>" + exampleHTML + "</body></html>");
         }
-    
+
         function getTagDescription(tagName) {
             var descriptions = {
                 'html': {
@@ -444,22 +446,23 @@
                 }
             };
             var tagInfo = descriptions[tagName];
-    
+
             if (tagInfo) {
                 var description = tagInfo.description;
                 var attributes = tagInfo.attributes;
                 var attributesList = attributes.map(function (attribute) {
                     return '<li>' + attribute + '</li>';
                 }).join('');
-    
-                return description + '<br><h4>Attribute:</h4>' +(attributesList.length > 0 ? '<ul>' + attributesList + '</ul>' : '');
+
+                return description + '<br><h4>Attribute:</h4>' + (attributesList.length > 0 ? '<ul>' + attributesList + '</ul>' : '');
             }
-    
+
             return 'Beschreibung für dieses Tag fehlt.';
         };
     </script>
-    
+
 </head>
+
 <body>
     <h1>Liste aller HTML-Tags</h1>
     <ul>
@@ -560,4 +563,5 @@
         <li><button onclick="showTagExample('center')">center</button></li>
     </ul>
 </body>
+
 </html>
