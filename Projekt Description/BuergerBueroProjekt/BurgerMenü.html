@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown Burger Menü</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling für das Menü-Icon */
+        .menu-icon {
+            cursor: pointer;
+            padding: 15px;
+            background-color: #6fa5db;
+            /* Helle Hintergrundfarbe */
+            color: #333;
+            /* Dunklerer Text */
+            position: fixed;
+            top: 20px;
+            /* Abstand vom oberen Rand */
+            right: 20px;
+            /* Abstand vom rechten Rand */
+            border-radius: 5px;
+            /* Abgerundete Ecken */
+            z-index: 1;
+        }
+
+        /* Styling für das Dropdown-Menü */
+        .dropdown {
+            display: none;
+            position: fixed;
+            background-color: #6fa5db;
+            /* Helle Hintergrundfarbe */
+            top: 55px;
+            /* Abstand vom oberen Rand, um das Menü-Icon nicht zu überdecken */
+            right: 20px;
+            /* Abstand vom rechten Rand */
+            min-width: 200px;
+            border-radius: 10px;
+            /* Abgerundete Ecken */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Styling für Menüelemente im Dropdown */
+        .dropdown-item {
+            padding: 12px 20px;
+            color: #333;
+            /* Dunklerer Text */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hervorhebung beim Hovern über Menüelemente */
+        .dropdown-item:hover {
+            background-color: #8eb9d7;
+            /* Hellere Hintergrundfarbe beim Hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Das Menü-Icon, normalerweise ein Burger-Icon -->
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+
+    <!-- Das Dropdown-Menü -->
+    <div class="dropdown" id="menuDropdown">
+        <div class="dropdown-item" onclick="window.location.href='PersönlicheDaten.php';">Persönliche Daten</div>
+        <div class="dropdown-item" onclick="window.location.href='Anträge.php';">Anträge</div>
+        <div class="dropdown-item" onclick="window.location.href='Nachrichten.php';">Nachrichten</div>
+        <div class="dropdown-item" onclick="window.location.href='Termine.php';">Termine</div>
+        <div class="dropdown-item" onclick="window.location.href='Kontakt.php';">Kontakt</div>
+    </div>
+
+    <script>
+        // JavaScript, um das Dropdown-Menü anzuzeigen/verbergen
+        const menuIcon = document.getElementById("menuIcon");
+        const menuDropdown = document.getElementById("menuDropdown");
+
+        menuIcon.addEventListener("click", function () {
+            if (menuDropdown.style.display === "block") {
+                menuDropdown.style.display = "none";
+            } else {
+                menuDropdown.style.display = "block";
+            }
+        });
+
+        // Schließen des Dropdown-Menüs, wenn außerhalb geklickt wird
+        window.addEventListener("click", function (event) {
+            if (event.target !== menuIcon && event.target !== menuDropdown) {
+                menuDropdown.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>
