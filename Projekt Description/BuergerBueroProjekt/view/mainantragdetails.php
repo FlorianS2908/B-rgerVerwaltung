@@ -53,7 +53,6 @@
             </div>
             <div class="content">
                 <iframe src="https://google.com">
-                    SAsss
                 </iframe>
             </div>
         </div>
