@@ -1,2 +1,2 @@
 <?php
-echo 'Hallo Welt';
+echo 'Egons zuhaus';
