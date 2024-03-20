@@ -1,42 +1,55 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-}
-.container {
+  }
+  .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-h1 {
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 60px;
-}
-ul {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  ul {
     list-style: none;
     padding: 0;
-}
-li {
+  }
+  li {
     margin-bottom: 10px;
-}
-a {
+  }
+  a {
     color: #ffffff;
     text-decoration: none;
-}
-.antrag-list {
+  }
+  .antrag-list {
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
-}
-.antrag-element {
+    padding: 0px 50px 0px 50px;
+    list-style: none;
+  }
+  .antrag-element {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .antrag-element span{
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  .button {
     display: inline-block;
     background-color: #007bff;
     color: #ffffff;
@@ -45,4 +58,43 @@ a {
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
-}
+  }
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0927cf;
+  }
+  label::after {
+    content: "*";
+    color: #ff0000;
+    margin-left: 4px;
+  }
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  select option:checked {
+  background-color: #474d55;
+  color: #fff;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
