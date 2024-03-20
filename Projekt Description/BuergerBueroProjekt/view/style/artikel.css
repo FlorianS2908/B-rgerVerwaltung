@@ -1,0 +1,111 @@
+/* Styling für das Menü-Icon */
+.menu-icon {
+    cursor: pointer;
+    padding: 15px;
+    background-color: #6a737b;
+    /* Helle Hintergrundfarbe */
+    color: #333;
+    /* Dunklerer Text */
+    position: fixed;
+    top: 20px;
+    /* Abstand vom oberen Rand */
+    right: 20px;
+    /* Abstand vom rechten Rand */
+    border-radius: 5px;
+    /* Abgerundete Ecken */
+    z-index: 1;
+}
+
+/* Styling für das Dropdown-Menü */
+.dropdown {
+    display: none;
+    position: fixed;
+    background-color: #6fa5db;
+    /* Helle Hintergrundfarbe */
+    top: 55px;
+    /* Abstand vom oberen Rand, um das Menü-Icon nicht zu überdecken */
+    right: 20px;
+    /* Abstand vom rechten Rand */
+    min-width: 200px;
+    border-radius: 10px;
+    /* Abgerundete Ecken */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Styling für Menüelemente im Dropdown */
+.dropdown-item {
+    padding: 12px 20px;
+    color: #333;
+    /* Dunklerer Text */
+    text-decoration: none;
+    display: block;
+}
+
+/* Hervorhebung beim Hovern über Menüelemente */
+.dropdown-item:hover {
+    background-color: #8eb9d7;
+    /* Hellere Hintergrundfarbe beim Hover */
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.filter-bar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+}
+
+.filter-bar button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+article {
+    width: 30%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.article-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-details {
+    padding: 10px;
+}
+
+.article-details h2 {
+    margin-top: 0;
+}
+
+.article-details p.article-date {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #888;
+    text-align: right;
+}
