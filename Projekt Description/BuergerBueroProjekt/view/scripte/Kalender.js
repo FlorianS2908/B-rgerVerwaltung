@@ -1,8 +1,8 @@
 var CALENDAR = function () {
     var cal = {};
     var wrap, label,
-        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+        months =
+            ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
     cal.init = function (newWrap) {
         wrap = $(newWrap);
         label = wrap.find("#label");
@@ -17,8 +17,6 @@ var CALENDAR = function () {
         var curr = label.text().trim().split(" "), tempYear = parseInt(curr[1], 10);
         month = month || ((next) ? ((curr[0] === "December") ? 0 : months.indexOf(curr[0]) + 1) : ((curr[0] === "January") ? 11 : months.indexOf(curr[0]) - 1));
         year = year || ((next && month === 0) ? tempYear + 1 : (!next && month === 11) ? tempYear - 1 : tempYear);
-
-        var selectedDay = wrap.find('.selected').text(); // Get selected day before updating calendar
 
         var calendar = createCal(year, month);
         $("#cal-frame", wrap)
@@ -90,9 +88,12 @@ var CALENDAR = function () {
 
 
 function updateDate(day, month, year) {
-    // Find the existing label element by its ID
+    var months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
     var label = document.getElementById('datum');
 
-    // Update the content of the label with the selected day and year
-    label.textContent = day + '.' + month + '.' + year;
+    var monthName = months[parseInt(month)];
+
+    // Update the content of the label with the selected day, month, and year
+    label.textContent = day + ' ' + monthName + ' ' + year;
 }

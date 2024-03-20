@@ -12,7 +12,7 @@
     <div id="cal">
         <div class="header">
             <span class="left button" id="prev"> &lang; </span>
-            <span class="month-year" id="label"> März 2024 </span>
+            <span class="month-year" id="label"> </span>
             <span class="right button" id="next"> &rang; </span>
         </div>
         <table id="days">
@@ -32,7 +32,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripte/Kalender.js"></script>
+    <script src="scripte/kalender.js"></script>
     <script>
         $(document).ready(function() {
             var cal = CALENDAR();
@@ -52,9 +52,11 @@
 
     <label for="freie-termine">Freie Termine:</label>
     <select id="freie-termine">
-        <!--<option value="termin1">Termin 1</option>
-        <option value="termin2">Termin 2</option>
-         Weitere freie Termine hier -->
+        <?php
+        foreach ($freieTermine as $freierTermin) {
+            echo "<option value=\"$freierTermin\">$freierTermin</option>";
+        }
+        ?>
     </select>
     <br>
     <br>
@@ -69,8 +71,8 @@
     {
         foreach ($terminData as $termin) {
             if (
-                $datum == date('Y-m-d', strtotime($termin['Termindatum'])) ||
-                $datum == date('Y-m-d', strtotime($termin['Feiertag_datum'])) ||
+                $datum == date('Y-m-d', strtotime($termin['Termin'])) ||
+                $datum == date('Y-m-d', strtotime($termin['FeiertagsDatum'])) ||
                 $datum == date('Y-m-d', strtotime($termin['Urlaub']))
             ) {
                 return true;

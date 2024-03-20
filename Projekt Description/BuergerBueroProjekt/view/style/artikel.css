@@ -1,3 +1,21 @@
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    min-height: 10vh;
+    flex-direction: column;
+    flex: 1;
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
