@@ -1,9 +1,7 @@
 <main>
-    <section>
-        <h1 id="antrag-title">
-
-        </h1>
-        <div class="container">
+    <section class="container">
+        <h1 id="antrag-title"></h1>
+        <div>
             <div class="description">
                 <p id="antrag-desc">
                     Description
@@ -13,13 +11,13 @@
                 <p>Content</p>
             </div>
         </div>
+        <div class="button-container">
+            <button class="button">
+                Zurück
+            </button>
+            <button class="button">
+                Senden
+            </button>
+        </div>
     </section>
-    <div class="button-container">
-        <button class="button">
-            Zurück
-        </button>
-        <button class="button">
-            Senden
-        </button>
-    </div>
 </main>
