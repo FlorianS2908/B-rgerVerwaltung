@@ -1,23 +1,34 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
-
+ 
 .title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 40px;
 }
-
+ 
+.description {
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+ 
+.content {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+ 
 .button-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
+  justify-content: center;
+  margin: 20px;
 }
-
+ 
 .button {
   padding: 8px 16px;
   background-color: #007bff;
@@ -27,7 +38,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-
+ 
+.button + .button {
+  margin-left: 10px;
+}
+ 
 .button:hover {
   background-color: #0056b3;
 }
