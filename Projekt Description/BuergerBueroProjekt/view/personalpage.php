@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Information Form</title>
-    <link rel="stylesheet" href="style/persDaten.css">
+    <link rel="stylesheet" href="style/personalpage.css">
 </head>
 
 <body>
@@ -17,30 +17,23 @@
 
         <div class="fixed-fields">
             <div class="box">
-                <div class="umrandung">
-                    <label class="titel" for="state">Nachname:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
-                    <p class="text">Mustermann</p>
+                <div>
+                    <input type="text" id="Name" name="Name" required readonly value="Musterman" />
                 </div>
-                <div class="umrandung">
-                    <label class="titel" for="state">Geburtsdatum:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
-                    <p class="text">1990-01-01</p>
+                <div>
+                    <input type="date" id="Datum" name="Datum" required readonly value="1990-01-01" />
                 </div>
             </div>
             <div class="box">
-                <div class="umrandung">
-                    <label class="titel" for="state">Vorname:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
-                    <p class="text">Erika</p>
+                <div>
+                    <input type="text" id="Vorname" name="Vorname" required readonly value="Erika" />
                 </div>
-                <div class="umrandung">
-                    <label class="titel" for="state">Geburtsort:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
-                    <p class="text">Berlin</p>
+                <div>
+                    <input type="text" id="G_Ort" name="G_Ort" required readonly value="Berlin" />
                 </div>
             </div>
         </div>
+
 
         <h1>Adresse</h1>
         <div class="editable-fields">
