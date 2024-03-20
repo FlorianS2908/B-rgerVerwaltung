@@ -3,6 +3,17 @@
 <?php
 //require "../controller/db_dataLoad.php";
 //createDatapool();
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["username"]) && isset($_POST["password"])) {
+        // Setzen der Session-Variablen
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["password"] = $_POST["password"];
+
+        header("Location: index.php");
+        exit();
+    }
+}
 ?>
 
 <head>
@@ -28,7 +39,7 @@ require "navi.php";
     require "burgerMenü.php";
     ?>
     <?php
-    var_dump($_SESSION);
+
     if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
         include "main.php";
     } else {

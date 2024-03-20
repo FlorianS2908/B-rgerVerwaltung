@@ -21,19 +21,16 @@
         <input type="password" id="password" name="password" required>
         <button type="submit">Anmelden</button>
         <a href="/forgot-password">Passwort vergessen?</a>
+        <a href="registPage.php">Registrieren</a>
     </form>
 </div>
 <?php
 
-session_start();
+
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     // Setze die Session-Variablen
     $_SESSION["username"] = $_POST["username"];
     $_SESSION["password"] = $_POST["password"];
-
-    // Leite zur Index-Seite weiter
-    // header("Location: index.php");
-    exit();
 }
 ?>
 

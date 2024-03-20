@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../view/style/navigation.css">
     <link rel="stylesheet" href="../view/style/header.css">
     <link rel="stylesheet" href="../view/style/footer.css">
+    <script src="../view/scripte/register.js"></script>
 </head>
 <header>
     <h1>Willkommen im Bürgerbüro</h1>
@@ -24,7 +25,7 @@ require "navi.php";
     ?>
     <div class="container">
         <h1>Registrierung</h1>
-        <form action="index.php" method="post">
+        <form action="loginPage.php" method="post" onsubmit="return validatRegister()">
             <label for="anrede">Anrede:</label>
             <select id="anrede" name="anrede">
                 <option value="herr">Herr</option>
@@ -42,7 +43,7 @@ require "navi.php";
             <input type="email" id="email" name="email" required>
             <br>
             <label for="passwort">Passwort:</label>
-            <input type="password" id="passwort" name="passwort" required>
+            <input type="password" id="password" name="password" required>
             <br>
             <label for="geburtsdatum">Geburtsdatum:</label>
             <input type="date" id="geburtsdatum" name="geburtsdatum" required>
