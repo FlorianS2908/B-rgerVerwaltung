@@ -1,0 +1,49 @@
+/* Styling für das Menü-Icon */
+.menu-icon {
+    cursor: pointer;
+    padding: 15px;
+    background-color: #6a737b;
+    /* Helle Hintergrundfarbe */
+    color: #333;
+    /* Dunklerer Text */
+    position: fixed;
+    top: 20px;
+    /* Abstand vom oberen Rand */
+    right: 20px;
+    /* Abstand vom rechten Rand */
+    border-radius: 5px;
+    /* Abgerundete Ecken */
+    z-index: 1;
+}
+
+/* Styling für das Dropdown-Menü */
+.dropdown {
+    display: none;
+    position: fixed;
+    background-color: #6fa5db;
+    /* Helle Hintergrundfarbe */
+    top: 55px;
+    /* Abstand vom oberen Rand, um das Menü-Icon nicht zu überdecken */
+    right: 20px;
+    /* Abstand vom rechten Rand */
+    min-width: 200px;
+    border-radius: 10px;
+    /* Abgerundete Ecken */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Styling für Menüelemente im Dropdown */
+.dropdown-item {
+    padding: 12px 20px;
+    color: #333;
+    /* Dunklerer Text */
+    text-decoration: none;
+    display: block;
+}
+
+/* Hervorhebung beim Hovern über Menüelemente */
+.dropdown-item:hover {
+    background-color: #8eb9d7;
+    /* Hellere Hintergrundfarbe beim Hover */
+}
