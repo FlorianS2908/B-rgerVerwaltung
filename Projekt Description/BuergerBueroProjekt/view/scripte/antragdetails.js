@@ -11,7 +11,9 @@ function getParameters() {
   fetch("../model/AnträgeMockupNewVersion.json")
     .then((response) => response.json())
     .then((data) => {
+      
       const antrag = data.filter((item) => item.id == params.get("id"))[0];
+      console.log(antrag)
       antragParams = {
         id: antrag.id,
         name: antrag.name,
