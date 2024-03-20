@@ -1,8 +1,8 @@
 var CALENDAR = function () {
     var cal = {};
     var wrap, label,
-        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+        months =
+            ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
     cal.init = function (newWrap) {
         wrap = $(newWrap);
         label = wrap.find("#label");
@@ -88,7 +88,7 @@ var CALENDAR = function () {
 
 
 function updateDate(day, month, year) {
-    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
     var label = document.getElementById('datum');
 
