@@ -107,4 +107,10 @@
     </section>
 </body>
 
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 Bürgerbüro. Alle Rechte vorbehalten.</p>
+    </div>
+</footer>
+
 </html>
