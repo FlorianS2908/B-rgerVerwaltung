@@ -1,37 +1,95 @@
-<php>
-    <html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kontaktformular</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktformular</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            /* Hintergrundfarbe des Formulars */
+        }
 
-    <body>
+        form {
+            background-color: #ffffff;
+            /* Hintergrundfarbe des Formulars */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Schatten um das Formular */
+            width: 400px;
+            margin: 0 auto;
+        }
 
-        <h2>Kontaktformular</h2>
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
 
-        <form action="#" method="POST">
-            <label for="name">Name:</label><br>
+        .form-group label {
+            margin-bottom: 5px;
+        }
 
-            <input type="text" id="name" name="name" size="40" maxlength="50" required>
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
-            <label for="vorname">Vorname:</label><br>
-            <input type="text" id="vorname" name="vorname" size="40" required><br>
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            /* Hintergrundfarbe des Buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-            <label for="betreff">Betreff :</label><br>
-            <input type="text" id="betreff" name="betreff" size="93"><br>
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            /* Farbe beim Überfahren mit der Maus */
+        }
+    </style>
+</head>
 
-            <label for="email">E-Mail :</label><br>
-            <input type="email" id="email" name="email" size="93" maxlength="200" required><br><br>
+<body>
 
-            <label for="nachricht">Nachricht:</label><br>
-            <textarea id="nachricht" name="nachricht" size="200" required></textarea><br>
+    <h2>Kontaktformular</h2>
 
-            <input type="submit" value="Absenden">
-        </form>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" size="30" maxlength="50" required>
+        </div>
 
-    </body>
+        <div class="form-group">
+            <label for="vorname">Vorname:</label>
+            <input type="text" id="vorname" name="vorname" size="30" maxlength="50" required>
+        </div>
 
-    </html>
-</php>
+        <div class="form-group">
+            <label for="betreff">Betreff :</label>
+            <input type="text" id="betreff" name="betreff" size="30" maxlength="30" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-Mail :</label>
+            <input type="email" id="email" name="email" size="30" maxlength="200" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nachricht">Nachricht:</label>
+            <textarea id="nachricht" name="nachricht" rows="20" cols="30" required></textarea>
+        </div>
+
+        <input type="submit" value="Absenden">
+    </form>
+
+</body>
+
+</html>
