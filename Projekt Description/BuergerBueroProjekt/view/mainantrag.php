@@ -10,11 +10,10 @@
             <div>
                 <label for="abteilung">Wählen sie die passende Behörde aus</label>
                 <select id="abteilung" onchange="handleSelection()">
-                    <option value="" disabled selected>
+                    <option value="" disabled="disabled" selected="selected">
                         Bitte wählen
                     </option>
                 </select>
-
                 <div id="antr-list">
                     <h3 id="grupe-name">Führerscheinstelle</h3>
                     <div class="elements-container">
@@ -30,8 +29,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <hr />
             </div>
     </section>
 </main>
