@@ -1,4 +1,4 @@
-const antrageList = fetch("./../model/AnträgeMockup.json").then((response) =>
+const antrageList = fetch("./../model/AnträgeMockupNewVersion.json").then((response) =>
   response.json()
 );
 
@@ -32,7 +32,7 @@ function populateSelect() {
         span.textContent = item.Name ? item.Name : `Antrag Name von Gruppe ${item.Gruppe}`;
 
         const link = document.createElement("a");
-        link.href = item.Link;
+        link.href = `?${item.id}`
         link.textContent = "Klicken Sie hier...";
         link.target = "_blank";
         link.classList.add("button");
@@ -68,10 +68,10 @@ function handleSelection() {
         listItem.classList.add("antrag-element");
 
         const span = document.createElement("span");
-        span.textContent = item.Name ? item.Name : `Antrag Name von Gruppe ${item.Gruppe}`;
+        span.textContent = item.name ? item.name : `Antrag Name von Gruppe ${item.Gruppe}`;
 
         const link = document.createElement("a");
-        link.href = item.Link;
+        link.href = `anträgedetails.php?${item.id}`
         link.textContent = "Klicken Sie hier...";
         link.target = "_blank";
         link.classList.add("button");

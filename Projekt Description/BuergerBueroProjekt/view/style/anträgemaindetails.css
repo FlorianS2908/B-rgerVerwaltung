@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
 }
-
+ 
 .title {
   font-size: 28px;
   font-weight: bold;
@@ -11,24 +11,24 @@
   text-align: left;
   margin-left: 40px;
 }
-
+ 
 .description {
   font-size: 20px;
   margin-bottom: 20px;
   width: 70%;
 }
-
+ 
 .content {
   font-size: 20px;
   margin-bottom: 10px;
 }
-
+ 
 .button-container {
   display: flex;
   justify-content: center;
   margin: 20px;
 }
-
+ 
 .button {
   padding: 8px 16px;
   background-color: #007bff;

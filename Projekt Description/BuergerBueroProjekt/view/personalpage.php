@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <br>
-        <h1>Persönlichen Daten</h1>
+        <h1>Persönliche Daten</h1>
         <p class="subtext">Hier finden Sie Ihre persönlichen Daten</p>
 
         <div class="fixed-fields">

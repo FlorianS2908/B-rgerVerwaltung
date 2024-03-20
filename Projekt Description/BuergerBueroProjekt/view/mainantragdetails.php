@@ -1,11 +1,11 @@
 <main>
-    <h1 class="title">
-        Title
-    </h1>
     <section>
+        <h1 id="antrag-title">
+
+        </h1>
         <div class="container">
             <div class="description">
-                <p>
+                <p id="antrag-desc">
                     Description
                 </p>
             </div>
@@ -14,14 +14,12 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="button-container">
-            <button class="button">
-                Zurück
-            </button>
-            <button class="button">
-                Senden
-            </button>
-        </div>
-    </footer>
+    <div class="button-container">
+        <button class="button">
+            Zurück
+        </button>
+        <button class="button">
+            Senden
+        </button>
+    </div>
 </main>
