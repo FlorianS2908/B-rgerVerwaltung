@@ -52,9 +52,11 @@
 
     <label for="freie-termine">Freie Termine:</label>
     <select id="freie-termine">
-        <!--<option value="termin1">Termin 1</option>
-        <option value="termin2">Termin 2</option>
-         Weitere freie Termine hier -->
+        <?php
+        foreach ($freieTermine as $freierTermin) {
+            echo "<option value=\"$freierTermin\">$freierTermin</option>";
+        }
+        ?>
     </select>
     <br>
     <br>
