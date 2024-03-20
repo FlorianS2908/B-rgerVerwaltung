@@ -18,8 +18,6 @@ var CALENDAR = function () {
         month = month || ((next) ? ((curr[0] === "December") ? 0 : months.indexOf(curr[0]) + 1) : ((curr[0] === "January") ? 11 : months.indexOf(curr[0]) - 1));
         year = year || ((next && month === 0) ? tempYear + 1 : (!next && month === 11) ? tempYear - 1 : tempYear);
 
-        var selectedDay = wrap.find('.selected').text(); // Get selected day before updating calendar
-
         var calendar = createCal(year, month);
         $("#cal-frame", wrap)
             .find(".curr")

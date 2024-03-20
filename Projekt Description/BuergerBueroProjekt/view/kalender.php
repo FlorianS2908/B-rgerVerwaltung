@@ -32,18 +32,18 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripte/Kalender.js"></script>
+    <script src="scripte/kalender.js"></script>
     <script>
-        $(document).ready(function() {
-            var cal = CALENDAR();
-            cal.init("#cal");
-        });
+    $(document).ready(function() {
+        var cal = CALENDAR();
+        cal.init("#cal");
+    });
     </script>
     <style>
-        #datum {
-            display: block;
-            text-align: center;
-        }
+    #datum {
+        display: block;
+        text-align: center;
+    }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
@@ -69,8 +69,8 @@
     {
         foreach ($terminData as $termin) {
             if (
-                $datum == date('Y-m-d', strtotime($termin['Termindatum'])) ||
-                $datum == date('Y-m-d', strtotime($termin['Feiertag_datum'])) ||
+                $datum == date('Y-m-d', strtotime($termin['Termin'])) ||
+                $datum == date('Y-m-d', strtotime($termin['FeiertagsDatum'])) ||
                 $datum == date('Y-m-d', strtotime($termin['Urlaub']))
             ) {
                 return true;
