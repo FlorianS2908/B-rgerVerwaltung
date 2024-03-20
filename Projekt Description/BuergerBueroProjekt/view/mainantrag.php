@@ -16,11 +16,11 @@
                         <ul id="elements" class="antrag-list">
                             <li class="antrag-element">
                                 <span>Antrag auf Fahreignung</span>
-                                <a href="#">Klicken Sie hier...</a>
+                                <a class="button" href="#">Klicken Sie hier...</a>
                             </li>
                             <li class="antrag-element">
                                 <span>Antrag auf Fahreignung</span>
-                                <a href="#">Klicken Sie hier...</a>
+                                <a class="button" href="#">Klicken Sie hier...</a>
                             </li>
                         </ul>
                     </div>
