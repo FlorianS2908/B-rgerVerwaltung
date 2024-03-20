@@ -71,7 +71,7 @@ function handleSelection() {
         span.textContent = item.name ? item.name : `Antrag Name von Gruppe ${item.Gruppe}`;
 
         const link = document.createElement("a");
-        link.href = `anträgedetails.php?${item.id}`
+        link.href = `anträgedetails.php?id=${item.id}`
         link.textContent = "Klicken Sie hier...";
         link.target = "_blank";
         link.classList.add("button");
