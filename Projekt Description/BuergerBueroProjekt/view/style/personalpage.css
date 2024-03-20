@@ -111,13 +111,9 @@ input[readonly] {
 
 .label-container {
     border: 1px solid #ccc;
-    /* Rahmen um den Container */
     padding: 5px;
-    /* Platz um den Text */
     border-radius: 4px;
-    /* Abrundung der Ecken */
     display: inline-block;
-    /* Container passt sich dem Inhalt an */
 }
 
 .titel {
@@ -127,16 +123,12 @@ input[readonly] {
 
 .text {
     margin: 0;
-    /* Entfernt den Standardabstand des Texts */
 }
 
 .umrandung {
     border: 1px solid #ccc;
-    /* Rahmen um den Container */
     padding: 5px;
-    /* Platz um den Text */
     border-radius: 4px;
-    /* Abrundung der Ecken */
     display: inline-block;
-    /* Container passt sich dem Inhalt an */
+
 }
