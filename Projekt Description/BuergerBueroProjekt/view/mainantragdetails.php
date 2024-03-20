@@ -1,0 +1,25 @@
+<main>
+    <section>
+        <div>
+            <h1>
+                Title
+            </h1>
+            <p>
+                Description
+            </p>
+            <div>
+                <p>
+                    Content
+                </p>
+            </div>
+            <div>
+                <button>
+                    Zurück
+                </button>
+                <button>
+                    Senden
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
