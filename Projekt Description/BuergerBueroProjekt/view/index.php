@@ -28,7 +28,12 @@ require "navi.php";
     require "burgerMenü.php";
     ?>
     <?php
-    require "main.php"
+    var_dump($_SESSION);
+    if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+        include "main.php";
+    } else {
+        include "loginPage.php";
+    }
     ?>
     <?php
     require "footer.php";
