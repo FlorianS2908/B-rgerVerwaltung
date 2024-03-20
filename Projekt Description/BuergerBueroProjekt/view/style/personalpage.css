@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,15 +11,13 @@ body {
 
 .container {
     text-align: center;
-    width: 500px;
+    width: 60%;
     background-color: #fff;
     padding: 20px;
     border-radius: 4px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-rows: auto min-content;
     gap: 0px;
-    overflow-y: auto;
     max-height: calc(100vh - 40px);
 }
 
@@ -33,12 +31,11 @@ h1 {
     margin: 20px 0px 80px 0px;
 }
 
-.fixed-fields,
+
 .editable-fields {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+
     margin-top: -48px;
+    justify-items: center;
 }
 
 .fixed-fields {
@@ -48,7 +45,9 @@ h1 {
     gap: 10px;
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: -50px;
+    padding-top: 10px;
 }
 
 .box {
@@ -102,6 +101,9 @@ input[readonly] {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+
 }
 
 .adresse .titel {
@@ -127,8 +129,9 @@ input[readonly] {
 
 .umrandung {
     border: 1px solid #ccc;
-    padding: 5px;
+    padding: 20px;
     border-radius: 4px;
     display: inline-block;
+    margin-bottom: 10px;
 
 }
