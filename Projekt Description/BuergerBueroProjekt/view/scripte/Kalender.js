@@ -88,9 +88,12 @@ var CALENDAR = function () {
 
 
 function updateDate(day, month, year) {
-    // Find the existing label element by its ID
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
     var label = document.getElementById('datum');
 
-    // Update the content of the label with the selected day and year
-    label.textContent = day + '.' + month + '.' + year;
+    var monthName = months[parseInt(month)];
+
+    // Update the content of the label with the selected day, month, and year
+    label.textContent = day + ' ' + monthName + ' ' + year;
 }

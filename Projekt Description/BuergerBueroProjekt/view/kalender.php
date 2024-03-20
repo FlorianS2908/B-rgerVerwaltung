@@ -12,7 +12,7 @@
     <div id="cal">
         <div class="header">
             <span class="left button" id="prev"> &lang; </span>
-            <span class="month-year" id="label"> März 2024 </span>
+            <span class="month-year" id="label"> </span>
             <span class="right button" id="next"> &rang; </span>
         </div>
         <table id="days">
@@ -34,16 +34,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripte/kalender.js"></script>
     <script>
-    $(document).ready(function() {
-        var cal = CALENDAR();
-        cal.init("#cal");
-    });
+        $(document).ready(function() {
+            var cal = CALENDAR();
+            cal.init("#cal");
+        });
     </script>
     <style>
-    #datum {
-        display: block;
-        text-align: center;
-    }
+        #datum {
+            display: block;
+            text-align: center;
+        }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
