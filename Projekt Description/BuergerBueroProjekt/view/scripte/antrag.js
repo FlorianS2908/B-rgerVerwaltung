@@ -35,6 +35,8 @@ function populateSelect() {
         link.href = item.Link;
         link.textContent = "Klicken Sie hier...";
         link.target = "_blank";
+        link.classList.add("button");
+        
 
         listItem.appendChild(span);
         listItem.appendChild(link);
@@ -72,7 +74,8 @@ function handleSelection() {
         link.href = item.Link;
         link.textContent = "Klicken Sie hier...";
         link.target = "_blank";
-
+        link.classList.add("button");
+        
         listItem.appendChild(span);
         listItem.appendChild(link);
         container.appendChild(listItem);
