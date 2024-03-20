@@ -23,7 +23,6 @@ body {
     max-height: calc(100vh - 40px);
 }
 
-
 h1 {
     margin-bottom: 0px;
 }
@@ -32,7 +31,6 @@ h1 {
     font-size: 14px;
     font-weight: 300;
     margin: 20px 0px 80px 0px;
-
 }
 
 .fixed-fields,
@@ -104,10 +102,41 @@ input[readonly] {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
 }
 
 .adresse .titel {
     margin-left: 0;
     margin-top: 30px;
+}
+
+.label-container {
+    border: 1px solid #ccc;
+    /* Rahmen um den Container */
+    padding: 5px;
+    /* Platz um den Text */
+    border-radius: 4px;
+    /* Abrundung der Ecken */
+    display: inline-block;
+    /* Container passt sich dem Inhalt an */
+}
+
+.titel {
+    margin: 0;
+    font-weight: bold;
+}
+
+.text {
+    margin: 0;
+    /* Entfernt den Standardabstand des Texts */
+}
+
+.umrandung {
+    border: 1px solid #ccc;
+    /* Rahmen um den Container */
+    padding: 5px;
+    /* Platz um den Text */
+    border-radius: 4px;
+    /* Abrundung der Ecken */
+    display: inline-block;
+    /* Container passt sich dem Inhalt an */
 }

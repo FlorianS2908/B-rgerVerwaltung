@@ -17,23 +17,30 @@
 
         <div class="fixed-fields">
             <div class="box">
-                <div>
-                    <input type="text" id="Name" name="Name" required readonly value="Musterman" />
+                <div class="umrandung">
+                    <label class="titel" for="state">Nachname:</label>
+                    <!-- Hier wird der Input für den Namen als readonly definiert -->
+                    <p class="text">Mustermann</p>
                 </div>
-                <div>
-                    <input type="date" id="Datum" name="Datum" required readonly value="1990-01-01" />
+                <div class="umrandung">
+                    <label class="titel" for="state">Geburtsdatum:</label>
+                    <!-- Hier wird der Input für den Namen als readonly definiert -->
+                    <p class="text">1990-01-01</p>
                 </div>
             </div>
             <div class="box">
-                <div>
-                    <input type="text" id="Vorname" name="Vorname" required readonly value="Erika" />
+                <div class="umrandung">
+                    <label class="titel" for="state">Vorname:</label>
+                    <!-- Hier wird der Input für den Namen als readonly definiert -->
+                    <p class="text">Erika</p>
                 </div>
-                <div>
-                    <input type="text" id="Ort" name="Ort" required readonly value="Berlin" />
+                <div class="umrandung">
+                    <label class="titel" for="state">Geburtsort:</label>
+                    <!-- Hier wird der Input für den Namen als readonly definiert -->
+                    <p class="text">Berlin</p>
                 </div>
             </div>
         </div>
-
 
         <h1>Adresse</h1>
         <div class="editable-fields">
