@@ -12,32 +12,31 @@
     <link rel="stylesheet" href="../view/style/footer.css">
     <link rel="stylesheet" href="../view/style/header.css">
 </head>
-<header>
-    <h1>Willkommen im Bürgerbüro</h1>
-</header>
+<div class="container">
+    <h1>Login</h1>
+    <form action="index.php" method="post">
+        <label for="username">Benutzername oder E-Mail-Adresse:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Anmelden</button>
+        <a href="/forgot-password">Passwort vergessen?</a>
+    </form>
+</div>
 <?php
-require "navi.php";
+
+session_start();
+if (isset($_POST["username"]) && isset($_POST["password"])) {
+    // Setze die Session-Variablen
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["password"] = $_POST["password"];
+
+    // Leite zur Index-Seite weiter
+    // header("Location: index.php");
+    exit();
+}
 ?>
 
-
-<body>
-    <?php
-    require "burgerMenü.php";
-    ?>
-    <div class="container">
-        <h1>Login</h1>
-        <form action="/login" method="post">
-            <label for="username">Benutzername oder E-Mail-Adresse:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Passwort:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Anmelden</button>
-            <a href="/forgot-password">Passwort vergessen?</a>
-        </form>
-    </div>
-    <?php
-    require "footer.php";
-    ?>
 </body>
 
 </html>
