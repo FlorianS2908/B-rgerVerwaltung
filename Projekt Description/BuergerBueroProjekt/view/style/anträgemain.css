@@ -9,10 +9,12 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    min-height: 90vh;
   }
-  h1 {
+  .title {
     font-size: 32px;
     font-weight: bold;
+    text-transform: uppercase;
     color: #333;
     text-align: center;
     margin-top: 20px;

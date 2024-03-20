@@ -1,6 +1,6 @@
 <main>
     <section class="container">
-        <h1>Anträge</h1>
+        <h1 class="title">Anträge</h1>
         <div>
             <div>
                 <p>

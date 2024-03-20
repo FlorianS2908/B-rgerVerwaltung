@@ -1,6 +1,6 @@
 <main>
     <section class="container">
-        <h1 id="antrag-title"></h1>
+        <h1 class="title" id="antrag-title"></h1>
         <div>
             <div class="description">
                 <p id="antrag-desc">
@@ -8,7 +8,7 @@
                 </p>
             </div>
             <div class="content">
-                <iframe src="https://www.google.de">
+                <iframe class="pdfcontent" src="https://www.google.de">
 
                 </iframe>
             </div>
