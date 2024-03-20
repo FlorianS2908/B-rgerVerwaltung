@@ -29,7 +29,7 @@ function populateSelect() {
         listItem.classList.add("antrag-element");
 
         const span = document.createElement("span");
-        span.textContent = item.Gruppe;
+        span.textContent = item.Name ? item.Name : `Antrag Name von Gruppe ${item.Gruppe}`;
 
         const link = document.createElement("a");
         link.href = item.Link;
@@ -68,7 +68,7 @@ function handleSelection() {
         listItem.classList.add("antrag-element");
 
         const span = document.createElement("span");
-        span.textContent = item.Gruppe;
+        span.textContent = item.Name ? item.Name : `Antrag Name von Gruppe ${item.Gruppe}`;
 
         const link = document.createElement("a");
         link.href = item.Link;
