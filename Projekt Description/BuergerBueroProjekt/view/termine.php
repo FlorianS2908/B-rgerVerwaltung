@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminvereinbarung</title>
     <link rel="stylesheet" href="./style/termine.css">
-    <link rel="stylesheet" href="./style/kontakt.css">
-    <link rel="stylesheet" href="./style/burgerMenü.css">
     <link rel="stylesheet" href="./style/navigation.css">
     <link rel="stylesheet" href="./style/header.css">
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="../view/style/burgerMenü.css">
+    
 </head>
 <header>
     <h1>Terminvereinbahrung</h1>
@@ -71,6 +71,7 @@
             <div class="zeitfenster">
                 <label>Zeitfenster:</label>
                 <br>
+                <div class="checkbox-container">
                 <input type="checkbox" id="vormittags" name="zeitfenster" value="vormittags">
                 <label for="vormittags">Vormittags</label>
                 <input type="checkbox" id="nachmittags" name="zeitfenster" value="nachmittags">

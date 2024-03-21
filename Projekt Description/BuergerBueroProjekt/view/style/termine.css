@@ -117,6 +117,6 @@ a {
   .zeitfenster {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 10px;
+    margin-left: 20px;
   }
 
