@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/main.css">
 
-
     <title>Registrierung</title>
 
 </head>
@@ -42,16 +41,29 @@ require "navi.php";
             <label for="nachname">Nachname:</label>
             <input type="text" id="nachname" name="nachname" required>
             <br>
+
+            <label for="geburtsdatum">Geburtsdatum:</label>
+            <input type="date" id="geburtsdatum" name="geburtsdatum" required>
+            <br>
+            <label for="geburtsort">Geburtsort:</label>
+            <input type="text" id="geburtsort" name="geburtsort" required>
+            <br>
+            <label for="straße">Straße:</label>
+            <input type="text" id="straße" name="straße" required>
+            <label for="hausnummer">Hausnummer:</label>
+            <input type="text" id="hausnummer" name="hausnummer" required>
+            <br>
+            <label for="plz">PLZ:</label>
+            <input type="text" id="plz" name="plz" required>
+            <label for="ort">Ort:</label>
+            <input type="text" id="ort" name="ort" required>
+            <br><br>
             <label for="email">E-Mail-Adresse:</label>
             <input type="email" id="email" name="email" required>
             <br>
             <label for="passwort">Passwort:</label>
             <input type="password" id="passwort" name="passwort" required>
-            <br>
-            <label for="geburtsdatum">Geburtsdatum:</label>
-            <input type="date" id="geburtsdatum" name="geburtsdatum" required>
-            <br>
-            <br>
+            <br><br>
             <input type="submit" value="Registrieren">
         </form>
     </div>
