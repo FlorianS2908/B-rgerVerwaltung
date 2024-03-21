@@ -94,12 +94,52 @@ var CALENDAR = function () {
 
 
 function updateDate(day, month, year) {
-
     var label = document.getElementById('datum');
 
+    // Formatting day and month
     day = day < 10 ? '0' + day : day;
     month = parseInt(month) + 1;
     month = month < 10 ? '0' + month : month;
 
-    label.textContent = day + '.' + month + '.' + year;
+    // Construct the new date string
+    var newDate = year + '-' + month + '-' + day;
+
+    // Update the label
+    label.textContent = newDate;
+
+    // Send the new date to the server using fetch
+    fetch('freieTermine.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'newDate=' + encodeURIComponent(newDate),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(responseText => {
+            // Handle the response from the server
+            updateFreeSlots(responseText);
+            // Reload the "Freie Termine" section
+            reloadFreieTermine();
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+}
+
+function reloadFreieTermine() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'freieTermine.php');
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Replace the content of freie-termine-container with the new content
+            document.getElementById('freie-termine-container').innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
 }

@@ -2,16 +2,16 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminvereinbarung</title>
-  <link rel="stylesheet" href="./style/termine.css">
-  <link rel="stylesheet" href="./style/kontakt.css">
-  <link rel="stylesheet" href="./style/burgerMenü.css">
-  <link rel="stylesheet" href="./style/navigation.css">
-  <link rel="stylesheet" href="./style/header.css">
-  <link rel="stylesheet" href="./style/footer.css">
-  <link rel="stylesheet" href="./style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminvereinbarung</title>
+    <link rel="stylesheet" href="./style/termine.css">
+    <link rel="stylesheet" href="./style/kontakt.css">
+    <link rel="stylesheet" href="./style/burgerMenü.css">
+    <link rel="stylesheet" href="./style/navigation.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/main.css">
 </head>
 
 <body>
@@ -79,73 +79,12 @@
             <br>
 
             <h2>Datum</h2>
-            <!-- Hier wird der Kalender eingefügt -->
-
-            <br>
-            <br> <br>
-
-            <?php
-            // Datum überprüfen
-            function istVergeben($datum, $terminData)
-            {
-                foreach ($terminData as $termin) {
-                    if (
-                        $datum == date('Y-m-d', strtotime($termin['Termin'])) ||
-                        $datum == date('Y-m-d', strtotime($termin['FeiertagsDatum'])) ||
-                        $datum == date('Y-m-d', strtotime($termin['Urlaub']))
-                    ) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-            // Ermittlung freier Termine
-            function findeFreieTermine($datum, $terminData)
-            {
-                $freieTermine = array();
-
-                // Tage für ein Jahr überprüfen
-                for ($i = 0; $i < 365; $i++) {
-                    $currentDate = date('Y-m-d', strtotime($datum . " +$i day"));
-                    if (!istVergeben($currentDate, $terminData)) {
-                        $freieTermine[] = $currentDate;
-                    }
-                }
-                return $freieTermine;
-            }
-
-            // Laden der Daten aus der JSON-Datei
-            $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
-            // Datumeingabe --> Aus dem Kalender
-            // $datum = input???;
-            $datum = readline("Geben Sie das Datum ein (YYYY-MM-DD): ");
-
-            // Ermittlung freier Termine für das eingegebene Datum
-            $freieTermine = findeFreieTermine($datum, $terminData);
-            ?>
-
-            <!-- Dropdown-Menü für die freien Termine -->
-            <label for="freie-termine">Freie Termine:</label>
-            <select id="freie-termine">
-                <?php
-                // Ausgabe der freien Termine als Dropdown-Optionen
-                foreach ($freieTermine as $index => $freierTermin) {
-                    echo "<option value=\"termin$index\">Termin " . ($index + 1) . ": $freierTermin</option>";
-                }
-                ?>
-            </select>
-            <br><br>
-
-            <input type="button" value="Termin buchen">
+            <?php require "kalender.php"; ?>
         </div>
-       
-            <br>
-            <p>Kontaktinformationen</p>
-        </div>
-        <?php
-            require "footer.php";
-            ?>
+    </div>
+    <?php
+    require "footer.php";
+    ?>
 </body>
 
 </html>

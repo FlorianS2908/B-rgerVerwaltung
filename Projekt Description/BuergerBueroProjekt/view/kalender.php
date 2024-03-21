@@ -9,12 +9,23 @@
 
     <?php
     $termine = file_get_contents("../model/TerminMockup.json");
-    $test = json_decode($termine, true);
+
+    $feiertage = json_decode($termine, true);
+    $feiertageArray = array();
+
+    foreach ($feiertage as $holiday) {
+        if (isset($holiday['FeiertagsDatum'])) {
+            $feiertageArray[] = $holiday['FeiertagsDatum'];
+        }
+    }
     ?>
 
 </head>
 
 <body>
+    <?php
+    require_once ("burgerMenü.php");
+    ?>
     <div id="cal">
         <div class="header">
             <span class="left button" id="prev"> &lang; </span>
@@ -42,7 +53,9 @@
     <script src="scripte/kalender.js"></script>
     <script>
     $(document).ready(function() {
+        //var feiertageDates = <?php echo json_encode($feiertageArray); ?>;
         var cal = CALENDAR();
+        //var_dump($feiertageArray)
         cal.init("#cal");
     });
     </script>
@@ -52,76 +65,16 @@
         text-align: center;
     }
     </style>
-    <Label id='datum'>Ausgewähltes Datum</Label>
 
+    <Label id='datum'>Ausgewähltes Datum</Label>
 
     <br> <br>
 
-    <?php
-    // Datum überprüfen
-    function istVergeben($datum, $terminData)
-    {
-        foreach ($terminData as $termin) {
-            if (
-                $datum == date('Y-m-d', strtotime($termin['Termin'])) ||
-                $datum == date('Y-m-d', strtotime($termin['FeiertagsDatum'])) ||
-                $datum == date('Y-m-d', strtotime($termin['Urlaub']))
-            ) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Ermittlung freier Termine
-    function findeFreieTermine($datum, $terminData)
-    {
-        $freieTermine = array();
-
-        // Tage für ein Jahr überprüfen
-        foreach ($terminData as $termin) {
-            // Überprüfen, ob der Termin an diesem Datum vergeben ist
-            if ($datum == date('Y-m-d', strtotime($termin['Termin']))) {
-                // Wenn nicht, füge den Termin zur Liste der freien Termine hinzu
-                $freieTermine[] = date('H:i', strtotime($termin['Startzeitpunkt']));
-            }
-        }
-        // Sortieren der freien Termine nach Uhrzeit
-        usort($freieTermine, function ($a, $b) {
-            return strtotime($a) - strtotime($b);
-        });
-        return $freieTermine;
-    }
-
-    // Laden der Daten aus der JSON-Datei
-    $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
-
-    // Ausgewähltes Datum
-    $datum = date('2024-03-23'); // Anpassen Eingabe durch Kalender
-
-    // Ermittlung freier Termine für das eingegebene Datum
-    $freieTermine = findeFreieTermine($datum, $terminData);
-    ?>
-
-    <!-- Dropdown-Menü für die freien Termine -->
-    <label for="freie-termine">Freie Termine:</label>
-    <select id="freie-termine">
-        <?php
-        // Ausgabe der freien Termine als Dropdown-Optionen
-        foreach ($freieTermine as $index => $freierTermin) {
-            echo "<option value=\"termin$index\">Termin " . ($index + 1) . ": $freierTermin</option>";
-        }
-        ?>
-    </select>
-    <br><br>
-
-    <input type="button" value="Termin buchen">
+    <div id="freie-termine-container">
+        <!-- Freie Termine content goes here -->
+        <?php require 'freieTermine.php'; ?>
     </div>
-    <div class="footer">
-        <br>
-        <p>Kontaktinformationen</p>
     </div>
-
 </body>
 
 </html>
