@@ -21,10 +21,6 @@ body {
     max-height: calc(100vh - 40px);
 }
 
-h1 {
-    margin-bottom: 0px;
-}
-
 .subtext {
     font-size: 14px;
     font-weight: 300;
@@ -149,6 +145,16 @@ input[readonly] {
     }
 
     .fixed-fields {
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 90%;
+        overflow-x: hidden;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    .box {
+        margin: 0;
+    }
+
 }

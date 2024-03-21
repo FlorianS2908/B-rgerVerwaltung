@@ -43,7 +43,7 @@
         </div>
 
 
-        <h1>Adresse</h1>
+        <h1 class="title2">Adresse</h1>
         <div class="editable-fields">
             <div class="box">
                 <div class="adresse">
