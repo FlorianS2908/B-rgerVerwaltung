@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS Personen (
     Pers_ID INT AUTO_INCREMENT PRIMARY KEY,
     Pers_Name VARCHAR(255) NOT NULL,
     Pers_Vorname VARCHAR(255) NOT NULL,
+    Pers_Email VARCHAR(255) NOT NULL,
     Pers_Geb_Datum DATE NOT NULL,
     Pers_Geb_Ort_ID INT,
     Pers_Adress_ID INT,

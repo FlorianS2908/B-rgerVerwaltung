@@ -2,10 +2,16 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminvereinbarung</title>
-    <link rel="stylesheet" href="../style/termine.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminvereinbarung</title>
+  <link rel="stylesheet" href="./style/termine.css">
+  <link rel="stylesheet" href="./style/kontakt.css">
+  <link rel="stylesheet" href="./style/burgerMenü.css">
+  <link rel="stylesheet" href="./style/navigation.css">
+  <link rel="stylesheet" href="./style/header.css">
+  <link rel="stylesheet" href="./style/footer.css">
+  <link rel="stylesheet" href="./style/main.css">
 </head>
 
 <body>
@@ -13,6 +19,9 @@
         <div class="header">
             <h1>Terminvereinbarung</h1>
         </div>
+        <?php
+        require "navi.php";
+        ?>
         <div class="main">
             <?php
             $json_file_path = '../model/TerminMockup.json';
@@ -130,7 +139,9 @@
 
             <input type="button" value="Termin buchen">
         </div>
-        <div class="footer">
+        <?php
+            require "footer.php";
+            ?>
             <br>
             <p>Kontaktinformationen</p>
         </div>

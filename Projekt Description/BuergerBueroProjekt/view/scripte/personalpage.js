@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json()) // Parsen der Antwort als JSON
       .then(data => {
           // Suche nach dem Kunden mit der ID 1
-          const kunde = data.find(k => k.ID === 2);
+          const kunde = data.find(k => k.ID === 1);
           if (kunde) {
               // Setze die Textinhalte der Paragraphen-Elemente
               document.querySelector(".nachname").textContent = kunde.Name;
