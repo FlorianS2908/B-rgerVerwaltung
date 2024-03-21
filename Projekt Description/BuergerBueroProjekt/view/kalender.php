@@ -34,16 +34,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripte/kalender.js"></script>
     <script>
-        $(document).ready(function() {
-            var cal = CALENDAR();
-            cal.init("#cal");
-        });
+    $(document).ready(function() {
+        var cal = CALENDAR();
+        cal.init("#cal");
+    });
     </script>
     <style>
-        #datum {
-            display: block;
-            text-align: center;
-        }
+    #datum {
+        display: block;
+        text-align: center;
+    }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
@@ -53,8 +53,10 @@
     <label for="freie-termine">Freie Termine:</label>
     <select id="freie-termine">
         <?php
+        $counter = 1;
         foreach ($freieTermine as $freierTermin) {
-            echo "<option value=\"$freierTermin\">$freierTermin</option>";
+            echo "<option value=\"termin$counter\">Termin $counter: $freierTermin</option>";
+            $counter++;
         }
         ?>
     </select>
@@ -105,9 +107,9 @@
 
     // Ausgabe der freien Termine
     if (!empty($freieTermine)) {
-        echo "Freie Termine für das angegebene Datum:\n";
         foreach ($freieTermine as $freierTermin) {
-            echo $freierTermin . "\n";
+            echo "<option value=\"termin$counter\">Termin $counter: $freierTermin</option>";
+            $counter++;
         }
     } else {
         echo "Keine freien Termine für das angegebene Datum gefunden.\n";
