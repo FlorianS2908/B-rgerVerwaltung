@@ -17,8 +17,6 @@
     <h1>Terminvereinbahrung</h1>
 </header>
 <body>
-  
-
         </div>
         <?php
         require "navi.php";
@@ -64,7 +62,6 @@
                 <input type="checkbox" id="freitag" name="wochentage" value="freitag">
                 <label for="freitag">Freitag</label>
                 <br>
-                <br>
 
                 <label>Zeitfenster:</label>
                 <br>
@@ -73,19 +70,20 @@
                 <input type="checkbox" id="nachmittags" name="zeitfenster" value="nachmittags">
                 <label for="nachmittags">Nachmittags</label>
                 <br>
-                <br>
 
                 <input type="submit" value="Termin suchen">
             </form>
             <br>
 
             <h2>Datum</h2>
-            <?php require "kalender.php"; ?>
-        </div>
-    </div>
-    <?php
-    require "footer.php";
-    ?>
+            <?php 
+            require "kalender.php"; 
+            ?>
+            </div>
+            </div>
+        <?php
+        require "footer.php";
+        ?>
 </body>
 
 </html>
