@@ -48,9 +48,11 @@
                 </select>
                 <br>
                 <br>
-
+                
+            <div class="wochentage">
                 <label>Wochentage:</label>
                 <br>
+                <div class="checkbox-container">
                 <input type="checkbox" id="montag" name="wochentage" value="montag">
                 <label for="montag">Montag</label>
                 <input type="checkbox" id="dienstag" name="wochentage" value="dienstag">
@@ -62,6 +64,9 @@
                 <input type="checkbox" id="freitag" name="wochentage" value="freitag">
                 <label for="freitag">Freitag</label>
                 <br>
+                <br>
+                </div>
+            </div>
 
                 <label>Zeitfenster:</label>
                 <br>
