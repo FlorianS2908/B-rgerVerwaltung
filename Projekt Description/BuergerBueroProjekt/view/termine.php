@@ -36,7 +36,7 @@
             echo "<option value=\$elm\"> $elm</option>";
           }
           ?>
-          <!-- Schauen, dass es mit der Jason Datei "TerminMockup.json" verbunden wird  -->
+          
         </select>
         <br>
         <br>
