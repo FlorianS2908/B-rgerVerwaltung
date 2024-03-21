@@ -16,6 +16,8 @@ header {
     background-color: #f4f4f4;
     padding: 10px;
     text-align: center;
+    transition: background-color 0.3s, cursor 0.3s;
+
 }
 
 .filter-bar button {
@@ -23,22 +25,44 @@ header {
     border: none;
     padding: 5px 10px;
     margin: 5px;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.filter-bar button:hover {
+    background-color: #ccc;
+
+}
+
+.filter-bar:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+
 }
 
 .articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px; /* Abstand zu den Seiten des übergeordneten Containers */
+    padding: 0 20px;
+    /* Abstand zu den Seiten des übergeordneten Containers */
 }
 
 .article {
-    width: calc(33.33% - 20px); /* 33.33% der Breite des übergeordneten Containers, mit 20px Abstand */
+    width: calc(33.33% - 20px);
+    /* 33.33% der Breite des übergeordneten Containers, mit 20px Abstand */
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
+    transition: box-shadow 0.3s, background-color 0.3s, cursor 0.3s;
+}
+
+.article:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    background-color: #beb7b7;
+
+    cursor: pointer;
 }
 
 .article .article-details {
@@ -64,17 +88,19 @@ header {
 /* Media Queries für kleinere Bildschirme */
 @media only screen and (max-width: 768px) {
     .articles {
-        justify-content: center; /* Zentriert die Artikel auf kleinen Bildschirmen */
+        justify-content: center;
+        /* Zentriert die Artikel auf kleinen Bildschirmen */
     }
-    
+
     .article {
-        width: calc(50% - 20px); /* 50% der Breite des übergeordneten Containers, mit 20px Abstand */
+        width: calc(50% - 20px);
+        /* 50% der Breite des übergeordneten Containers, mit 20px Abstand */
     }
 }
 
 @media only screen and (max-width: 480px) {
     .article {
-        width: calc(100% - 20px); /* 100% der Breite des übergeordneten Containers, mit 20px Abstand */
+        width: calc(100% - 20px);
+        /* 100% der Breite des übergeordneten Containers, mit 20px Abstand */
     }
 }
-
