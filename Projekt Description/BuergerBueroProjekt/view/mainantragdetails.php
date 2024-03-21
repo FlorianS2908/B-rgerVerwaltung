@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="button-container">
-            <a class="button" href="anträge.php">
+            <a class="button" onclick="createPdf()" href="anträge.php">
                 Zurück
             </a>
             <button class="button">
