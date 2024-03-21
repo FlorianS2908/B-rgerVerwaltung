@@ -10,12 +10,6 @@ body {
     margin: 20px auto;
   }
   
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
   
   .main {
     padding: 20px;
@@ -47,12 +41,7 @@ body {
     margin-top: 20px;
   }
   
-  .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
+
   
   /* Spezifische Anpassungen */
   #dienstleistung {
