@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Artikel (
     Artikel_ID INT AUTO_INCREMENT PRIMARY KEY,
     ArtikelTitel VARCHAR(255) NOT NULL,
     ArtikelDatum DATE NOT NULL,
-    ArtikelBild BLOB,
+    ArtikelBild LONGBLOB,
     ArtikelText TEXT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS Gruppen (
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS Termine (
 CREATE TABLE IF NOT EXISTS Anträge (
     Antrag_ID INT AUTO_INCREMENT PRIMARY KEY,
     Gruppe_ID INT NOT NULL,
-    AntragsLink VARCHAR(255) NOT NULL,
+    file_data LONGBLOB NOT NULL,
     FOREIGN KEY (Gruppe_ID) REFERENCES Gruppen(Gruppen_ID)
 );
 
@@ -300,26 +300,24 @@ INSERT INTO Termin_Urlaub (Termin_Urlaub, Termin_Mitarbeiter_ID) VALUES
 ('2027-05-28', 19),
 ('2027-08-10', 20);
 
-INSERT INTO Anträge (Gruppe_ID, AntragsLink) VALUES
-(1, 'https://printfriendly.com/fusce/posuere/felis/sed/lacus/morbi.jpg?porttitor=nec&pede=molestie&justo=sed'),
-(2, 'http://va.gov/lectus/pellentesque/eget/nunc.js?ultrices=primis&phasellus=in&id=faucibus&sapien=orci&in=luctus'),
-(3, 'https://gizmodo.com/diam/cras.html?nisl=vulputate'),
-(4, 'http://wordpress.org/justo/in.jpg?penatibus=in&et=blandit'),
-(5, 'http://mayoclinic.com/cras/non/velit/nec.html?ut=mattis'),
-(6, 'https://nhs.uk/montes/nascetur/ridiculus.html?ridiculus=ac&mus=diam&vivamus=cras&vestibulum=pellentesque&sagittis=volutpat&sapien=dui&cum=maecenas&sociis=tristique&natoque=est'),
-(7, 'https://google.co.uk/luctus/et/ultrices.xml?quis=magnis&augue=dis&luctus=parturient&tincidunt=montes&nulla=nascetur&mollis=ridiculus&molestie=mus'),
-(8, 'https://howstuffworks.com/in/felis/donec/semper/sapien/a/libero.xml?ut=fermentum&dolor=donec&morbi=ut'),
-(9, 'http://usda.gov/amet/justo/morbi/ut/odio/cras.jpg?sed=justo&tristique=maecenas&in=rhoncus'),
-(10, 'https://bigcartel.com/nibh/in/hac/habitasse.aspx?quam=blandit&turpis=non&adipiscing=interdum&lorem=in&vitae=ante&mattis=vestibulum&nibh=ante&ligula=ipsum&nec=primis&sem=in'),
-(11, 'https://barnesandnoble.com/convallis/morbi/odio/odio.jpg?duis=tortor&faucibus=duis&accumsan=mattis&odio=egestas&curabitur=metus&convallis=aenean&duis=fermentum'),
-(12, 'http://slashdot.org/amet/diam.jpg?massa=donec&quis=posuere&augue=metus&luctus=vitae&tincidunt=ipsum&nulla=aliquam&mollis=non&molestie=mauris&lorem=morbi'),
-(13, 'http://flavors.me/integer/aliquet/massa/id/lobortis/convallis.json?dis=odio&parturient=donec&montes=vitae&nascetur=nisi&ridiculus=nam&mus=ultrices&etiam=libero&vel=non'),
-(14, 'http://mail.ru/curae/nulla/dapibus/dolor/vel/est.jpg?magna=convallis&ac=eget&consequat=eleifend&metus=luctus&sapien=ultricies&ut=eu&nunc=nibh&vestibulum=quisque&ante=id'),
-(15, 'https://ebay.co.uk/sapien/ut/nunc/vestibulum/ante/ipsum/primis.png?adipiscing=orci&lorem=vehicula&vitae=condimentum&mattis=curabitur&nibh=in&ligula=libero&nec=ut&sem=massa&duis=volutpat'),
-(16, 'https://prweb.com/massa.jsp?vestibulum=vulputate&sed=ut&magna=ultrices&at=vel&nunc=augue'),
-(17, 'http://nymag.com/lectus/aliquam.json?primis=vel&in=nisl&faucibus=duis&orci=ac&luctus=nibh&et=fusce&ultrices=lacus&posuere=purus&cubilia=aliquet&curae=at&mauris=feugiat'),
-(18, 'http://cnn.com/at/nibh.jsp?vitae=in&consectetuer=blandit'),
-(19, 'https://google.com.hk/eget/orci.js?tempus=est&vivamus=et&in=tempus&felis=semper'),
-(20, 'http://hhs.gov/ridiculus/mus/etiam.js?fusce=risus&posuere=semper&felis=porta');
-
-
+INSERT INTO Anträge (Gruppe_ID, file_data) VALUES
+(1, LOAD_FILE('C:/PDF/dok_ba024340.pdf')),
+(2, LOAD_FILE('C:/PDF/berufecheck-passt-der-beruf-zu-mir_ba036875.pdf')),
+(3, LOAD_FILE('C:/PDF/dok_ba024525.pdf')),
+(4, LOAD_FILE('C:/PDF/dok_ba029450.pdf')),
+(5, LOAD_FILE('C:/PDF/dok_ba033205.pdf')),
+(6, LOAD_FILE('C:/PDF/dok_ba034925.pdf')),
+(7, LOAD_FILE('C:/PDF/dok_ba036880.pdf')),
+(8, LOAD_FILE('C:/PDF/duale-ausbildung-en_ba026740.pdf')),
+(9, LOAD_FILE('C:/PDF/eltern-ins-boot-holen_ba031005.pdf')),
+(10, LOAD_FILE('C:/PDF/flyer-zum-berufswahltest-infos-fuer-eltern-und-lehrkraefte_ba037979.pdf')),
+(11, LOAD_FILE('C:/PDF/handicap-na-und_ba026295.pdf')),
+(12, LOAD_FILE('C:/PDF/info-ferienbeschaeftigung_ba036085.pdf')),
+(13, LOAD_FILE('C:/PDF/merkblatt-11-berufsberatung_ba033920.pdf')),
+(14, LOAD_FILE('C:/PDF/young-refugees-en-fr-ar-de_ba035585.pdf')),
+(15, LOAD_FILE('C:/PDF/budget-fuer-ausbildung-flyer_ba038174.pdf')),
+(16, LOAD_FILE('C:/PDF/dok_ba026115.pdf')),
+(17, LOAD_FILE('C:/PDF/dok_ba029450.pdf')),
+(18, LOAD_FILE('C:/PDF/dok_ba036880.pdf')),
+(19, LOAD_FILE('C:/PDF/budget-fuer-ausbildung-flyer_ba038174.pdf')),
+(20, LOAD_FILE('C:/PDF/eltern-ins-boot-holen_ba031005.pdf'));
