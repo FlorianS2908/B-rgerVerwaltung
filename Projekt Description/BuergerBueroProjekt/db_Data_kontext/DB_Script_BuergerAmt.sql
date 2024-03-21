@@ -257,26 +257,26 @@ INSERT INTO Mitarbeiter (Personen_ID, Gruppen_ID) VALUES
 (20, 20);
 
 INSERT INTO Termine (Termin_Mitarbeiter_ID, Termin_Termin, Termin_Startzeitpunkt, Termin_Dauer, Termin_Titel) VALUES
-(1, '2024-03-15', '09:00:00', 60, 'Meeting mit Kunden'),
-(2, '2024-03-16', '10:30:00', 45, 'Projektbesprechung'),
+(1, '2024-03-15', '09:00:00', 30, 'Meeting mit Kunden'),
+(2, '2024-03-16', '10:30:00', 30, 'Projektbesprechung'),
 (3, '2024-03-17', '14:00:00', 30, 'Telefoninterview'),
-(4, '2024-03-18', '11:00:00', 90, 'Workshop Planung'),
-(5, '2024-03-19', '08:30:00', 120, 'Schulung neuer Mitarbeiter'),
-(1, '2024-03-20', '13:00:00', 60, 'Besprechung Marketingstrategie'),
-(2, '2024-03-21', '09:30:00', 45, 'Feedbackgespräch'),
+(4, '2024-03-18', '11:00:00', 30, 'Workshop Planung'),
+(5, '2024-03-19', '08:30:00', 30, 'Schulung neuer Mitarbeiter'),
+(1, '2024-03-20', '13:00:00', 30, 'Besprechung Marketingstrategie'),
+(2, '2024-03-21', '09:30:00', 30, 'Feedbackgespräch'),
 (3, '2024-03-22', '16:00:00', 30, 'Statusupdate Meeting'),
-(4, '2024-03-23', '10:30:00', 90, 'Budgetüberprüfung'),
-(5, '2024-03-24', '11:00:00', 120, 'Präsentation Vorstand'),
-(1, '2024-03-25', '09:00:00', 60, 'Kundengespräch'),
-(2, '2024-03-26', '10:30:00', 45, 'Produktentwicklungstreffen'),
+(4, '2024-03-23', '10:30:00', 30, 'Budgetüberprüfung'),
+(5, '2024-03-24', '11:00:00', 30, 'Präsentation Vorstand'),
+(1, '2024-03-25', '09:00:00', 30, 'Kundengespräch'),
+(2, '2024-03-26', '10:30:00', 30, 'Produktentwicklungstreffen'),
 (3, '2024-03-27', '14:00:00', 30, 'Besprechung Marketingkampagne'),
-(4, '2024-03-28', '11:00:00', 90, 'Projektfortschrittsbericht'),
-(5, '2024-03-29', '08:30:00', 120, 'Teamtraining'),
-(1, '2024-03-30', '13:00:00', 60, 'Verkaufsgespräch'),
-(2, '2024-03-31', '09:30:00', 45, 'Qualitätssicherungstreffen'),
+(4, '2024-03-28', '11:00:00', 30, 'Projektfortschrittsbericht'),
+(5, '2024-03-29', '08:30:00', 30, 'Teamtraining'),
+(1, '2024-03-30', '13:00:00', 30, 'Verkaufsgespräch'),
+(2, '2024-03-31', '09:30:00', 30, 'Qualitätssicherungstreffen'),
 (3, '2024-04-01', '16:00:00', 30, 'Abteilungsmeeting'),
-(4, '2024-04-02', '10:30:00', 90, 'Strategieplanung'),
-(5, '2024-04-03', '11:00:00', 120, 'Kreativitätssitzung');
+(4, '2024-04-02', '10:30:00', 30, 'Strategieplanung'),
+(5, '2024-04-03', '11:00:00', 30, 'Kreativitätssitzung');
 
 INSERT INTO Termin_Urlaub (Termin_Urlaub, Termin_Mitarbeiter_ID) VALUES
 ('2024-04-01', 1),

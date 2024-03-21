@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <?php
-//require "../controller/db_dataLoad.php";
-//createDatapool();
+require "../controller/db_dataLoad.php";
+createDatapool();
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["username"]) && isset($_POST["password"])) {
         // Setzen der Session-Variablen
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["password"] = $_POST["password"];
+        // query mittels Username + Password => daraus die Pers_ID aus deer DB
+        // in die Session die Daten der Person die eingeloggt hat speichern
 
         header("Location: index.php");
         exit();
@@ -39,7 +41,7 @@ require "navi.php";
     require "burgerMenü.php";
     ?>
     <?php
-
+    var_dump($_SESSION);
     if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
         include "main.php";
     } else {
