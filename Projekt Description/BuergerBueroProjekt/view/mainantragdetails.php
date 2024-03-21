@@ -8,7 +8,7 @@
                 </p>
             </div>
             <div class="content">
-                <iframe id="pdf" style="width: 100%; height: 800px;"></iframe>
+                <iframe class="pdfcontent" id="pdf"></iframe>
             </div>
         </div>
         <div class="button-container">
