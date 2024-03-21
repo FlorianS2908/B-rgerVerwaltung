@@ -6,12 +6,13 @@ $salz_hex = bin2hex($salz); // Salz in hexadezimaler Darstellung konvertieren
 var_dump($salz_hex);
 $hash = password_hash("Hallo" . $salz, PASSWORD_DEFAULT);
 var_dump($hash);
+var_dump($_POST);
 require "../controller/db_dataLoad.php";
 //createDatapool();
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if (isset($_POST["username"]) && isset($_POST["password"])) {
+    if (isset ($_POST["username"]) && isset ($_POST["password"])) {
         // Setzen der Session-Variablen
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["password"] = $_POST["password"];
@@ -47,7 +48,7 @@ require "navi.php";
     require "burgerMenü.php";
     ?>
     <?php
-    if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+    if (isset ($_SESSION['username']) && isset ($_SESSION['password'])) {
         include "main.php";
         if (isUserOnDB()) {
             generateLoginJson();

@@ -18,7 +18,7 @@
         <p class="subtext">Hier finden Sie Ihre persönlichen Daten</p>
         <?php
         session_start();
-        
+
         ?>
         <div class="fixed-fields">
             <div class="box">
@@ -47,21 +47,24 @@
         <h1 class="title2">Adresse</h1>
         <div class="editable-fields">
             <div class="box">
-                <div class="adresse">
-                    <label class="titel" for="state">Straße:</label>
-                    <input type="text" id="Straße" name="Straße" required value="Ihre Straße" />
-                    <label class="titel" for="address">Hausnummer:</label>
-                    <input type="text" id="Hausnummer" name="Hausnummer" required value="Ihre Hausnummer" />
-                    <label class="titel" for="zipCode">Postleitzahl:</label>
-                    <input type="text" id="PLZ" name="PLZ" required value="Ihre Postleitzahl" />
-                    <label class="titel" for="city">Stadt:</label>
-                    <input type="text" id="Ort" name="Ort" required value="Ihre Stadt" />
-                    <div class="btn-container">
-                        <button class="btn" onclick="saveData()">Speichern</button>
-                    </div>
-                </div>
+                <form action="index.php" method="post">
+                    <div class="adresse">
+
+                        <label class="titel" for="state">Straße:</label>
+                        <input type="text" id="Straße" name="Straße" required value="Ihre Straße" />
+                        <label class="titel" for="address">Hausnummer:</label>
+                        <input type="text" id="Hausnummer" name="Hausnummer" required value="Ihre Hausnummer" />
+                        <label class="titel" for="zipCode">Postleitzahl:</label>
+                        <input type="text" id="PLZ" name="PLZ" required value="Ihre Postleitzahl" />
+                        <label class="titel" for="city">Stadt:</label>
+                        <input type="text" id="Ort" name="Ort" required value="Ihre Stadt" />
+                        <div class="btn-container">
+                            <button class="btn" onclick="saveData()">Speichern</button>
+                        </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
     <?php include 'footer.php'; ?>
     <script src="scripte/personalpage.js"></script>
