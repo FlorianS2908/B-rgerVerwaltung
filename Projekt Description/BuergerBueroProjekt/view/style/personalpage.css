@@ -11,7 +11,7 @@ body {
 
 .container {
     text-align: center;
-    width: 60%;
+    width: 90%;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 4px;
@@ -135,4 +135,20 @@ input[readonly] {
     margin-bottom: 10px;
     background-color: #ffffff;
 
+}
+
+@media only screen and (max-width: 768px) {
+    .adresse {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .btn {
+        width: 90%;
+    }
+
+    .fixed-fields {
+        width: 100%;
+    }
 }
