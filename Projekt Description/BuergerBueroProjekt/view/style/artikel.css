@@ -46,12 +46,13 @@ header {
 .articles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: space-between;
+    /* Ändere die Ausrichtung der Container */
 }
 
-article {
+.article {
     width: 30%;
+    /* Setze die Breite der Artikelcontainer */
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -80,18 +81,16 @@ article {
 
 /* Media Queries für kleinere Bildschirme */
 @media only screen and (max-width: 768px) {
-    .articles {
-        padding: 10px;
-    }
-
-    article {
+    .article {
         width: 45%;
+        /* Ändere die Breite der Artikelcontainer für kleinere Bildschirme */
     }
 }
 
 @media only screen and (max-width: 480px) {
-    article {
+    .article {
         width: 90%;
+        /* Ändere die Breite der Artikelcontainer für noch kleinere Bildschirme */
     }
 }
 
