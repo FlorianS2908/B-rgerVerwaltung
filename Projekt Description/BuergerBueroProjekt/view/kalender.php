@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="style/kalender.css" />
 
     <?php
-    $termine = file_get_contents("Termin.json");
+    $termine = file_get_contents("../model/TerminMockup.json");
     $test = json_decode($termine, true);
-    foreach ($test as $t) {
-        $abteilung = 'test';
-    }
     ?>
 
 </head>
@@ -26,13 +23,14 @@
         </div>
         <table id="days">
             <tr>
+                <td>So</td>
                 <td>Mo</td>
                 <td>Di</td>
                 <td>Mi</td>
                 <td>Do</td>
                 <td>Fr</td>
                 <td>Sa</td>
-                <td>So</td>
+
             </tr>
         </table>
         <div id="cal-frame">
@@ -81,20 +79,22 @@
         $freieTermine = array();
 
         // Tage für ein Jahr überprüfen
-        for ($i = 0; $i < 365; $i++) {
-            $currentDate = date('Y-m-d', strtotime($datum . " +$i day"));
-            if (!istVergeben($currentDate, $terminData)) {
-                $freieTermine[] = $currentDate;
+        foreach ($terminData as $termin) {
+            // Überprüfen, ob der Termin an diesem Datum vergeben ist
+            if ($datum == date('Y-m-d', strtotime($termin['Termin']))) {
+                // Wenn nicht, füge den Termin zur Liste der freien Termine hinzu
+                $freieTermine[] = date('H:i', strtotime($termin['Termin']));
             }
         }
+
         return $freieTermine;
     }
 
     // Laden der Daten aus der JSON-Datei
     $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
-    // Datumeingabe --> Aus dem Kalender
-    // $datum = input???;
-    $datum = readline("Geben Sie das Datum ein (YYYY-MM-DD): ");
+
+    // Ausgewähltes Datum
+    $datum = date('2024-03-23'); // Anpassen Eingabe durch Kalender
 
     // Ermittlung freier Termine für das eingegebene Datum
     $freieTermine = findeFreieTermine($datum, $terminData);
