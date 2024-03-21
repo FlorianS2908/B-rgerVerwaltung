@@ -139,12 +139,13 @@
 
             <input type="button" value="Termin buchen">
         </div>
-        <?php
-            require "footer.php";
-            ?>
+       
             <br>
             <p>Kontaktinformationen</p>
         </div>
+        <?php
+            require "footer.php";
+            ?>
 </body>
 
 </html>
