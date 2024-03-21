@@ -73,7 +73,6 @@ function isUserOnDB()
 function createDatapool()
 {
     require_once 'dbConnection.php';
-    var_dump($conn);
     getPersonenDaten($conn);
     getArtikel($conn);
     getAntag_Gruppe($conn);
@@ -82,19 +81,21 @@ function createDatapool()
 }
 function registPerson()
 {
+    require_once 'dbConnection.php';
+    var_dump($_POST);
     $username = $_SESSION["username"];
     $passwort = $_SESSION['passwort'];
 
-    // Ein Salz generieren (kann auch vorher festgelegt werden)
-    $salz = random_bytes(16); // Eine zufällige Zeichenfolge
+    $salz = random_bytes(16); // 16 Byte Salz
+    $salz_hex = bin2hex($salz); // Salz in hexadezimaler Darstellung konvertieren
+
 
     // Das Passwort mit dem Salz hashen
-    $hash = password_hash($passwort . $salz, PASSWORD_DEFAULT);
+    $hash = password_hash($passwort . $salz_hex, PASSWORD_DEFAULT);
 
     // Das verschlüsselte Passwort und das Salz in die Datenbank schreiben
     // Beispiel: Annahme, dass eine Verbindung zur Datenbank bereits hergestellt wurde
-    $stmt = $pdo->prepare("INSERT INTO benutzer (passwort, salz) VALUES (?, ?)");
-    $stmt->execute([$hash, $salz]);
+
 }
 
 function generateLoginJson()
