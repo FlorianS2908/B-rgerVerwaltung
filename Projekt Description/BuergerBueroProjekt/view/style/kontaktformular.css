@@ -1,63 +1,60 @@
-/* style.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background-color: #f2f2f2;
+    /* Hintergrundfarbe grau hell */
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     text-align: center;
-    color: #333;
-}
-
-table {
-    width: 100%;
     margin-bottom: 20px;
-    border-collapse: collapse;
+    color: #444;
 }
 
-th {
-    text-align: left;
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
 }
 
-table,
-th,
-td {
-    padding: 10px;
+.form-group {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-    width: calc(100% - 22px);
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
 }
 
 input[type="submit"] {
-    width: 22%;
-    padding: 10px;
-    background-color: #808080;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #444;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #169246;
 }
