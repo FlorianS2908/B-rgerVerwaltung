@@ -11,19 +11,14 @@
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="../view/style/burgerMenü.css">
-    
+
 </head>
 <header>
     <h1>Terminvereinbahrung</h1>
 </header>
 
 <body>
-<<<<<<< Updated upstream
-        <?php
-=======
-    </div>
     <?php
->>>>>>> Stashed changes
         require "navi.php";
         ?>
     <div class="main">
@@ -41,17 +36,12 @@
             }
             $group = array_unique($group, SORT_STRING);
             ?>
-<<<<<<< Updated upstream
-            <form>
-                <label for="dienstleistung"><h2>Dienstleistung:</h2></label>
-                <select id="dienstleistung">
-                    <?php
-=======
         <form>
-            <label for="dienstleistung">Dienstleistung:</label>
+            <label for="dienstleistung">
+                <h2>Dienstleistung:</h2>
+            </label>
             <select id="dienstleistung">
                 <?php
->>>>>>> Stashed changes
                     foreach ($group as $elm) {
                         echo "<option value=\$elm\"> $elm</option>";
                     }
@@ -62,7 +52,9 @@
             <br>
 
             <div class="wochentage">
-                <label><h4>Wochentage:</h4></label>
+                <label>
+                    <h4>Wochentage:</h4>
+                </label>
                 <br>
                 <div class="checkbox-container">
                     <input type="checkbox" id="montag" name="wochentage" value="montag">
@@ -81,46 +73,34 @@
             </div>
 
             <div class="zeitfenster">
-                <label><h4>Zeitfenster:</h4></label>
+                <label>
+                    <h4>Zeitfenster:</h4>
+                </label>
                 <br>
                 <div class="checkbox-container">
-                <input type="checkbox" id="vormittags" name="zeitfenster" value="vormittags">
-                <label for="vormittags">Vormittags</label>
-                <input type="checkbox" id="nachmittags" name="zeitfenster" value="nachmittags">
-                <label for="nachmittags">Nachmittags</label>
-                <br>
-                <br>
+                    <input type="checkbox" id="vormittags" name="zeitfenster" value="vormittags">
+                    <label for="vormittags">Vormittags</label>
+                    <input type="checkbox" id="nachmittags" name="zeitfenster" value="nachmittags">
+                    <label for="nachmittags">Nachmittags</label>
+                    <br>
+                    <br>
+                </div>
             </div>
-    </div>
 
-<<<<<<< Updated upstream
-                <input type="submit" value="Termin suchen">
+            <input type="submit" value="Termin suchen">
             <br>
 
             <h2>Datum:</h2>
             <?php 
             require "kalender.php"; 
             ?>
-            </div>
-            </div>
-                <input type="submit" value="Termin buchen">
-        <?php
-=======
-    <input type="submit" value="Termin suchen">
-    </form>
-    <br>
-
-    <h2>Datum</h2>
-    <?php 
-            require "kalender.php"; 
-            ?>
     </div>
     </div>
+    <input type="submit" value="Termin buchen">
     <?php
->>>>>>> Stashed changes
         require "footer.php";
         ?>
-        </form>
+    </form>
 </body>
 
 </html>
