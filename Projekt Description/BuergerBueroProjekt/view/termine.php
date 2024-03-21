@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/main.css">
 </head>
-
+<header>
+    <h1>Terminvereinbahrung</h1>
+</header>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Terminvereinbarung</h1>
+  
+
         </div>
         <?php
         require "navi.php";
