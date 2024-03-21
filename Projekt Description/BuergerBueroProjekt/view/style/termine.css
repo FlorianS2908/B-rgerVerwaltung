@@ -18,6 +18,15 @@ body {
     border-radius: 5px;
   }
   
+  #Wochentage {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #Zeitfenster {
+    display: flex;
+    margin-left: 10px;
+  }
 
   form {
     margin-bottom: 20px;
