@@ -1,21 +1,4 @@
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    display: flex;
-    min-height: 10vh;
-    flex-direction: column;
-    flex: 1;
-}
-
-p {
-    line-height: 1.6;
-}
-
-
-
+/* Artikel-Stile */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -47,51 +30,51 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* Ändere die Ausrichtung der Container */
+    padding: 0 20px; /* Abstand zu den Seiten des übergeordneten Containers */
 }
 
 .article {
-    width: 30%;
-    /* Setze die Breite der Artikelcontainer */
+    width: calc(33.33% - 20px); /* 33.33% der Breite des übergeordneten Containers, mit 20px Abstand */
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
-    /* */
 }
 
-.article-thumbnail img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.article-details {
+.article .article-details {
     padding: 10px;
 }
 
-.article-details h2 {
+.article .article-details h2 {
     margin-top: 0;
 }
 
-.article-details p.article-date {
+.article .article-details p.article-date {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #888;
     text-align: right;
 }
 
+.article .article-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Media Queries für kleinere Bildschirme */
 @media only screen and (max-width: 768px) {
+    .articles {
+        justify-content: center; /* Zentriert die Artikel auf kleinen Bildschirmen */
+    }
+    
     .article {
-        width: 45%;
-        /* Ändere die Breite der Artikelcontainer für kleinere Bildschirme */
+        width: calc(50% - 20px); /* 50% der Breite des übergeordneten Containers, mit 20px Abstand */
     }
 }
 
 @media only screen and (max-width: 480px) {
     .article {
-        width: 90%;
-        /* Ändere die Breite der Artikelcontainer für noch kleinere Bildschirme */
+        width: calc(100% - 20px); /* 100% der Breite des übergeordneten Containers, mit 20px Abstand */
     }
 }
 
