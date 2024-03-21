@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Information Form</title>
     <link rel="stylesheet" href="style/personalpage.css">
-    <script src="scripte/personalpage.js"></script>
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/burgerMenü.css">
+    <script src="personalpage.js"></script>
 </head>
 
 <body>
-
+    <?php include 'burgerMenü.php'; ?>
     <script src="scripte/personalpage.js"></script>
     <div class="container">
         <br>
@@ -67,7 +69,7 @@
             </div>
         </div>
     </div>
-
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>

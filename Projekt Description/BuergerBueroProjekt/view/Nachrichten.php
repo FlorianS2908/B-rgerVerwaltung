@@ -81,6 +81,7 @@
                 //echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
 
                 // Artikelcontainer
+                //
                 echo "<div class='article'>";
                 // Artikelinhalt
                 echo "<div class='article-details'>";

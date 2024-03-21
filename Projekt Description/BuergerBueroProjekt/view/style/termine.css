@@ -1,0 +1,70 @@
+/* Allgemeine Formatierung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333333;
+  }
+  
+  .container {
+    width: 800px;
+    margin: 20px auto;
+  }
+  
+  .header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .main {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="checkbox"],
+  input[type="submit"],
+  input[type="button"] {
+    margin-right: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Spezifische Anpassungen */
+  #dienstleistung {
+    width: calc(100% - 22px);
+  }
+  
+  #freie-termine {
+    width: calc(100% - 22px);
+  }
+  
+  .container select,
+  .container input[type="checkbox"] {
+    margin-bottom: 10px;
+  }
+  
