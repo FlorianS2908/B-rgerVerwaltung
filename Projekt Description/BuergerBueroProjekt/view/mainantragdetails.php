@@ -8,9 +8,7 @@
                 </p>
             </div>
             <div class="content">
-                <iframe class="pdfcontent" src="https://www.google.de">
-
-                </iframe>
+                <iframe id="pdf" style="width: 100%; height: 800px;"></iframe>
             </div>
         </div>
         <div class="button-container">

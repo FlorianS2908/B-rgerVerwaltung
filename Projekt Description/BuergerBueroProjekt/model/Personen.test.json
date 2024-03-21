@@ -1,96 +1,106 @@
-[{      "ID" : 1,
+[
+    {  
+            "ID" : 1,
         "Name": "McEntegart",
         "Vorname": "Rhoda",
         "Geb": {
-            " Datum": "10.05.2023",
-            " Ort": "Rouen"
+            "Datum": "10.05.2023",
+            "Ort": "Rouen"
         },
         "Straße": "Huxley",
         "Hausnummer": "71",
         "PLZ": "576",
         "Ort": "Az Zawr"
     },
-    {   "ID" : 2,
+    {  
+         "ID" : 2,
         "Name": "Picot",
         "Vorname": "Val",
         "Geb": {
-            " Datum": "10.10.2023",
-            " Ort": "Örebro"
+            "Datum": "10.10.2023",
+            "Ort": "Örebro"
         },
         "Straße": "Gateway",
         "Hausnummer": "79",
         "PLZ": "2034",
         "Ort": "Batibati"
     },
-    {   "ID" : 3,
+    {  
+         "ID" : 3,
         "Name": "Todarini",
         "Vorname": "Nikola",
         "Geb": {
-            " Datum": "14.08.2023",
-            " Ort": "Rabaul"
+            "Datum": "14.08.2023",
+            "Ort": "Rabaul"
         },
         "Straße": "Del Mar",
         "Hausnummer": "7",
         "PLZ": "2",
         "Ort": "Zhenxi"
     },
-    {   "ID" : 4,
+    {  
+         "ID" : 4,
         "Name": "Jellett",
         "Vorname": "Timmie",
         "Geb": {
-            " Datum": "26.12.2023",
-            " Ort": "Moravský Písek"
+            "Datum": "26.12.2023",
+            "Ort": "Moravský Písek"
         },
         "Straße": "Buena Vista",
         "Hausnummer": "44",
         "PLZ": "39279",
         "Ort": "Brändö"
     },
-    {   "ID" : 5,
+    {  
+         "ID" : 5,
         "Name": "McTrustey",
         "Vorname": "Annmaria",
         "Geb": {
-            " Datum": "28.05.2023",
-            " Ort": "Skënderbegas"
+            "Datum": "28.05.2023",
+            "Ort": "Skënderbegas"
         },
         "Straße": "Bellgrove",
         "Hausnummer": "2430",
         "PLZ": "303",
         "Ort": "Łubnice"
     },
-    {   "ID" : 6,
+    { 
+          "ID" : 6,
         "Name": "Beurich",
         "Vorname": "May",
         "Geb": {
-            " Datum": "10.06.2023",
-            " Ort": "Dunyāpur"
+            "Datum": "10.06.2023",
+            "Ort": "Dunyāpur"
         },
         "Straße": "Carey",
         "Hausnummer": "54850",
         "PLZ": "0593",
         "Ort": "Dongfu"
     },
-    {   "ID" : 7,
+    {  
+         "ID" : 7,
         "Name": "Featherstone",
         "Vorname": "Paton",
         "Geb": {
-            " Datum": "12.06.2023",
-            " Ort": "Arkalyk"
+            "Datum": "12.06.2023",
+            "Ort": "Arkalyk"
         },
         "Straße": "Arizona",
         "Hausnummer": "07850",
         "PLZ": "93919",
         "Ort": "Zalesnoye"
     },
-    {   "ID" : 8,
+    {  
+         "ID" : 8,
         "Name": "Blackhall",
         "Vorname": "Lissy",
         "Geb": {
-            " Datum": "24.01.2024",
-            " Ort": "Al Ḩammāmāt"
+            "Datum": "24.01.2024",
+            "Ort": "Al Ḩammāmāt"
         },
         "Straße": "Rigney",
         "Hausnummer": "36",
         "PLZ": "38",
         "Ort": "Calingcuan"
-    }]
+    }
+]

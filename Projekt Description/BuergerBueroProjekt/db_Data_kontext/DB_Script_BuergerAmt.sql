@@ -47,9 +47,14 @@ CREATE TABLE IF NOT EXISTS Personen (
     Pers_Geb_Datum DATE NOT NULL,
     Pers_Geb_Ort_ID INT,
     Pers_Adress_ID INT,
+    Pers_Salt VARCHAR(255) NOT NULL,
+    Pers_Password VARCHAR(255) NOT NULL,
     FOREIGN KEY (Pers_Geb_Ort_ID) REFERENCES Orte(Ort_ID),
     FOREIGN KEY (Pers_Adress_ID) REFERENCES Adressen(Adresse_ID)
 );
+
+
+
 CREATE TABLE IF NOT EXISTS Mitarbeiter (
     Mitarbeiter_ID INT AUTO_INCREMENT PRIMARY KEY,
     Personen_ID INT NOT NULL,

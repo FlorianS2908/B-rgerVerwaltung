@@ -80,8 +80,8 @@ input[readonly] {
 
 .btn {
     padding: 10px 20px;
-    background-color: #4c77af;
-    color: white;
+    background-color: #6fa5db;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -91,7 +91,7 @@ input[readonly] {
 }
 
 .btn:hover {
-    background-color: #6eadff;
+    background-color: #8eb9d7;
 }
 
 .adresse {
