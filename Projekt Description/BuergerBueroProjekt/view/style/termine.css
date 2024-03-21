@@ -98,10 +98,7 @@ a {
     width: calc(100% - 22px);
   }
   
-  .container select,
-  .container input[type="checkbox"] {
-    margin-bottom: 10px;
-  }
+
   
   .wochentage {
     display: flex;
@@ -111,6 +108,8 @@ a {
 
   .checkbox-container {
     display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
   }
 
 

@@ -60,7 +60,7 @@ $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true)
 $freieTermine = findeFreieTermine($datum, $terminData);
 ?>
 
-<label for="freie-termine">Freie Termine:</label>
+<label for="freie-termine" style="font-weight: bold;">Freie Termine:</label>
 <select id="freie-termine">
     <?php
     // Output the freie Termine as Dropdown options
@@ -70,4 +70,4 @@ $freieTermine = findeFreieTermine($datum, $terminData);
     ?>
 </select>
 <br><br>
-<input type="button" value="Termin buchen">
+ 

@@ -17,7 +17,6 @@
     <h1>Terminvereinbahrung</h1>
 </header>
 <body>
-        </div>
         <?php
         require "navi.php";
         ?>
@@ -37,7 +36,7 @@
             $group = array_unique($group, SORT_STRING);
             ?>
             <form>
-                <label for="dienstleistung">Dienstleistung:</label>
+                <label for="dienstleistung"><h2>Dienstleistung:</h2></label>
                 <select id="dienstleistung">
                     <?php
                     foreach ($group as $elm) {
@@ -50,7 +49,7 @@
                 <br>
                 
             <div class="wochentage">
-                <label>Wochentage:</label>
+                <label><h4>Wochentage:</h4></label>
                 <br>
                 <div class="checkbox-container">
                 <input type="checkbox" id="montag" name="wochentage" value="montag">
@@ -69,7 +68,7 @@
             </div>
 
             <div class="zeitfenster">
-                <label>Zeitfenster:</label>
+                <label><h4>Zeitfenster:</h4></label>
                 <br>
                 <div class="checkbox-container">
                 <input type="checkbox" id="vormittags" name="zeitfenster" value="vormittags">
@@ -82,18 +81,19 @@
             </div>
 
                 <input type="submit" value="Termin suchen">
-            </form>
             <br>
 
-            <h2>Datum</h2>
+            <h2>Datum:</h2>
             <?php 
             require "kalender.php"; 
             ?>
             </div>
             </div>
+                <input type="submit" value="Termin buchen">
         <?php
         require "footer.php";
         ?>
+        </form>
 </body>
 
 </html>
