@@ -41,16 +41,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripte/kalender.js"></script>
     <script>
-        $(document).ready(function() {
-            var cal = CALENDAR();
-            cal.init("#cal");
-        });
+    $(document).ready(function() {
+        var cal = CALENDAR();
+        cal.init("#cal");
+    });
     </script>
     <style>
-        #datum {
-            display: block;
-            text-align: center;
-        }
+    #datum {
+        display: block;
+        text-align: center;
+    }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
@@ -83,7 +83,7 @@
             // Überprüfen, ob der Termin an diesem Datum vergeben ist
             if ($datum == date('Y-m-d', strtotime($termin['Termin']))) {
                 // Wenn nicht, füge den Termin zur Liste der freien Termine hinzu
-                $freieTermine[] = date('H:i', strtotime($termin['Termin']));
+                $freieTermine[] = date('H:i', strtotime($termin['Startzeitpunkt']));
             }
         }
 
