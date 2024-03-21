@@ -5,9 +5,17 @@ footer {
     text-align: center;
     padding: 20px 0;
     display: flex;
-    min-height: 100vh;
+    min-height: 3em;
     flex-direction: column;
     flex: 1;
+
+    /*footer immer unten*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+
+
 }
 
 p {
