@@ -8,13 +8,22 @@
     <link rel="stylesheet" href="style/personalpage.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/burgerMenü.css">
+    <link rel="stylesheet" href="style/navigation.css">
+    <link rel="stylesheet" href="style/header.css">
 </head>
 
+<header>
+    <h1>Persönliche Daten</h1>
+</header>
+
 <body>
-    <?php include 'burgerMenü.php'; ?>
+    <?php require 'burgerMenü.php'; ?>
+
     <div class="container">
+
+        <?php require 'navi.php'; ?>
         <br>
-        <h1>Persönliche Daten</h1>
+
         <p class="subtext">Hier finden Sie Ihre persönlichen Daten</p>
         <?php
         session_start();
@@ -47,26 +56,23 @@
         <h1 class="title2">Adresse</h1>
         <div class="editable-fields">
             <div class="box">
-                <form action="index.php" method="post">
-                    <div class="adresse">
-
-                        <label class="titel" for="state">Straße:</label>
-                        <input type="text" id="Straße" name="Straße" required value="Ihre Straße" />
-                        <label class="titel" for="address">Hausnummer:</label>
-                        <input type="text" id="Hausnummer" name="Hausnummer" required value="Ihre Hausnummer" />
-                        <label class="titel" for="zipCode">Postleitzahl:</label>
-                        <input type="text" id="PLZ" name="PLZ" required value="Ihre Postleitzahl" />
-                        <label class="titel" for="city">Stadt:</label>
-                        <input type="text" id="Ort" name="Ort" required value="Ihre Stadt" />
-                        <div class="btn-container">
-                            <button class="btn" onclick="saveData()">Speichern</button>
-                        </div>
-                </form>
+                <div class="adresse">
+                    <label class="titel" for="state">Straße:</label>
+                    <input type="text" id="Straße" name="Straße" required value="Ihre Straße" />
+                    <label class="titel" for="address">Hausnummer:</label>
+                    <input type="text" id="Hausnummer" name="Hausnummer" required value="Ihre Hausnummer" />
+                    <label class="titel" for="zipCode">Postleitzahl:</label>
+                    <input type="text" id="PLZ" name="PLZ" required value="Ihre Postleitzahl" />
+                    <label class="titel" for="city">Stadt:</label>
+                    <input type="text" id="Ort" name="Ort" required value="Ihre Stadt" />
+                    <div class="btn-container">
+                        <button class="btn" onclick="saveData()">Speichern</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <?php include 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
     <script src="scripte/personalpage.js"></script>
 </body>
 
