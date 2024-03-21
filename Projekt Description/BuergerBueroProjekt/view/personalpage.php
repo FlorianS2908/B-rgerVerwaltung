@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/personalpage.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/burgerMenü.css">
-    <script src="personalpage.js"></script>
+    <script src="scripte/personalpage.js"></script>
 </head>
 
 <body>
