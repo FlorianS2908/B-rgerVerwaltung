@@ -66,7 +66,7 @@
             echo '<article>';
             echo '<div class="article-details">';
             echo '<p class="article-date">' . $article['Datum'] . '</p>'; // Datum hier einfügen
-            echo '<h2>' . $article['Titel'] . '</h2>';
+            echo '<h2><a href="dummy.php?id=">' . $article['Titel'] . '</h2>';
             echo '<div class="article-thumbnail">';
             echo '<img src="' . $article['Bild'] . '" alt="Bild">';
             echo '</div>';

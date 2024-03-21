@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="script.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +9,7 @@
 </head>
 
 <body>
+    <script src="scripte/personalpage.js"></script>
     <div class="container">
         <br>
         <h1>Persönliche Daten</h1>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
