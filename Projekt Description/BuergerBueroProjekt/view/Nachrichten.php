@@ -26,13 +26,13 @@
 
     <section class="articles">
         <?php
-        $json_file_path = '../model/ArtikelMockup.json';
+        $json_file_path = '../controller/query_result_Artikel.json';
 
         // JSON-Datei lesen
         $json_data = file_get_contents($json_file_path);
 
         // JSON-Daten dekodieren
-        $data_array = json_decode($json_data, true); // Das zweite Argument "true" gibt an, dass ein assoziatives Array verwendet werden soll
+        $data = json_decode($json_data, true); // Das zweite Argument "true" gibt an, dass ein assoziatives Array verwendet werden soll
         
         // Filterung der Artikel basierend auf dem POST-Parameter
         if (isset ($_POST['filter'])) {
@@ -41,38 +41,58 @@
 
             if ($filter === 'week') {
                 // Filter für Artikel der letzten Woche
-                foreach ($data_array as $article) {
+                foreach ($data as $article) {
                     if (strtotime($article['Datum']) >= strtotime('-1 week')) {
                         $filtered_articles[] = $article;
                     }
                 }
             } elseif ($filter === 'month') {
                 // Filter für Artikel des letzten Monats
-                foreach ($data_array as $article) {
+                foreach ($data as $article) {
                     if (strtotime($article['Datum']) >= strtotime('-1 month')) {
                         $filtered_articles[] = $article;
                     }
                 }
             } else {
                 // Kein Filter angewendet
-                $filtered_articles = $data_array;
+                $filtered_articles = $data;
             }
 
             // Verwende die gefilterten Artikel für die Anzeige
-            $data_array = $filtered_articles;
+            $data = $filtered_articles;
         }
 
-        foreach ($data_array as $article) {
-            echo '<article>';
-            echo '<div class="article-details">';
-            echo '<p class="article-date">' . $article['Datum'] . '</p>'; // Datum hier einfügen
-            echo '<h2><a href="dummy.php?id=">' . $article['Titel'] . '</h2>';
-            echo '<div class="article-thumbnail">';
-            echo '<img src="' . $article['Bild'] . '" alt="Bild">';
-            echo '</div>';
-            echo '<p>' . $article['ArtikelText'] . '</p>';
-            echo '</div>';
-            echo '</article>';
+        foreach ($data as $art) {
+            //var_dump($art);
+            // Wenn Daten vorhanden sind
+            if (!empty ($data)) {
+                // Das erste Bild auswählen
+                $datum = $art['Datum'];
+                $titel = $art['Titel'];
+                $imageData = $art['Bild'];
+                $imageDescription = $art['ArtikelText'];
+                $artText = $art['ArtikelText'];
+
+
+                // Das Bild als Base64-codierte Zeichenfolge in das img-Tag einfügen
+                echo $titel;
+                echo $datum;
+                echo $artText;
+                echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
+
+                // Artikelcontainer
+                echo "<div class='article'>";
+                // Artikelinhalt
+                echo "<div class='article-details'>";
+                echo "<p class='article-date'>$datum</p>";
+                echo "<h2>$titel</h2>";
+                echo "<div class='article-thumbnail'>";
+                echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
+                echo "</div>";
+                echo "<p>$artText</p>";
+                echo "</div>";
+                echo "</div>";
+            }
         }
         ?>
     </section>
