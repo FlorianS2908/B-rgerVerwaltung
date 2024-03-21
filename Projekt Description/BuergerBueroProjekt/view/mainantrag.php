@@ -20,11 +20,11 @@
                         <ul id="elements" class="antrag-list">
                             <li class="antrag-element">
                                 <span>Antrag auf Fahreignung</span>
-                                <a class="button" href="#">Klicken Sie hier...</a>
+                                <a class="button" href="#">Details</a>
                             </li>
                             <li class="antrag-element">
                                 <span>Antrag auf Fahreignung</span>
-                                <a class="button" href="#">Klicken Sie hier...</a>
+                                <a class="button" href="#">Details</a>
                             </li>
                         </ul>
                     </div>
