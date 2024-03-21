@@ -56,15 +56,24 @@ $conn->close();
     $jsonData = file_get_contents('query_result_Artikel.json');
     // JSON in ein PHP-Array umwandeln
     $data = json_decode($jsonData, true);
+    //var_dump($data);
+    foreach ($data as $art) {
+        var_dump($art);
+        // Wenn Daten vorhanden sind
+        if (!empty($data)) {
+            // Das erste Bild auswählen
+            $imageData = $art['Bild'];
+            $imageDescription = $art['ArtikelText'];
+            $datum = $art['Datum'];
+            $artText = $art['ArtikelText'];
+            $titel = $art['Titel'];
 
-    // Wenn Daten vorhanden sind
-    if (!empty($data)) {
-        // Das erste Bild auswählen
-        $imageData = $data[0]['Bild'];
-        $imageDescription = $data[0]['ArtikelText'];
-
-        // Das Bild als Base64-codierte Zeichenfolge in das img-Tag einfügen
-        echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
+            // Das Bild als Base64-codierte Zeichenfolge in das img-Tag einfügen
+            echo $titel;
+            echo $datum;
+            echo $artText;
+            echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
+        }
     }
     ?>
 

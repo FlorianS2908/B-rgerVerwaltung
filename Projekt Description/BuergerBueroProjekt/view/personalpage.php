@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Information Form</title>
     <link rel="stylesheet" href="style/personalpage.css">
+    <script src="personalpage.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,10 @@
         <br>
         <h1>Persönliche Daten</h1>
         <p class="subtext">Hier finden Sie Ihre persönlichen Daten</p>
-
+        <?php
+        session_start();
+        var_dump($_SESSION);
+        ?>
         <div class="fixed-fields">
             <div class="box">
                 <div class="umrandung">
