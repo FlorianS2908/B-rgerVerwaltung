@@ -141,9 +141,11 @@ input[readonly] {
     display: inline-block;
     margin-bottom: 10px;
     background-color: #ffffff;
-
 }
 
+footer {
+    padding: 0px 0;
+}
 
 @media only screen and (max-width: 768px) {
     .container {
