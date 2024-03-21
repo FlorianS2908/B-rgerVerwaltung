@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <?php
+$salz = random_bytes(16); // 16 Byte Salz
+$salz_hex = bin2hex($salz); // Salz in hexadezimaler Darstellung konvertieren
+var_dump($salz_hex);
+$hash = password_hash("Hallo" . $salz, PASSWORD_DEFAULT);
+var_dump($hash);
+var_dump($_POST);
 require "../controller/db_dataLoad.php";
 //createDatapool();
 session_start();
