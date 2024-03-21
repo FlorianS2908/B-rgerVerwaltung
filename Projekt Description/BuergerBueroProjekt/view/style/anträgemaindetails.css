@@ -40,6 +40,7 @@ body {
 .button {
   padding: 16px 64px;
   background-color: #007bff;
+  text-decoration: none;
   color: #fff;
   border: none;
   font-size: 18px;

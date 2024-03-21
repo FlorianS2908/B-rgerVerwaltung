@@ -14,9 +14,9 @@
             </div>
         </div>
         <div class="button-container">
-            <button class="button">
+            <a class="button" href="anträge.php">
                 Zurück
-            </button>
+            </a>
             <button class="button">
                 Senden
             </button>
