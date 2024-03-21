@@ -11,6 +11,9 @@ if (isset($_POST['newDate'])) {
 $datum = date('2024-03-23');
 var_dump($datum);
 
+// Zeitslots erstellen
+// $freierTermin = {'8:00', '8:30'};
+
 function istVergeben($datum, $terminData)
 {
     foreach ($terminData as $termin) {
@@ -26,6 +29,7 @@ function istVergeben($datum, $terminData)
 }
 
 // Ermittlung freier Termine
+// finde Belegte Termine => belegte Termine aus $freieTermine[] Array entfernen
 function findeFreieTermine($datum, $terminData)
 {
     $freieTermine = array();
