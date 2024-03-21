@@ -1,16 +1,19 @@
 <?php
 //$datum = '';
-$datum = date('2024-03-23');
+$datum = date('2024-03-27');
 // Check if the newDate parameter is received
-//if (isset($_POST['newDate'])) {
-// Retrieve the new date from the POST data
-//    $datum = date($_POST['newDate']);
-//    echo 'Vorhanden';
-//} else {
-//    echo 'nicht vorhanden';
-//}
+if (isset($_POST['newDate'])) {
+    //Retrieve the new date from the POST data
+    $datum = date($_POST['newDate']);
+    echo 'Vorhanden';
+} else {
+    //echo 'nicht vorhanden';
+}
 
 //var_dump($datum);
+
+// Laden der Daten aus Mockup
+$terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
 
 function istVergeben($datum, $terminData)
 {
@@ -25,6 +28,7 @@ function istVergeben($datum, $terminData)
     }
     return false;
 }
+
 
 // Funktion zum Ermitteln der freien Termine für ein bestimmtes Datum
 function findeFreieTermine($datum, $terminData)
@@ -52,9 +56,6 @@ function findeFreieTermine($datum, $terminData)
 
     return $freieTermine;
 }
-
-// Laden der Daten aus der JSON-Datei
-$terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
 
 // Ermittlung freier Termine für das eingegebene Datum
 $freieTermine = findeFreieTermine($datum, $terminData);

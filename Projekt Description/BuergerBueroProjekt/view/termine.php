@@ -16,12 +16,18 @@
 <header>
     <h1>Terminvereinbahrung</h1>
 </header>
+
 <body>
+<<<<<<< Updated upstream
         <?php
+=======
+    </div>
+    <?php
+>>>>>>> Stashed changes
         require "navi.php";
         ?>
-        <div class="main">
-            <?php
+    <div class="main">
+        <?php
             $json_file_path = '../model/TerminMockup.json';
 
             // JSON-Datei lesen
@@ -35,35 +41,42 @@
             }
             $group = array_unique($group, SORT_STRING);
             ?>
+<<<<<<< Updated upstream
             <form>
                 <label for="dienstleistung"><h2>Dienstleistung:</h2></label>
                 <select id="dienstleistung">
                     <?php
+=======
+        <form>
+            <label for="dienstleistung">Dienstleistung:</label>
+            <select id="dienstleistung">
+                <?php
+>>>>>>> Stashed changes
                     foreach ($group as $elm) {
                         echo "<option value=\$elm\"> $elm</option>";
                     }
                     ?>
 
-                </select>
-                <br>
-                <br>
-                
+            </select>
+            <br>
+            <br>
+
             <div class="wochentage">
                 <label><h4>Wochentage:</h4></label>
                 <br>
                 <div class="checkbox-container">
-                <input type="checkbox" id="montag" name="wochentage" value="montag">
-                <label for="montag">Montag</label>
-                <input type="checkbox" id="dienstag" name="wochentage" value="dienstag">
-                <label for="dienstag">Dienstag</label>
-                <input type="checkbox" id="mittwoch" name="wochentage" value="mittwoch">
-                <label for="mittwoch">Mittwoch</label>
-                <input type="checkbox" id="donnerstag" name="wochentage" value="donnerstag">
-                <label for="donnerstag">Donnerstag</label>
-                <input type="checkbox" id="freitag" name="wochentage" value="freitag">
-                <label for="freitag">Freitag</label>
-                <br>
-                <br>
+                    <input type="checkbox" id="montag" name="wochentage" value="montag">
+                    <label for="montag">Montag</label>
+                    <input type="checkbox" id="dienstag" name="wochentage" value="dienstag">
+                    <label for="dienstag">Dienstag</label>
+                    <input type="checkbox" id="mittwoch" name="wochentage" value="mittwoch">
+                    <label for="mittwoch">Mittwoch</label>
+                    <input type="checkbox" id="donnerstag" name="wochentage" value="donnerstag">
+                    <label for="donnerstag">Donnerstag</label>
+                    <input type="checkbox" id="freitag" name="wochentage" value="freitag">
+                    <label for="freitag">Freitag</label>
+                    <br>
+                    <br>
                 </div>
             </div>
 
@@ -77,9 +90,10 @@
                 <label for="nachmittags">Nachmittags</label>
                 <br>
                 <br>
-                </div>
             </div>
+    </div>
 
+<<<<<<< Updated upstream
                 <input type="submit" value="Termin suchen">
             <br>
 
@@ -91,6 +105,19 @@
             </div>
                 <input type="submit" value="Termin buchen">
         <?php
+=======
+    <input type="submit" value="Termin suchen">
+    </form>
+    <br>
+
+    <h2>Datum</h2>
+    <?php 
+            require "kalender.php"; 
+            ?>
+    </div>
+    </div>
+    <?php
+>>>>>>> Stashed changes
         require "footer.php";
         ?>
         </form>
