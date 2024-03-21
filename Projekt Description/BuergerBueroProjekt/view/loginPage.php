@@ -20,7 +20,7 @@
         <label for="password">Passwort:</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Anmelden</button>
-        <a href="/forgot-password">Passwort vergessen?</a>
+        <a href="forgotPaswword.php">Passwort vergessen?</a>
         <a href="registPage.php">Registrieren</a>
     </form>
 </div>
