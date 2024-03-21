@@ -18,27 +18,27 @@
         <p class="subtext">Hier finden Sie Ihre persönlichen Daten</p>
         <?php
         session_start();
-        var_dump($_SESSION);
+        
         ?>
         <div class="fixed-fields">
             <div class="box">
                 <div class="umrandung">
                     <label class="titel" for="state">Nachname:</label>
-                    <p class="text">Mustermann</p>
+                    <p class="text nachname" name="Nachname">Mustermann</p>
                 </div>
                 <div class="umrandung">
                     <label class="titel" for="state">Geburtsdatum:</label>
-                    <p class="text">1990-01-01</p>
+                    <p class="text geburtsdatum ">1990-01-01</p>
                 </div>
             </div>
             <div class="box">
                 <div class="umrandung">
                     <label class="titel" for="state">Vorname:</label>
-                    <p class="text">Erika</p>
+                    <p class="text vorname">Erika</p>
                 </div>
                 <div class="umrandung">
                     <label class="titel" for="state">Geburtsort:</label>
-                    <p class="text">Berlin</p>
+                    <p class="text geburtsort">Berlin</p>
                 </div>
             </div>
         </div>
