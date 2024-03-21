@@ -2,8 +2,8 @@
     {
         "Gruppe": "Sales",
         "Mitarbeiter": "Salim Fulloway",
-        "Termin": "23.11.2023",
-        "Startzeitpunkt": "7:06 PM",
+        "Termin": "23.03.2024",
+        "Startzeitpunkt": "9:00 PM",
         "Dauer": 30,
         "Titel": "So Proudly We Hail!",
         "Urlaub": "12.11.2024",
@@ -11,10 +11,10 @@
         "FeiertagsDatum": "16.05.2024"
     },
     {
-        "Gruppe": "Research and Development",
+        "Gruppe": "Sales",
         "Mitarbeiter": "Candis Egell",
-        "Termin": "05.12.2024",
-        "Startzeitpunkt": "3:38 PM",
+        "Termin": "23.03.2024",
+        "Startzeitpunkt": "8:00 PM",
         "Dauer": 30,
         "Titel": "Bogowie",
         "Urlaub": "02.05.2024",
@@ -22,10 +22,10 @@
         "FeiertagsDatum": "29.04.2024"
     },
     {
-        "Gruppe": "Services",
+        "Gruppe": "Sales",
         "Mitarbeiter": "Levey Mation",
-        "Termin": "10.01.2024",
-        "Startzeitpunkt": "6:34 PM",
+        "Termin": "23.03.2024",
+        "Startzeitpunkt": "10:00 PM",
         "Dauer": 30,
         "Titel": "Practical Magic",
         "Urlaub": "03.11.2023",

@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/kalender.css" />
+
+    <?php
+    $termine = file_get_contents("Termin.json");
+    $test = json_decode($termine, true);
+    foreach ($test as $t) {
+        $abteilung = 'test';
+    }
+    ?>
+
 </head>
 
 <body>
@@ -34,16 +43,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripte/kalender.js"></script>
     <script>
-    $(document).ready(function() {
-        var cal = CALENDAR();
-        cal.init("#cal");
-    });
+        $(document).ready(function() {
+            var cal = CALENDAR();
+            cal.init("#cal");
+        });
     </script>
     <style>
-    #datum {
-        display: block;
-        text-align: center;
-    }
+        #datum {
+            display: block;
+            text-align: center;
+        }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
