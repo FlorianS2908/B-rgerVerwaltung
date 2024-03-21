@@ -26,24 +26,20 @@
             <div class="box">
                 <div class="umrandung">
                     <label class="titel" for="state">Nachname:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">Mustermann</p>
                 </div>
                 <div class="umrandung">
                     <label class="titel" for="state">Geburtsdatum:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">1990-01-01</p>
                 </div>
             </div>
             <div class="box">
                 <div class="umrandung">
                     <label class="titel" for="state">Vorname:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">Erika</p>
                 </div>
                 <div class="umrandung">
                     <label class="titel" for="state">Geburtsort:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">Berlin</p>
                 </div>
             </div>
