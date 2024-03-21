@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json()) // Parsen der Antwort als JSON
       .then(data => {
           // Suche nach dem Kunden mit der ID 1
-          const kunde = data.find(k => k.ID === 1);
+          const kunde = data.find(k => k.ID === 2);
           if (kunde) {
               // Setze die Textinhalte der Paragraphen-Elemente
-              document.querySelector(".umrandung .text[name='Nachname']").textContent = kunde.Name;
-              document.querySelector(".umrandung .text[name='Vorname']").textContent = kunde.Vorname;
-              document.querySelector(".umrandung .text[name='Geburtsdatum']").textContent = kunde.Geb.Datum;
-              document.querySelector(".umrandung .text[name='Geburtsort']").textContent = kunde.Geb.Ort;
+              document.querySelector(".nachname").textContent = kunde.Name;
+              document.querySelector(".vorname").textContent = kunde.Vorname;
+              document.querySelector(".geburtsdatum").textContent = kunde.Geb.Datum;
+              document.querySelector(".geburtsort").textContent = kunde.Geb.Ort;
               document.getElementById("Straße").value = kunde.Straße;
               document.getElementById("Hausnummer").value = kunde.Hausnummer;
               document.getElementById("PLZ").value = kunde.PLZ;
