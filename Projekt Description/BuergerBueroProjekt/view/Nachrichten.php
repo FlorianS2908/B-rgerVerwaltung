@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nachrichtenformular</title>
-    <link rel="stylesheet" href="style/artikel.css">
+    <link rel="stylesheet" href="../view/style/artikel.css">
+    <link rel="stylesheet" href="../view/style/burgerMenü.css">
+    <link rel="stylesheet" href="../view/style/navigation.css">
+    <link rel="stylesheet" href="../view/style/header.css">
+    <link rel="stylesheet" href="../view/style/footer.css">
 </head>
+
+<header>
+        <h1>Nachrichtenformular</h1>
+    </header>
+
+    <?php
+    require "navi.php";
+    ?>
+
 
 <body>
     <?php
     require_once ("burgerMenü.php");
     ?>
-    <header>
-        <h1>Nachrichtenformular</h1>
-    </header>
 
     <section class="filter-bar">
         <form method="post">
@@ -24,7 +34,8 @@
         </form>
     </section>
 
-    <section class="articles">
+    <section class="articles" onclick="weiterleiten($art)">
+    
         <?php
         $json_file_path = '../controller/query_result_Artikel.json';
 
@@ -97,10 +108,14 @@
         }
         ?>
     </section>
-</body>
-
-<?php
+    <script>function weiterleiten(){
+        window.location.href="artikel_seite.php"+encodeURIComponent ($art);
+    }</script>
+    <?php
 require_once 'footer.php';
 ?>
+</body>
+
+
 
 </html>

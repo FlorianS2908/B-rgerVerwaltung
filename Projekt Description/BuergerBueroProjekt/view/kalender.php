@@ -86,7 +86,10 @@
                 $freieTermine[] = date('H:i', strtotime($termin['Startzeitpunkt']));
             }
         }
-
+        // Sortieren der freien Termine nach Uhrzeit
+        usort($freieTermine, function ($a, $b) {
+            return strtotime($a) - strtotime($b);
+        });
         return $freieTermine;
     }
 

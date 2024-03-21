@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel Seite</title>
-    <link rel="stylesheet" href="style/artikel.css">
+    <link rel="stylesheet" href="../view/style/artikel.css">
+    <link rel="stylesheet" href="../view/style/burgerMenü.css">
+    <link rel="stylesheet" href="../view/style/navigation.css">
+    <link rel="stylesheet" href="../view/style/header.css">
+    <link rel="stylesheet" href="../view/style/footer.css">
 </head>
 
 <body>
