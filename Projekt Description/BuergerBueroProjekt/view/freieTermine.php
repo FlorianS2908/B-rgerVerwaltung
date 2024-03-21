@@ -1,5 +1,6 @@
 <?php
-$datum = '';
+//$datum = '';
+$datum = date('2024-03-23');
 // Check if the newDate parameter is received
 if (isset($_POST['newDate'])) {
     // Retrieve the new date from the POST data
@@ -8,11 +9,10 @@ if (isset($_POST['newDate'])) {
 } else {
     echo 'nicht vorhanden';
 }
-$datum = date('2024-03-23');
+
 var_dump($datum);
 
-// Zeitslots erstellen
-// $freierTermin = {'8:00', '8:30'};
+
 
 function istVergeben($datum, $terminData)
 {
@@ -32,20 +32,20 @@ function istVergeben($datum, $terminData)
 // finde Belegte Termine => belegte Termine aus $freieTermine[] Array entfernen
 function findeFreieTermine($datum, $terminData)
 {
-    $freieTermine = array();
+    $vergebeneTermine = array();
 
     // Tage für ein Jahr überprüfen
     foreach ($terminData as $termin) {
-        // Überprüfen, ob der Termin an diesem Datum vergeben ist
         if ($datum == date('Y-m-d', strtotime($termin['Termin']))) {
-            // Wenn nicht, füge den Termin zur Liste der freien Termine hinzu
-            $freieTermine[] = date('H:i', strtotime($termin['Startzeitpunkt']));
+            $vergebeneTermine[] = date('H:i', strtotime($termin['Startzeitpunkt']));
         }
     }
-    // Sortieren der freien Termine nach Uhrzeit
-    usort($freieTermine, function ($a, $b) {
-        return strtotime($a) - strtotime($b);
-    });
+    // Definiere verfügbare Zeitslots
+    $verfuegbareZeitslots = array('8:00', '8:30', '9:00', '9:30', '10:00', '10:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30');
+
+    // Entferne vergebene Zeitslots aus den verfügbaren Zeitslots
+    $freieTermine = array_diff($verfuegbareZeitslots, $vergebeneTermine);
+
     return $freieTermine;
 }
 
@@ -58,6 +58,8 @@ $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true)
 // Ermittlung freier Termine für das eingegebene Datum
 $freieTermine = findeFreieTermine($datum, $terminData);
 ?>
+
+
 <label for="freie-termine">Freie Termine:</label>
 <select id="freie-termine">
     <?php
