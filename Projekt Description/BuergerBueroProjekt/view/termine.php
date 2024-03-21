@@ -2,17 +2,10 @@
 <html lang="de">
 
 <head>
-<<<<<<< Updated upstream
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminvereinbarung</title>
-    <link rel="stylesheet" href="style.css">
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminvereinbarung</title>
-  <link rel="stylesheet" href="../style/termine.css">
->>>>>>> Stashed changes
+    <link rel="stylesheet" href="../style/termine.css">
 </head>
 
 <body>
