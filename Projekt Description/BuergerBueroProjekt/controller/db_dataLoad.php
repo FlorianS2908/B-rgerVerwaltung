@@ -83,8 +83,16 @@ function registPerson()
 {
     require_once 'dbConnection.php';
     var_dump($_POST);
-    $username = $_SESSION["username"];
-    $passwort = $_SESSION['passwort'];
+    $vorname = $_POST["vorname"];
+    $nachname = $_POST["nachname"];
+    $geburtsdatum = $_POST["geburtsdatum"];
+    $geburtsort = $_POST["geburtsort"];
+    $straße = $_POST["straße"];
+    $hausnummer = $_POST["hausnummer"];
+    $plz = $_POST["plz"];
+    $ort = $_POST["ort"];
+    $email = $_POST["email"];
+    $passwort = $_POST['passwort'];
 
     $salz = random_bytes(16); // 16 Byte Salz
     $salz_hex = bin2hex($salz); // Salz in hexadezimaler Darstellung konvertieren

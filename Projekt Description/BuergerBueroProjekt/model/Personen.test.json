@@ -1,6 +1,6 @@
 [
-    {  
-            "ID" : 1,
+    {
+        "ID": 1,
         "Name": "McEntegart",
         "Vorname": "Rhoda",
         "Geb": {
@@ -12,8 +12,8 @@
         "PLZ": "576",
         "Ort": "Az Zawr"
     },
-    {  
-         "ID" : 2,
+    {
+        "ID": 2,
         "Name": "Picot",
         "Vorname": "Val",
         "Geb": {
@@ -25,8 +25,8 @@
         "PLZ": "2034",
         "Ort": "Batibati"
     },
-    {  
-         "ID" : 3,
+    {
+        "ID": 3,
         "Name": "Todarini",
         "Vorname": "Nikola",
         "Geb": {
@@ -38,8 +38,8 @@
         "PLZ": "2",
         "Ort": "Zhenxi"
     },
-    {  
-         "ID" : 4,
+    {
+        "ID": 4,
         "Name": "Jellett",
         "Vorname": "Timmie",
         "Geb": {
@@ -51,8 +51,8 @@
         "PLZ": "39279",
         "Ort": "Brändö"
     },
-    {  
-         "ID" : 5,
+    {
+        "ID": 5,
         "Name": "McTrustey",
         "Vorname": "Annmaria",
         "Geb": {
@@ -64,8 +64,8 @@
         "PLZ": "303",
         "Ort": "Łubnice"
     },
-    { 
-          "ID" : 6,
+    {
+        "ID": 6,
         "Name": "Beurich",
         "Vorname": "May",
         "Geb": {
@@ -77,8 +77,8 @@
         "PLZ": "0593",
         "Ort": "Dongfu"
     },
-    {  
-         "ID" : 7,
+    {
+        "ID": 7,
         "Name": "Featherstone",
         "Vorname": "Paton",
         "Geb": {
@@ -90,8 +90,8 @@
         "PLZ": "93919",
         "Ort": "Zalesnoye"
     },
-    {  
-         "ID" : 8,
+    {
+        "ID": 8,
         "Name": "Blackhall",
         "Vorname": "Lissy",
         "Geb": {
