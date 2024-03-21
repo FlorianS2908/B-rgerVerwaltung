@@ -17,7 +17,7 @@
     <script src="./scripte/antrag.js"></script>
 </head>
 <header>
-    <h1>Willkommen im Bürgerbüro</h1>
+    <h1>Anträge</h1>
 </header>
 <?php
 require "navi.php";

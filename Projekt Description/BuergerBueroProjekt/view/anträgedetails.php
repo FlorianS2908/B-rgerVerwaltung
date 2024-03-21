@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/pdf-lib"></script>
 </head>
 <header>
-    <h1>Willkommen im Bürgerbüro</h1>
+    <h1>Antrag Details</h1>
 </header>
 <?php
 require "navi.php";
