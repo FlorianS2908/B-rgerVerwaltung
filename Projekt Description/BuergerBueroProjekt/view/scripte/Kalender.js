@@ -1,8 +1,8 @@
 var CALENDAR = function () {
     var cal = {};
-    var wrap, label,
-        months =
-            ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    var wrap, label;
+    var months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
     cal.init = function (newWrap) {
         wrap = $(newWrap);
         label = wrap.find("#label");
@@ -15,7 +15,7 @@ var CALENDAR = function () {
 
     function switchMonth(next, month, year) {
         var curr = label.text().trim().split(" "), tempYear = parseInt(curr[1], 10);
-        month = month || ((next) ? ((curr[0] === "December") ? 0 : months.indexOf(curr[0]) + 1) : ((curr[0] === "January") ? 11 : months.indexOf(curr[0]) - 1));
+        month = month || ((next) ? ((curr[0] === "Dezember") ? 0 : months.indexOf(curr[0]) + 1) : ((curr[0] === "January") ? 11 : months.indexOf(curr[0]) - 1));
         year = year || ((next && month === 0) ? tempYear + 1 : (!next && month === 11) ? tempYear - 1 : tempYear);
 
         var calendar = createCal(year, month);
@@ -63,10 +63,16 @@ var CALENDAR = function () {
         }
 
         for (i = 0; i < calendar.length; i++) {
-            calendar[i] = "<tr>" + calendar[i].map(function (day) {
-                return "<td>" + (day ? ("<div onclick=\"updateDate('" + day + "', '" + month + "', '" + year + "')\">" + day + "</div>") : "") + "</td>";
-            }).join("") + "</tr>";
+            calendar[i] = "<tr>" + calendar[i].map(function (day, index) {
+                // Check if the current day is Sunday (index 0 represents Sunday)
+                var isSunday = index === 6;
+                // Generate id for the td element based on whether it's Sunday or not
+                var tdId = isSunday ? "sunday" : "";
+                // For each day in the row, generate a table cell with a div (if day is not empty)
+                return "<td id='" + tdId + "'>" + (day ? ("<div onclick=\"updateDate('" + day + "', '" + month + "', '" + year + "')\">" + day + "</div>") : "") + "</td>";
+            }).join("") + "</tr>"; // Join the table cells to form the row
         }
+
         calendar = $("<table>" + calendar.join("") + "</table>").addClass("curr");
 
         $("td:empty", calendar).addClass("nil");
