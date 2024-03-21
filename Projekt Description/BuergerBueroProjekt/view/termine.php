@@ -68,6 +68,7 @@
                 </div>
             </div>
 
+            <div class="zeitfenster">
                 <label>Zeitfenster:</label>
                 <br>
                 <input type="checkbox" id="vormittags" name="zeitfenster" value="vormittags">
@@ -75,6 +76,9 @@
                 <input type="checkbox" id="nachmittags" name="zeitfenster" value="nachmittags">
                 <label for="nachmittags">Nachmittags</label>
                 <br>
+                <br>
+                </div>
+            </div>
 
                 <input type="submit" value="Termin suchen">
             </form>
