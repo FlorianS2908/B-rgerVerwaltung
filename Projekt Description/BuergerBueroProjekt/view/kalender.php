@@ -34,41 +34,25 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripte/kalender.js"></script>
     <script>
-    $(document).ready(function() {
-        var cal = CALENDAR();
-        cal.init("#cal");
-    });
+        $(document).ready(function() {
+            var cal = CALENDAR();
+            cal.init("#cal");
+        });
     </script>
     <style>
-    #datum {
-        display: block;
-        text-align: center;
-    }
+        #datum {
+            display: block;
+            text-align: center;
+        }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
 
     <br>
 
-    <label for="freie-termine">Freie Termine:</label>
-    <select id="freie-termine">
-        <?php
-        $counter = 1;
-        foreach ($freieTermine as $freierTermin) {
-            echo "<option value=\"termin$counter\">Termin $counter: $freierTermin</option>";
-            $counter++;
-        }
-        ?>
-    </select>
-    <br>
-    <br>
-
     <?php
-    $freieTermine = file_get_contents("../model/TerminMockup.json");
 
-    $terminData = json_decode($freieTermine, true);
-
-    // Feiertag | Urlaub | vergeben uberprüfen
+    // Funktion zur Überprüfung, ob ein Datum vergeben ist
     function istVergeben($datum, $terminData)
     {
         foreach ($terminData as $termin) {
@@ -83,7 +67,7 @@
         return false;
     }
 
-    //freie Termine finden
+    // Funktion zur Ermittlung freier Termine
     function findeFreieTermine($datum, $terminData)
     {
         $freieTermine = array();
@@ -99,24 +83,28 @@
         return $freieTermine;
     }
 
+    // Laden der Daten aus der JSON-Datei
+    $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
+
     // Datumeingabe
     $datum = readline("Geben Sie das Datum ein (YYYY-MM-DD): ");
 
-    // freie Termine für Eingabe finden
+    // Ermittlung freier Termine für das eingegebene Datum
     $freieTermine = findeFreieTermine($datum, $terminData);
 
-    // Ausgabe der freien Termine
-    if (!empty($freieTermine)) {
-        foreach ($freieTermine as $freierTermin) {
-            echo "<option value=\"termin$counter\">Termin $counter: $freierTermin</option>";
-            $counter++;
-        }
-    } else {
-        echo "Keine freien Termine für das angegebene Datum gefunden.\n";
-    }
-
-
     ?>
+
+    <!-- Dropdown-Menü für die freien Termine -->
+    <label for="freie-termine">Freie Termine:</label>
+    <select id="freie-termine">
+        <?php
+        // Ausgabe der freien Termine als Dropdown-Optionen
+        foreach ($freieTermine as $index => $freierTermin) {
+            echo "<option value=\"termin$index\">Termin " . ($index + 1) . ": $freierTermin</option>";
+        }
+        ?>
+    </select>
+    <br><br>
 
 </body>
 

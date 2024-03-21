@@ -11,7 +11,7 @@ body {
 
 .container {
     text-align: center;
-    width: 90%;
+    width: 60%;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 4px;
@@ -86,6 +86,8 @@ input[readonly] {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    border-radius: 30px;
+    height: 45px;
 }
 
 .btn:hover {
@@ -134,14 +136,22 @@ input[readonly] {
 }
 
 @media only screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+
     .adresse {
         width: 90%;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .btn {
+    .container {
         width: 90%;
+    }
+
+    .btn {
+        width: 70%;
     }
 
     .fixed-fields {
