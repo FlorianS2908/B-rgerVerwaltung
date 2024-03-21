@@ -34,25 +34,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripte/kalender.js"></script>
     <script>
-        $(document).ready(function() {
-            var cal = CALENDAR();
-            cal.init("#cal");
-        });
+    $(document).ready(function() {
+        var cal = CALENDAR();
+        cal.init("#cal");
+    });
     </script>
     <style>
-        #datum {
-            display: block;
-            text-align: center;
-        }
+    #datum {
+        display: block;
+        text-align: center;
+    }
     </style>
     <Label id='datum'>Ausgewähltes Datum</Label>
 
 
-    <br>
+    <br> <br>
 
     <?php
-
-    // Funktion zur Überprüfung, ob ein Datum vergeben ist
+    // Datum überprüfen
     function istVergeben($datum, $terminData)
     {
         foreach ($terminData as $termin) {
@@ -67,7 +66,7 @@
         return false;
     }
 
-    // Funktion zur Ermittlung freier Termine
+    // Ermittlung freier Termine
     function findeFreieTermine($datum, $terminData)
     {
         $freieTermine = array();
@@ -79,19 +78,17 @@
                 $freieTermine[] = $currentDate;
             }
         }
-
         return $freieTermine;
     }
 
     // Laden der Daten aus der JSON-Datei
     $terminData = json_decode(file_get_contents("../model/TerminMockup.json"), true);
-
-    // Datumeingabe
+    // Datumeingabe --> Aus dem Kalender
+    // $datum = input???;
     $datum = readline("Geben Sie das Datum ein (YYYY-MM-DD): ");
 
     // Ermittlung freier Termine für das eingegebene Datum
     $freieTermine = findeFreieTermine($datum, $terminData);
-
     ?>
 
     <!-- Dropdown-Menü für die freien Termine -->
@@ -105,6 +102,13 @@
         ?>
     </select>
     <br><br>
+
+    <input type="button" value="Termin buchen">
+    </div>
+    <div class="footer">
+        <br>
+        <p>Kontaktinformationen</p>
+    </div>
 
 </body>
 
