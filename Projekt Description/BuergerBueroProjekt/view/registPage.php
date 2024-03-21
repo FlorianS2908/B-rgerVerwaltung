@@ -28,7 +28,7 @@ require "navi.php";
     ?>
     <div class="container">
         <h2 style="text-align:center">Registrierung</h2>
-        <form action="/registrieren" method="post">
+        <form action="index.php" method="post">
             <label for="anrede">Anrede:</label>
             <select id="anrede" name="anrede">
                 <option value="herr">Herr</option>

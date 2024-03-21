@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="style/personalpage.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/burgerMenü.css">
-    <script src="scripte/personalpage.js"></script>
 </head>
 
 <body>
     <?php include 'burgerMenü.php'; ?>
-    <script src="scripte/personalpage.js"></script>
     <div class="container">
         <br>
         <h1>Persönliche Daten</h1>
@@ -26,24 +24,20 @@
             <div class="box">
                 <div class="umrandung">
                     <label class="titel" for="state">Nachname:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">Mustermann</p>
                 </div>
                 <div class="umrandung">
                     <label class="titel" for="state">Geburtsdatum:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">1990-01-01</p>
                 </div>
             </div>
             <div class="box">
                 <div class="umrandung">
                     <label class="titel" for="state">Vorname:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">Erika</p>
                 </div>
                 <div class="umrandung">
                     <label class="titel" for="state">Geburtsort:</label>
-                    <!-- Hier wird der Input für den Namen als readonly definiert -->
                     <p class="text">Berlin</p>
                 </div>
             </div>
@@ -70,6 +64,7 @@
         </div>
     </div>
     <?php include 'footer.php'; ?>
+    <script src="scripte/personalpage.js"></script>
 </body>
 
 </html>

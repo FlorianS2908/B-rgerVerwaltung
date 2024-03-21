@@ -24,16 +24,6 @@
         <a href="registPage.php">Registrieren</a>
     </form>
 </div>
-<?php
-
-
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-    // Setze die Session-Variablen
-    $_SESSION["username"] = $_POST["username"];
-    $_SESSION["password"] = $_POST["password"];
-}
-?>
-
 </body>
 
 </html>

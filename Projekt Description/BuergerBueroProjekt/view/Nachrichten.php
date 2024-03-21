@@ -37,29 +37,29 @@
         // Filterung der Artikel basierend auf dem POST-Parameter
         if (isset ($_POST['filter'])) {
             $filter = $_POST['filter'];
-            $filtered_articles = array();
+            $filtered_art = array();
 
             if ($filter === 'week') {
                 // Filter für Artikel der letzten Woche
-                foreach ($data as $article) {
-                    if (strtotime($article['Datum']) >= strtotime('-1 week')) {
-                        $filtered_articles[] = $article;
+                foreach ($data as $art) {
+                    if (strtotime($art['Datum']) >= strtotime('-1 week')) {
+                        $filtered_art[] = $art;
                     }
                 }
             } elseif ($filter === 'month') {
                 // Filter für Artikel des letzten Monats
-                foreach ($data as $article) {
-                    if (strtotime($article['Datum']) >= strtotime('-1 month')) {
-                        $filtered_articles[] = $article;
+                foreach ($data as $art) {
+                    if (strtotime($art['Datum']) >= strtotime('-1 month')) {
+                        $filtered_art[] = $art;
                     }
                 }
             } else {
                 // Kein Filter angewendet
-                $filtered_articles = $data;
+                $filtered_art = $data;
             }
 
             // Verwende die gefilterten Artikel für die Anzeige
-            $data = $filtered_articles;
+            $data = $filtered_art;
         }
 
         foreach ($data as $art) {
