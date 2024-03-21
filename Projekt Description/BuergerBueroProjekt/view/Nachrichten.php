@@ -75,10 +75,10 @@
 
 
                 // Das Bild als Base64-codierte Zeichenfolge in das img-Tag einfügen
-                echo $titel;
-                echo $datum;
-                echo $artText;
-                echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
+                //echo $titel;
+                //echo $datum;
+                //echo $artText;
+                //echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
 
                 // Artikelcontainer
                 echo "<div class='article'>";
