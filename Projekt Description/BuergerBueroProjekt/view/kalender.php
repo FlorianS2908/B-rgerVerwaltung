@@ -59,12 +59,13 @@
         cal.init("#cal");
     });
     </script>
+    <!--
     <style>
-    #datum {
+     #datum {
         display: block;
         text-align: center;
-    }
-    </style>
+    } 
+    </style> -->
 
     <Label id='datum'>Ausgewähltes Datum</Label>
 
