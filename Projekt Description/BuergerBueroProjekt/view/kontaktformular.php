@@ -25,7 +25,7 @@ require "navi.php";
 
     <div class="container">
         <h2>Kontaktformular</h2>
-        <form action="index.php" method="post" class="contact-form">
+        <form action="kontaktsend.php" method="post" class="contact-form">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
