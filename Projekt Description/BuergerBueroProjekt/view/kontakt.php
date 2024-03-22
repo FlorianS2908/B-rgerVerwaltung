@@ -39,7 +39,7 @@ require "navi.php";
         </section>
 
         <section>
-            <h2>Kontaktformular</h2>
+            <h2 style="padding: 20px;">Kontaktformular</h2>
             <form action="#" method="post">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
