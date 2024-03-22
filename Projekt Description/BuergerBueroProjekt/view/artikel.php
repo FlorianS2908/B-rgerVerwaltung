@@ -10,21 +10,55 @@
     <link rel="stylesheet" href="../view/style/navigation.css">
     <link rel="stylesheet" href="../view/style/header.css">
     <link rel="stylesheet" href="../view/style/footer.css">
+    <style>
+        /* Stil für das Popup-Fenster */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Hintergrund halbtransparent */
+            z-index: 9999;
+            /* Z-Index über allem anderen Inhalt */
+            overflow: auto;
+            /* Scrollen ermöglichen, wenn der Inhalt zu groß ist */
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<header>
-    <h1>Nachrichtenformular</h1>
-</header>
-
-<?php
-    require "navi.php";
-    ?>
-
-
 <body>
-    <?php
-    require_once ("burgerMenü.php");
-    ?>
+    <header>
+        <h1>Nachrichtenformular</h1>
+    </header>
+
+    <?php require "navi.php"; ?>
+
+    <?php require_once ("burgerMenü.php"); ?>
 
     <section class="filter-bar">
         <form method="post">
@@ -34,8 +68,7 @@
         </form>
     </section>
 
-    <section class="articles" onclick="weiterleiten($art)">
-
+    <section class="articles">
         <?php
         $json_file_path = '../controller/query_result_Artikel.json';
 
@@ -43,8 +76,8 @@
         $json_data = file_get_contents($json_file_path);
 
         // JSON-Daten dekodieren
-        $data = json_decode($json_data, true); // Das zweite Argument "true" gibt an, dass ein assoziatives Array verwendet werden soll
-        
+        $data = json_decode($json_data, true);
+
         // Filterung der Artikel basierend auf dem POST-Parameter
         if (isset ($_POST['filter'])) {
             $filter = $_POST['filter'];
@@ -74,7 +107,6 @@
         }
 
         foreach ($data as $art) {
-            //var_dump($art);
             // Wenn Daten vorhanden sind
             if (!empty ($data)) {
                 // Das erste Bild auswählen
@@ -84,15 +116,7 @@
                 $imageDescription = $art['ArtikelText'];
                 $artText = $art['ArtikelText'];
 
-
-                // Das Bild als Base64-codierte Zeichenfolge in das img-Tag einfügen
-                //echo $titel;
-                //echo $datum;
-                //echo $artText;
-                //echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
-
-                // Artikelcontainer
-                //
+                // Artikelcontainer mit Link
                 echo "<div class='article'>";
                 // Artikelinhalt
                 echo "<div class='article-details'>";
@@ -102,22 +126,56 @@
                 echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
                 echo "</div>";
                 echo "<p>$artText</p>";
+                echo "<button onclick='openPopup(\"$titel\", \"$datum\", \"$artText\", \"$imageData\", \"$imageDescription\")'>Weiterlesen</button>"; // Button zum Öffnen des Artikels im Popup
                 echo "</div>";
                 echo "</div>";
             }
         }
         ?>
     </section>
+
+    <!-- Popup-Fenster -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-date"></p>
+            <div id="popup-image"></div>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+
     <script>
-    function weiterleiten() {
-        window.location.href = "artikel_seite.php" + encodeURIComponent($art);
-    }
+        // JavaScript-Funktion zum Öffnen des Popup-Fensters mit Artikelinhalt
+        function openPopup(title, date, text, imageData, imageDescription) {
+            var popup = document.getElementById("popup");
+            var titleElement = document.getElementById("popup-title");
+            var dateElement = document.getElementById("popup-date");
+            var textElement = document.getElementById("popup-text");
+            var imageElement = document.getElementById("popup-image");
+
+            titleElement.textContent = title;
+            dateElement.textContent = date;
+            textElement.textContent = text;
+
+            // Bild einfügen
+            var img = new Image();
+            img.src = 'data:image/jpeg;base64,' + imageData;
+            img.alt = imageDescription;
+            imageElement.innerHTML = '';
+            imageElement.appendChild(img);
+
+            popup.style.display = "block"; // Popup-Fenster anzeigen
+        }
+
+        // JavaScript-Funktion zum Schließen des Popup-Fensters
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none"; // Popup-Fenster ausblenden
+        }
     </script>
-    <?php
-require_once 'footer.php';
-?>
+
+    <?php require_once 'footer.php'; ?>
 </body>
-
-
 
 </html>
