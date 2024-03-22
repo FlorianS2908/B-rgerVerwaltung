@@ -11,43 +11,43 @@
     <link rel="stylesheet" href="../view/style/header.css">
     <link rel="stylesheet" href="../view/style/footer.css">
     <style>
-        /* Stil für das Popup-Fenster */
-        .popup {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Hintergrund halbtransparent */
-            z-index: 9999;
-            /* Z-Index über allem anderen Inhalt */
-            overflow: auto;
-            /* Scrollen ermöglichen, wenn der Inhalt zu groß ist */
-        }
+    /* Stil für das Popup-Fenster */
+    .popup {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Hintergrund halbtransparent */
+        z-index: 9999;
+        /* Z-Index über allem anderen Inhalt */
+        overflow: auto;
+        /* Scrollen ermöglichen, wenn der Inhalt zu groß ist */
+    }
 
-        .popup-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
+    .popup-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
     </style>
 </head>
 
@@ -126,7 +126,7 @@
                 echo "<img src='data:image/jpeg;base64,{$imageData}' alt='{$imageDescription}'>";
                 echo "</div>";
                 echo "<p>$artText</p>";
-                echo "<button onclick='openPopup(\"$titel\", \"$datum\", \"$artText\", \"$imageData\", \"$imageDescription\")'>Weiterlesen</button>"; // Button zum Öffnen des Artikels im Popup
+                echo "<button class ='button' button onclick='openPopup(\"$titel\", \"$datum\", \"$artText\", \"$imageData\", \"$imageDescription\")'>Weiterlesen</button>"; // Button zum Öffnen des Artikels im Popup
                 echo "</div>";
                 echo "</div>";
             }
@@ -146,33 +146,33 @@
     </div>
 
     <script>
-        // JavaScript-Funktion zum Öffnen des Popup-Fensters mit Artikelinhalt
-        function openPopup(title, date, text, imageData, imageDescription) {
-            var popup = document.getElementById("popup");
-            var titleElement = document.getElementById("popup-title");
-            var dateElement = document.getElementById("popup-date");
-            var textElement = document.getElementById("popup-text");
-            var imageElement = document.getElementById("popup-image");
+    // JavaScript-Funktion zum Öffnen des Popup-Fensters mit Artikelinhalt
+    function openPopup(title, date, text, imageData, imageDescription) {
+        var popup = document.getElementById("popup");
+        var titleElement = document.getElementById("popup-title");
+        var dateElement = document.getElementById("popup-date");
+        var textElement = document.getElementById("popup-text");
+        var imageElement = document.getElementById("popup-image");
 
-            titleElement.textContent = title;
-            dateElement.textContent = date;
-            textElement.textContent = text;
+        titleElement.textContent = title;
+        dateElement.textContent = date;
+        textElement.textContent = text;
 
-            // Bild einfügen
-            var img = new Image();
-            img.src = 'data:image/jpeg;base64,' + imageData;
-            img.alt = imageDescription;
-            imageElement.innerHTML = '';
-            imageElement.appendChild(img);
+        // Bild einfügen
+        var img = new Image();
+        img.src = 'data:image/jpeg;base64,' + imageData;
+        img.alt = imageDescription;
+        imageElement.innerHTML = '';
+        imageElement.appendChild(img);
 
-            popup.style.display = "block"; // Popup-Fenster anzeigen
-        }
+        popup.style.display = "block"; // Popup-Fenster anzeigen
+    }
 
-        // JavaScript-Funktion zum Schließen des Popup-Fensters
-        function closePopup() {
-            var popup = document.getElementById("popup");
-            popup.style.display = "none"; // Popup-Fenster ausblenden
-        }
+    // JavaScript-Funktion zum Schließen des Popup-Fensters
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none"; // Popup-Fenster ausblenden
+    }
     </script>
 
     <?php require_once 'footer.php'; ?>
