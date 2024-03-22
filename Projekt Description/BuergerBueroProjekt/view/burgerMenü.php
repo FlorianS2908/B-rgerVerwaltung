@@ -6,7 +6,7 @@
         Daten</div>
     <div class="dropdown-item" onclick="window.location.href='anträge.php';">Anträge</div>
     <div class="dropdown-item" onclick="window.location.href='artikel.php';">Artikel</div>
-    <div class="dropdown-item" onclick="window.location.href='termine.php';">Termine</div>
+    <div class="dropdown-item" onclick="window.location.href='termine_flo.php';">Termine</div>
     <div class="dropdown-item" onclick="window.location.href='kontakt.php';">Kontakt</div>
 </div>
 
