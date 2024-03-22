@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./style/header.css">
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/main.css">
-    <link rel="stylesheet" href="../view/style/burgerMenü.css">
+    <link rel="stylesheet" href="./style/burgerMenü.css">
 
 </head>
 <header>
@@ -19,33 +19,33 @@
 
 <body>
     <?php
-        require "navi.php";
-        ?>
+    require "navi.php";
+    ?>
     <div class="main">
         <?php
-            $json_file_path = '../model/TerminMockup.json';
+        $json_file_path = '../model/TerminMockup.json';
 
-            // JSON-Datei lesen
-            $json_data = file_get_contents($json_file_path);
+        // JSON-Datei lesen
+        $json_data = file_get_contents($json_file_path);
 
-            // JSON-Daten dekodieren
-            $data_array = json_decode($json_data, true); // Das zweite Argument "true" gibt an, dass ein assoziatives Array verwendet werden soll
-            $group = array();
-            foreach ($data_array as $elm) {
-                array_push($group, $elm["Gruppe"]);
-            }
-            $group = array_unique($group, SORT_STRING);
-            ?>
+        // JSON-Daten dekodieren
+        $data_array = json_decode($json_data, true); // Das zweite Argument "true" gibt an, dass ein assoziatives Array verwendet werden soll
+        $group = array();
+        foreach ($data_array as $elm) {
+            array_push($group, $elm["Gruppe"]);
+        }
+        $group = array_unique($group, SORT_STRING);
+        ?>
         <form>
             <label for="dienstleistung">
                 <h2>Dienstleistung:</h2>
             </label>
             <select id="dienstleistung">
                 <?php
-                    foreach ($group as $elm) {
-                        echo "<option value=\$elm\"> $elm</option>";
-                    }
-                    ?>
+                foreach ($group as $elm) {
+                    echo "<option value=\$elm\"> $elm</option>";
+                }
+                ?>
 
             </select>
             <br>
@@ -91,15 +91,15 @@
             <br>
 
             <h2>Datum:</h2>
-            <?php 
-            require "kalender.php"; 
+            <?php
+            require "kalender.php";
             ?>
     </div>
     </div>
     <input type="submit" value="Termin buchen">
     <?php
-        require "footer.php";
-        ?>
+    require "footer.php";
+    ?>
     </form>
 </body>
 

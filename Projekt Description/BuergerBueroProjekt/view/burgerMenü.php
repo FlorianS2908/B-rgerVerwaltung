@@ -11,22 +11,22 @@
 </div>
 
 <script>
-    // JavaScript, um das Dropdown-Menü anzuzeigen/verbergen
-    const menuIcon = document.getElementById("menuIcon");
-    const menuDropdown = document.getElementById("menuDropdown");
+// JavaScript, um das Dropdown-Menü anzuzeigen/verbergen
+const menuIcon = document.getElementById("menuIcon");
+const menuDropdown = document.getElementById("menuDropdown");
 
-    menuIcon.addEventListener("click", function() {
-        if (menuDropdown.style.display === "block") {
-            menuDropdown.style.display = "none";
-        } else {
-            menuDropdown.style.display = "block";
-        }
-    });
+menuIcon.addEventListener("click", function() {
+    if (menuDropdown.style.display === "block") {
+        menuDropdown.style.display = "none";
+    } else {
+        menuDropdown.style.display = "block";
+    }
+});
 
-    // Schließen des Dropdown-Menüs, wenn außerhalb geklickt wird
-    window.addEventListener("click", function(event) {
-        if (event.target !== menuIcon && event.target !== menuDropdown) {
-            menuDropdown.style.display = "none";
-        }
-    });
+// Schließen des Dropdown-Menüs, wenn außerhalb geklickt wird
+window.addEventListener("click", function(event) {
+    if (event.target !== menuIcon && event.target !== menuDropdown) {
+        menuDropdown.style.display = "none";
+    }
+});
 </script>
