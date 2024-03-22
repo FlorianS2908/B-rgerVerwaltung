@@ -51,12 +51,11 @@
             <br>
             <br>
 
-            <div class="wochentage">
+            <div class="wochentage checkbox-container">
                 <label>
                     <h4>Wochentage:</h4>
                 </label>
                 <br>
-                <div class="checkbox-container">
                     <input type="checkbox" id="montag" name="wochentage" value="montag">
                     <label for="montag">Montag</label>
                     <input type="checkbox" id="dienstag" name="wochentage" value="dienstag">
@@ -72,12 +71,11 @@
                 </div>
             </div>
 
-            <div class="zeitfenster">
+            <div class="zeitfenster checkbox-container">
                 <label>
                     <h4>Zeitfenster:</h4>
                 </label>
                 <br>
-                <div class="checkbox-container">
                     <input type="checkbox" id="vormittags" name="zeitfenster" value="vormittags">
                     <label for="vormittags">Vormittags</label>
                     <input type="checkbox" id="nachmittags" name="zeitfenster" value="nachmittags">
