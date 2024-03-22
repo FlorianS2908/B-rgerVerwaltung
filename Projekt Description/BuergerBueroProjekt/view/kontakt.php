@@ -26,7 +26,7 @@ require "navi.php";
     require "burgerMenü.php";
     ?>
     <main>
-        <section>
+        <section style="padding: 20px;">
             <h2>Kontaktinformationen</h2>
             <p>Hier sind unsere Kontaktdaten:</p>
             <address>
