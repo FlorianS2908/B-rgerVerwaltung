@@ -69,7 +69,7 @@
                     <br>
                     <br>
                 </div>
-            </div>
+           
 
             <div class="zeitfenster checkbox-container">
                 <label>
@@ -83,7 +83,7 @@
                     <br>
                     <br>
                 </div>
-            </div>
+
 
             <input type="submit" value="Termin suchen">
             <br>
