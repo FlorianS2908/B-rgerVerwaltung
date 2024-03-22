@@ -1,13 +1,4 @@
-header {
-    width: 100%;
-    margin-top: 20px;
-}
-
-h1 {
-    margin-top: 51px;
-}
-
-body {
+.container {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -16,9 +7,10 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
-.container {
+.main {
     text-align: center;
     width: 60%;
     padding: 20px;
@@ -28,6 +20,7 @@ body {
     gap: 0px;
     max-height: calc(100vh - 40px);
     margin-top: -15px;
+
 }
 
 .subtext {
