@@ -57,17 +57,17 @@
             </div>
 
 
-            <h1 class="title2">Adresse</h1>
+            <h2>Adresse</h2>
             <div class="editable-fields">
                 <div class="box">
                     <div class="adresse">
-                        <label class="titel" for="state">Straße:</label>
+                        <label class="titel2" for="state">Straße:</label>
                         <input type="text" id="Straße" name="Straße" required value="Ihre Straße" />
-                        <label class="titel" for="address">Hausnummer:</label>
+                        <label class="titel2" for="address">Hausnummer:</label>
                         <input type="text" id="Hausnummer" name="Hausnummer" required value="Ihre Hausnummer" />
-                        <label class="titel" for="zipCode">Postleitzahl:</label>
+                        <label class="titel2" for="zipCode">Postleitzahl:</label>
                         <input type="text" id="PLZ" name="PLZ" required value="Ihre Postleitzahl" />
-                        <label class="titel" for="city">Stadt:</label>
+                        <label class="titel2" for="city">Stadt:</label>
                         <input type="text" id="Ort" name="Ort" required value="Ihre Stadt" />
                         <div class="btn-container">
                             <button class="btn" onclick="saveData()">Speichern</button>
