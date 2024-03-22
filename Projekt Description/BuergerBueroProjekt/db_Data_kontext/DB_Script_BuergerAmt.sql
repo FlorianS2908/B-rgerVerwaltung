@@ -218,27 +218,214 @@ INSERT INTO Adressen (Strasse_ID, Adresse_Hausnummer, Ort_ID) VALUES
 (19, '41', 19),
 (20, '43', 20);
 
-INSERT INTO Personen (Pers_Name, Pers_Vorname, Pers_Geb_Datum, Pers_Geb_Ort_ID, Pers_Adress_ID) VALUES
-('Müller', 'Peter', '1990-05-15', 1, 1),
-('Schmidt', 'Anna', '1985-09-20', 2, 2),
-('Schneider', 'Michael', '1978-03-10', 3, 3),
-('Fischer', 'Maria', '1995-11-25', 4, 4),
-('Weber', 'Thomas', '1980-07-12', 5, 5),
-('Meyer', 'Sarah', '1992-01-03', 6, 6),
-('Wagner', 'Stefan', '1976-08-28', 7, 7),
-('Becker', 'Julia', '1983-04-17', 8, 8),
-('Schulz', 'David', '1987-06-30', 9, 9),
-('Hoffmann', 'Laura', '1998-02-22', 10, 10),
-('Koch', 'Daniel', '1989-12-05', 11, 11),
-('Bauer', 'Lena', '1979-10-08', 12, 12),
-('Richter', 'Jan', '1993-07-19', 13, 13),
-('Klein', 'Nicole', '1982-09-14', 14, 14),
-('Wolf', 'Kevin', '1975-11-28', 15, 15),
-('Schröder', 'Jessica', '1991-03-01', 16, 16),
-('Lange', 'Patrick', '1984-08-18', 17, 17),
-('Hofmann', 'Christina', '1996-04-12', 18, 18),
-('Schäfer', 'Max', '1981-06-09', 19, 19),
-('König', 'Vanessa', '1977-12-24', 20, 20);
+INSERT INTO Personen (
+        Pers_Name,
+        Pers_Vorname,
+        Pers_Email,
+        Pers_Geb_Datum,
+        Pers_Geb_Ort_ID,
+        Pers_Adress_ID,
+        Pers_Salt,
+        Pers_Password
+    ) VALUES(
+        'Candan',
+        'Adem',
+        'Adem.Candan @gfn.education',
+        1990-05-15,
+        1,
+        1,
+        'ac7b8194e4ecfccecf2983397ae70ada',
+        '$2y$10$qJ0/9L2EUm.st.7iM4Q9QuVJ7ibjJjadL/hI2MslAxpcdxnqyCj8y'
+    ),
+    (
+        'Arriaga',
+        'Andrea',
+        'A.A @mail.com',
+        1985-09-20,
+        2,
+        2,
+        '0c3a20a6105333b712edadbe51be8a86',
+        '$2y$10$EPTrkQuh1m4bv6UjystrK.WP08SMugz7yXL9IOtH2aaetZXM8DFdq'
+    ),
+    (
+        'Kosztolanyi',
+        'Attila',
+        'K.A @mail.com',
+        1978-03-10,
+        3,
+        3,
+        'b1f8085328c47e7872c14706b85c42f3',
+        '$2y$10$POsrr5dZzN3gG6Ajo5v.9uIRn86cV0E4YHkkh9k00K/fgezodSWS6'
+    ),
+    (
+        'Castrillón',
+        'Natalia',
+        'natalia.castrillon.hernandez @hotmail.com',
+        1984-12-26,
+        4,
+        4 'ad9916926cf33bf8f0c78fb2d7ae7b40',
+        '$2y$10$81cFcCPTxItbnpKQEHVsZ.6EXfirhdRChgY1rmMd8Whj19QcYUwfK'
+    ),
+    (
+        'Kara',
+        'Mustafa',
+        'mustafa.kara @gfn.education',
+        1980-07-12,
+        5,
+        5,
+        '3c155ac06fb80e8b86f8812ceb50a8b5',
+        '$2y$10$sVgfzF6FiKPDOU0wexPTruXR97rLJUWIxe7YP.EzSC163y7C7mVim'
+    ),
+    (
+        'Motruc',
+        'Dan',
+        'dan.motruc @gfn.education',
+        1995-07-14,
+        6,
+        6,
+        'a304200a95e3867045e7c0ae56868856',
+        '$2y$10$Lmu0CC4nx8ybA3cRBJONDOnHrKXVvyHM1zBvH0Kotde9e9jbSeKNW'
+    ),
+    (
+        'Jahmurataj',
+        'Bekim',
+        'bekim.jahmurataj @gfn.education',
+        1990-01-29,
+        7,
+        7,
+        'edc1fa43cbb8099c7960ce95e881d216',
+        '$2y$10$5d5VJ9WvcddAf/5DBpLHGevEpFSwh1IILF6m91OEvbwwQulRsykaq'
+    ),
+    (
+        'Nelke',
+        'Patrycja',
+        'patrycja.nelke @gfn.education',
+        1983-04-17,
+        8,
+        8,
+        'b541b41f2fc32a6284b496c6d4493f38',
+        '$2y$10$3lV8dCqk5cd43LYCDlzsQuwIYDV/EanQfw0BiRTdc/RRzA0K2sN.K'
+    ),
+    (
+        'Siebler',
+        'Johannes',
+        'johannes.siebler @gfn.education',
+        1987-06-30,
+        9,
+        9,
+        '17c5b7f04b4060197b7696231cd00d24',
+        '$2y$10$CPFecmUZM0vdkSKH.J22QOOILDX.V4zQRslgxsdymW/P431Z0GrCS'
+    ),
+    (
+        'Othmer',
+        'Markus',
+		'markus.othmer@gfn.education.de',
+        1978-07-05,
+        10,
+        10,
+        '8cd2079e1e29fea2a2b790bcb6614cea',
+        '$2y$10$niZLMW5mcaaOIK7W7NHVo.QpDDdhjcdyMz9Qo6GCLG7F5jWBqYW6C'
+    ),
+    (
+        'Brunnenkant',
+        'Robin',
+        'robin @mail.de',
+		1989-12-05,
+        11,
+        11,
+        '478b4e3b40a17a3c18e44af1a4b7f2b1',
+        '$2y$10$LJcg3t2h86.TME4e3Lxcn.NwZ/hxrbjc0ZZPhl..6Sv5Yrxq7MGAW'
+    ),
+    (
+        'Bauer',
+        'Lena',
+		'florian.schaffer@gfn.de',
+        1979-10-08,
+        12,
+        12,
+        '6aff457b0ce5af553d4a1bdb0b8e2572',
+        '$2y$10$wxr.ytTujsdJRq/td6c7tuCYT/YbuQ8a0YaArwZvpXBILuk1Tcoki'
+    ),
+    (
+        'Richter',
+        'Jan',
+		'florian.schaffer@gfn.de',
+        1993-07-19,
+        13,
+        13,
+        'b6f37dbfe7d26bd05f71fd9849bd4dd2',
+        '$2y$10$mYDH/dgXy.ModCYEYwgmBu/d07JgcEBRRUo79eEkI4uF38xLuV48u'
+    ),
+    (
+        'Klein',
+        'Nicole',
+		'florian.schaffer@gfn.de',
+        1982-09-14,
+        14,
+        14,
+        '330289412b805bab6f7b177c800eb056',
+        '$2y$10$rLsnS9zWS3Egn3CgynuOQ.44k0f/9HgWHo3hUyrVdnxSEqn6Cmtba'
+    ),
+    (
+        'Wolf',
+        'Kevin',
+		'florian.schaffer@gfn.de',
+        1975-11-28,
+        15,
+        15,
+        'cea6ac3955026f3a97592d0008a41254',
+        '$2y$10$2laVpBOe8KC5AE1kgRqfWe8.oGdku1Dc4nytUGy.OQuBfRPyPg.wC'
+    ),
+    (
+        'Beqiri',
+        'Valdrin',
+        'valdrin98@hotmail.com',
+        1991-03-01,
+        16,
+        16,
+        'ad476df0da7eee4c37ef70bc12e92d62',
+        '$2y$10$VoKkHWsAkb0GCzgGCXRPne.OKAqhKK3.qjiDyjaRqeJe4AY/AkXgu'
+    ),
+    (
+        'Lange',
+        'Patrick',
+		'florian.schaffer@gfn.de',
+        1984-08-18,
+        17,
+        17,
+        'e6facbe9279b4740c6d2f0ccce3bfd2b',
+        '$2y$10$1G669mGbtb/bhkDVHFKlDueeAIRC5TuoKPSrwCeWlDTCJ3Cv3ajCe'
+    ),
+    (
+        'Hofmann',
+        'Christina',
+		'florian.schaffer@gfn.de',
+        1996-04-12,
+        18,
+        18,
+        '4bf73431a92d39eb32a42940d4f93a4a',
+        '$2y$10$XSHK7f5MeSRUVnB5u6lQJOA7bzFqIwL460VD6dIVPWK7TkSUoUhjq'
+    ),
+    (
+        'Schäfer',
+        'Max',
+		'florian.schaffer@gfn.de',
+        1981-06-09,
+        19,
+        19,
+        '8007153fb685af9b8bbf69c4eb773764',
+        '$2y$10$r9gGmRP0JbsuvMB.2wcqj.ekZumZjA1mVQFwYdJK.z6PcagVXJFKi'
+    ),
+    (
+        'König',
+        'Vanessa',
+		'florian.schaffer@gfn.de',
+        1977-12-24,
+        20,
+        20,
+        '7532899dd33b211a4c47f0eda1124521',
+        '$2y$10$G9vvUeqXMROWsnElvaDBLeK/U1.uZNeZvDZmdWkUkKbZavO6oKXWG'
+    );
 
 INSERT INTO Mitarbeiter (Personen_ID, Gruppen_ID) VALUES
 (1, 1),
