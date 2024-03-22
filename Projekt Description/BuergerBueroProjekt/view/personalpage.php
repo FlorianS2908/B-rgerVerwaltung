@@ -13,26 +13,16 @@
     <link rel="stylesheet" href="style/main.css">
 </head>
 
-<header>
-    <h1>Persönliche Daten</h1>
-</header>
-<?php
-    require "navi.php";
-    ?>
-
 <body>
-    <?php
-    require "burgerMenü.php";
-    ?>
-    <div class=container>
+    <header>
+        <h1>Persönliche Daten</h1>
+    </header>
+    <?php require "navi.php"; ?>
+    <?php require "burgerMenü.php"; ?>
+    <div class="container">
         <div class="main">
-
-
             <p class="subtext">Hier finden Sie Ihre persönlichen Daten</p>
-            <?php
-        session_start();
-
-        ?>
+            <?php session_start(); ?>
             <div class="fixed-fields">
                 <div class="box">
                     <div class="umrandung">
@@ -55,8 +45,6 @@
                     </div>
                 </div>
             </div>
-
-
             <h2>Adresse</h2>
             <div class="editable-fields">
                 <div class="box">
@@ -77,7 +65,8 @@
             </div>
         </div>
         <?php require 'footer.php'; ?>
-        <script src="scripte/personalpage.js"></script>
+    </div>
+    <script src="scripte/personalpage.js"></script>
 </body>
 
 </html>

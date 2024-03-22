@@ -8,7 +8,8 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 nav ul li a {

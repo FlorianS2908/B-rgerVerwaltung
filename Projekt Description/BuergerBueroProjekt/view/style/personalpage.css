@@ -156,6 +156,7 @@ footer {
 }
 
 @media only screen and (max-width: 480px) {
+
     .main {
         width: 90%;
         margin-bottom: 0;
