@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
 <?php
-$salz = random_bytes(16); // 16 Byte Salz
-$salz_hex = bin2hex($salz); // Salz in hexadezimaler Darstellung konvertieren
-var_dump($salz_hex);
-$hash = password_hash("Hallo" . $salz, PASSWORD_DEFAULT);
-var_dump($hash);
-var_dump($_POST);
+
 require "../controller/db_dataLoad.php";
 //createDatapool();
-session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {
-        // Setzen der Session-Variablen
-
-        $_SESSION["username"] = $_POST["username"];
-        $_SESSION["password"] = $_POST["password"];
         // query mittels Username + Password => daraus die Pers_ID aus deer DB
         // in die Session die Daten der Person die eingeloggt hat speichern
-
+        if (isUserInDbRegist($_POST["username"], $_POST["password"])) {
+            // Setzen der Session-Variablen
+            session_start();
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["password"] = $_POST["password"];
+        } else {
+?>
+            <script>
+                var error_message =
+                    "Leider ist ein Fehler Aufgetreten. Die Kombination von Benutzername/Email und Passwort stimmen nicht";
+                alert(error_message);
+            </script>
+<?php
+        }
         header("Location: index.php");
         exit();
     }
-    if (isset($_POST["nachname"]) && isset($_POST["vorname"])) {
-        $_SESSION["username"] = $_POST["vorname"] . " " . $_POST["nachname"];
-        $_SESSION["password"] = $_POST["password"];
+    if (
+        isset($_POST["nachname"]) && isset($_POST["vorname"]) && isset($_POST["geburtsort"])
+        && isset($_POST["hausnummer"]) && isset($_POST["plz"]) && isset($_POST["ort"])
+        && isset($_POST["geburtsdatum"]) && isset($_POST["straße"])
+    ) {
         registPerson();
     }
 }
@@ -54,14 +60,11 @@ require "navi.php";
     require "burgerMenü.php";
     ?>
     <?php
-    if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+    if (isset($_SESSION['pers_ID'])) {
         include "main.php";
-        if (isUserOnDB()) {
-            generateLoginJson();
-        } else {
-            registPerson();
-        }
+        // generateLoginJson();
     } else {
+        // => wenn nicht eingelogged dann gewisse Funktion in der API sperren
         include "loginPage.php";
     }
     ?>

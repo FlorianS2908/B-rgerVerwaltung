@@ -12,18 +12,8 @@
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/header.css">
 </head>
-<header>
-    <h1>Willkommen im Bürgerbüro</h1>
-</header>
-<?php
-require "navi.php";
-?>
-
 
 <body>
-    <?php
-    require "burgerMenü.php";
-    ?>
     <div class="container">
         <h1>Login</h1>
         <form action="index.php" method="post">
@@ -36,9 +26,6 @@ require "navi.php";
             <a href="registPage.php">Registrieren</a>
         </form>
     </div>
-    <?php
-    require "footer.php";
-    ?>
 </body>
 
 </html>

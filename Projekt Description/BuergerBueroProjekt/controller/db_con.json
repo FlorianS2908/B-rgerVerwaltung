@@ -1,8 +1,15 @@
 [
     {
-        "servername": "localhost",
-        "username": "root",
-        "password": "",
-        "database": "burgeramt"
+        "db_kontext": {
+            "servername": "localhost",
+            "username": "root",
+            "password": "",
+            "database": "burgeramt"
+        },
+        "login_kontext": {
+            "__comment": "hier könnte die Infos aus der Session abgelegt werden",
+            "username": "$_Sesseion['username']",
+            "password": "$_Session['password']"
+        }
     }
 ]

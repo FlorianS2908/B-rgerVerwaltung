@@ -41,14 +41,14 @@ require "navi.php";
             <label for="nachname">Nachname:</label>
             <input type="text" id="nachname" name="nachname" required>
             <br>
-            <!--
+
             <label for="geburtsdatum">Geburtsdatum:</label>
             <input type="date" id="geburtsdatum" name="geburtsdatum" required>
             <br>
             <label for="geburtsort">Geburtsort:</label>
             <input type="text" id="geburtsort" name="geburtsort" required>
             <br>
-          
+
             <label for="straße">Straße:</label>
             <input type="text" id="straße" name="straße" required>
             <label for="hausnummer">Hausnummer:</label>
@@ -63,8 +63,8 @@ require "navi.php";
             <input type="email" id="email" name="email" required>
             <br>
             <label for="passwort">Passwort:</label>
-            <input type="password" id="passwort" name="passwort" required>
-            <br><br>-->
+            <input type="password" id="password" name="password" required>
+            <br><br>
             <input type="submit" value="Registrieren">
         </form>
     </div>

@@ -32,14 +32,7 @@ CREATE TABLE IF NOT EXISTS Gruppen (
     Gruppen_ID INT AUTO_INCREMENT PRIMARY KEY,
     Gruppe VARCHAR(255) NOT NULL
 );
-CREATE TABLE IF NOT EXISTS Adressen (
-    Adresse_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Strasse_ID INT NOT NULL,
-    Adresse_Hausnummer VARCHAR(50) NOT NULL,
-    Ort_ID INT NOT NULL,
-    FOREIGN KEY (Strasse_ID) REFERENCES Strassen(Strasse_ID),
-    FOREIGN KEY (Ort_ID) REFERENCES Orte(Ort_ID)
-);
+
 CREATE TABLE IF NOT EXISTS Personen (
     Pers_ID INT AUTO_INCREMENT PRIMARY KEY,
     Pers_Name VARCHAR(255) NOT NULL,
@@ -54,7 +47,14 @@ CREATE TABLE IF NOT EXISTS Personen (
     FOREIGN KEY (Pers_Adress_ID) REFERENCES Adressen(Adresse_ID)
 );
 
-
+CREATE TABLE IF NOT EXISTS Adressen (
+    Adresse_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Strasse_ID INT NOT NULL,
+    Adresse_Hausnummer VARCHAR(50) NOT NULL,
+    Ort_ID INT NOT NULL,
+    FOREIGN KEY (Strasse_ID) REFERENCES Strassen(Strasse_ID),
+    FOREIGN KEY (Ort_ID) REFERENCES Orte(Ort_ID)
+);
 
 CREATE TABLE IF NOT EXISTS Mitarbeiter (
     Mitarbeiter_ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -230,8 +230,8 @@ INSERT INTO Personen (
     ) VALUES(
         'Candan',
         'Adem',
-        'Adem.Candan @gfn.education',
-        1990-05-15,
+        'Adem.Candan@gfn.education',
+        '1990-05-15',
         1,
         1,
         'ac7b8194e4ecfccecf2983397ae70ada',
@@ -240,8 +240,8 @@ INSERT INTO Personen (
     (
         'Arriaga',
         'Andrea',
-        'A.A @mail.com',
-        1985-09-20,
+        'A.A@mail.com',
+        '1985-09-20',
         2,
         2,
         '0c3a20a6105333b712edadbe51be8a86',
@@ -250,8 +250,8 @@ INSERT INTO Personen (
     (
         'Kosztolanyi',
         'Attila',
-        'K.A @mail.com',
-        1978-03-10,
+        'K.A@mail.com',
+        '1978-03-10',
         3,
         3,
         'b1f8085328c47e7872c14706b85c42f3',
@@ -260,17 +260,18 @@ INSERT INTO Personen (
     (
         'Castrillón',
         'Natalia',
-        'natalia.castrillon.hernandez @hotmail.com',
-        1984-12-26,
+        'natalia.castrillon.hernandez@hotmail.com',
+        '1984-12-26',
         4,
-        4 'ad9916926cf33bf8f0c78fb2d7ae7b40',
+        4,
+        'ad9916926cf33bf8f0c78fb2d7ae7b40',
         '$2y$10$81cFcCPTxItbnpKQEHVsZ.6EXfirhdRChgY1rmMd8Whj19QcYUwfK'
     ),
     (
         'Kara',
         'Mustafa',
-        'mustafa.kara @gfn.education',
-        1980-07-12,
+        'mustafa.kara@gfn.education',
+        '1980-07-12',
         5,
         5,
         '3c155ac06fb80e8b86f8812ceb50a8b5',
@@ -279,8 +280,8 @@ INSERT INTO Personen (
     (
         'Motruc',
         'Dan',
-        'dan.motruc @gfn.education',
-        1995-07-14,
+        'dan.motruc@gfn.education',
+        '1995-07-14',
         6,
         6,
         'a304200a95e3867045e7c0ae56868856',
@@ -289,8 +290,8 @@ INSERT INTO Personen (
     (
         'Jahmurataj',
         'Bekim',
-        'bekim.jahmurataj @gfn.education',
-        1990-01-29,
+        'bekim.jahmurataj@gfn.education',
+        '1990-01-29',
         7,
         7,
         'edc1fa43cbb8099c7960ce95e881d216',
@@ -299,8 +300,8 @@ INSERT INTO Personen (
     (
         'Nelke',
         'Patrycja',
-        'patrycja.nelke @gfn.education',
-        1983-04-17,
+        'patrycja.nelke@gfn.education',
+        '1983-04-17',
         8,
         8,
         'b541b41f2fc32a6284b496c6d4493f38',
@@ -309,8 +310,8 @@ INSERT INTO Personen (
     (
         'Siebler',
         'Johannes',
-        'johannes.siebler @gfn.education',
-        1987-06-30,
+        'johannes.siebler@gfn.education',
+        '1987-06-30',
         9,
         9,
         '17c5b7f04b4060197b7696231cd00d24',
@@ -320,7 +321,7 @@ INSERT INTO Personen (
         'Othmer',
         'Markus',
 		'markus.othmer@gfn.education.de',
-        1978-07-05,
+        '1978-07-05',
         10,
         10,
         '8cd2079e1e29fea2a2b790bcb6614cea',
@@ -329,8 +330,8 @@ INSERT INTO Personen (
     (
         'Brunnenkant',
         'Robin',
-        'robin @mail.de',
-		1989-12-05,
+        'robin@mail.de',
+		'1989-12-05',
         11,
         11,
         '478b4e3b40a17a3c18e44af1a4b7f2b1',
@@ -339,8 +340,8 @@ INSERT INTO Personen (
     (
         'Bauer',
         'Lena',
-		'florian.schaffer@gfn.de',
-        1979-10-08,
+		'florian.schaffer1@gfn.de',
+        '1979-10-08',
         12,
         12,
         '6aff457b0ce5af553d4a1bdb0b8e2572',
@@ -349,8 +350,8 @@ INSERT INTO Personen (
     (
         'Richter',
         'Jan',
-		'florian.schaffer@gfn.de',
-        1993-07-19,
+		'florian.schaffer2@gfn.de',
+        '1993-07-19',
         13,
         13,
         'b6f37dbfe7d26bd05f71fd9849bd4dd2',
@@ -359,8 +360,8 @@ INSERT INTO Personen (
     (
         'Klein',
         'Nicole',
-		'florian.schaffer@gfn.de',
-        1982-09-14,
+		'florian.schaffer3@gfn.de',
+        '1982-09-14',
         14,
         14,
         '330289412b805bab6f7b177c800eb056',
@@ -369,8 +370,8 @@ INSERT INTO Personen (
     (
         'Wolf',
         'Kevin',
-		'florian.schaffer@gfn.de',
-        1975-11-28,
+		'florian.schaffer4@gfn.de',
+        '1975-11-28',
         15,
         15,
         'cea6ac3955026f3a97592d0008a41254',
@@ -380,7 +381,7 @@ INSERT INTO Personen (
         'Beqiri',
         'Valdrin',
         'valdrin98@hotmail.com',
-        1991-03-01,
+        '1991-03-01',
         16,
         16,
         'ad476df0da7eee4c37ef70bc12e92d62',
@@ -389,8 +390,8 @@ INSERT INTO Personen (
     (
         'Lange',
         'Patrick',
-		'florian.schaffer@gfn.de',
-        1984-08-18,
+		'florian.schaffer5@gfn.de',
+        '1984-08-18',
         17,
         17,
         'e6facbe9279b4740c6d2f0ccce3bfd2b',
@@ -399,8 +400,8 @@ INSERT INTO Personen (
     (
         'Hofmann',
         'Christina',
-		'florian.schaffer@gfn.de',
-        1996-04-12,
+		'florian.schaffer6@gfn.de',
+        '1996-04-12',
         18,
         18,
         '4bf73431a92d39eb32a42940d4f93a4a',
@@ -409,8 +410,8 @@ INSERT INTO Personen (
     (
         'Schäfer',
         'Max',
-		'florian.schaffer@gfn.de',
-        1981-06-09,
+		'florian.schaffer7@gfn.de',
+        '1981-06-09',
         19,
         19,
         '8007153fb685af9b8bbf69c4eb773764',
@@ -419,8 +420,8 @@ INSERT INTO Personen (
     (
         'König',
         'Vanessa',
-		'florian.schaffer@gfn.de',
-        1977-12-24,
+		'florian.schaffer8@gfn.de',
+        '1977-12-24',
         20,
         20,
         '7532899dd33b211a4c47f0eda1124521',
@@ -494,23 +495,23 @@ INSERT INTO Termin_Urlaub (Termin_Urlaub, Termin_Mitarbeiter_ID) VALUES
 ('2027-08-10', 20);
 
 INSERT INTO Anträge (Gruppe_ID, file_data) VALUES
-(1, LOAD_FILE('C:/PDF/dok_ba024340.pdf')),
-(2, LOAD_FILE('C:/PDF/berufecheck-passt-der-beruf-zu-mir_ba036875.pdf')),
-(3, LOAD_FILE('C:/PDF/dok_ba024525.pdf')),
-(4, LOAD_FILE('C:/PDF/dok_ba029450.pdf')),
-(5, LOAD_FILE('C:/PDF/dok_ba033205.pdf')),
-(6, LOAD_FILE('C:/PDF/dok_ba034925.pdf')),
-(7, LOAD_FILE('C:/PDF/dok_ba036880.pdf')),
-(8, LOAD_FILE('C:/PDF/duale-ausbildung-en_ba026740.pdf')),
-(9, LOAD_FILE('C:/PDF/eltern-ins-boot-holen_ba031005.pdf')),
-(10, LOAD_FILE('C:/PDF/flyer-zum-berufswahltest-infos-fuer-eltern-und-lehrkraefte_ba037979.pdf')),
-(11, LOAD_FILE('C:/PDF/handicap-na-und_ba026295.pdf')),
-(12, LOAD_FILE('C:/PDF/info-ferienbeschaeftigung_ba036085.pdf')),
-(13, LOAD_FILE('C:/PDF/merkblatt-11-berufsberatung_ba033920.pdf')),
-(14, LOAD_FILE('C:/PDF/young-refugees-en-fr-ar-de_ba035585.pdf')),
-(15, LOAD_FILE('C:/PDF/budget-fuer-ausbildung-flyer_ba038174.pdf')),
-(16, LOAD_FILE('C:/PDF/dok_ba026115.pdf')),
-(17, LOAD_FILE('C:/PDF/dok_ba029450.pdf')),
-(18, LOAD_FILE('C:/PDF/dok_ba036880.pdf')),
-(19, LOAD_FILE('C:/PDF/budget-fuer-ausbildung-flyer_ba038174.pdf')),
-(20, LOAD_FILE('C:/PDF/eltern-ins-boot-holen_ba031005.pdf'));
+(1, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(2, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(3, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(4, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(5, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(6, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(7, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(8, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(9,LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(10, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(11, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(12, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(13,LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(14, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(15, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(16,LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(17, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(18, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(19, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf')),
+(20, LOAD_FILE('C:/PDF/Ticket_02_Registrierung.pdf'));
